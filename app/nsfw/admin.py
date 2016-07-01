@@ -4,7 +4,7 @@ from app.nsfw.models import Station, Report, Alert
 
 class StationAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
-    search_fields = ['name']
+    search_fields = ['id', 'name']
 admin.site.register(Station, StationAdmin)
 
 
