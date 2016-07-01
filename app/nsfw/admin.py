@@ -15,4 +15,5 @@ admin.site.register(Report, ReportAdmin)
 
 class AlertAdmin(admin.ModelAdmin):
     list_display = ('report', 'station', 'value', 'description', 'created', 'updated')
+    list_filter = ('report',)
 admin.site.register(Alert, AlertAdmin)

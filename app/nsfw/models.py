@@ -4,6 +4,7 @@ from django.dispatch import receiver
 import csv
 
 THRESHOLD_PM10 = 50
+THRESHOLD_NO2 = 200
 
 
 class Station(models.Model):
@@ -26,28 +27,30 @@ class Report(models.Model):
         return '%s (%s)' % (self.kind, self.date)
 
     def process_report(self):
-            handlers = {
-                'PM1': '_process_pm1_report'
-            }
-            getattr(self, handlers[self.kind])()
-
-    def _process_pm1_report(self):
+        thresholds = {
+            'PM1': THRESHOLD_PM10,
+            'NO2': THRESHOLD_NO2,
+        }
         for station in list(csv.DictReader(self.data.splitlines(),
                                            delimiter='\t')):
             val = int(station['val'].replace(' µg/m³', ''))
             station, created = Station.objects.get_or_create(
-                id=station['stationCode'])
-            if created:
-                station.name = station['title'].replace(' %s' % (station['stationCode']), '')
-                station.lat = station['lat']
-                station.lon = station['lon']
-                station.save()
-            if val > THRESHOLD_PM10:
+                id=station['stationCode'],
+                name=station['title'].replace(' %s' % (station['stationCode']), ''),
+                lat=station['lat'],
+                lon=station['lon'])
+            if val > thresholds[self.kind]:
                 Alert.objects.create(
                     report=self,
                     station=station,
                     value=val,
                 )
+
+    def _process_no2_report(self):
+        self._process_report(THRESHOLD_NO2)
+
+    def _process_pm1_report(self):
+        self._process_report(THRESHOLD_PM10)
 
 
 class Alert(models.Model):
