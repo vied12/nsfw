@@ -3,7 +3,8 @@ from app.nsfw.models import Station, PM10
 
 
 class StationAdmin(admin.ModelAdmin):
-    pass
+    search_fields = ['name']
+
 admin.site.register(Station, StationAdmin)
 
 
