@@ -1,2 +1,7 @@
 Django==1.9.7
 requests==2.10.0
+whitenoise==2.0.6
+# PROD
+gunicorn==19.4.5
+dj-database-url==0.4.0
+psycopg2
