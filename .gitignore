@@ -4,7 +4,6 @@ env/
 node_modules/
 static/.webassets-cache
 static/gen
-static/bower_components
 __pycache__/
 dump/
 *.sqlite3
@@ -12,3 +11,4 @@ dump/
 data/
 staticfiles/
 uploaded/
+app/static/bower_components

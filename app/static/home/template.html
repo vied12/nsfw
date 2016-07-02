@@ -1,0 +1,20 @@
+<div class="Home__background">
+    <div class="container">
+        <div class="row">
+            <h1>
+                Neukölln<br/>
+                Service<br/>
+                For Feinstaub<br/>
+                Warning
+            </h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <h2>Latests alerts</h2>
+        <div ng-repeat="alert in vm.alerts">
+            <h3>{{ alert.report.kind}}: {{ alert.value }}</h3>
+        </div>
+    </div>
+</div>

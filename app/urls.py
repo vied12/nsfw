@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from .nsfw.feeds import RssLatestEntriesFeed, AtomLatestEntriesFeed
+from .nsfw.views import HomePageView
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^alerts/rss/(?P<station_id>\w+)/$', RssLatestEntriesFeed()),
     url(r'^alerts/atom/(?P<station_id>\w+)/$', AtomLatestEntriesFeed()),
+    url(r'^$', HomePageView.as_view()),
+
 ]

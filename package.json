@@ -1,0 +1,14 @@
+{
+  "name": "nsfw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "less": "^2.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}

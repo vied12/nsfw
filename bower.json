@@ -1,0 +1,29 @@
+{
+  "name": "nsfw",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Edouard <edou4rd@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.3",
+    "angular": "~1.5.0",
+    "restangular": "~1.5.1",
+    "angular-resource": "~1.5.0",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.0",
+    "bootstrap": "~3.3.6",
+    "angular-ui-router": "~0.3.0",
+    "angular-bootstrap": "~1.3.2"
+  }
+}

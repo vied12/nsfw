@@ -1,0 +1,26 @@
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "variables.less";
+
+a, [ng-click], [ui-sref], [uib-dropdown-toggle] {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: @link-hover-decoration;
+        color: @text-color; // @link-hover-color;
+    }
+}
+
+.Home {
+    &__background {
+        background-image: url(/static/images/background.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        min-height: 390px;
+        h1 {
+            margin-top: 0;
+            padding-top: 20px;
+        }
+    }
+}
