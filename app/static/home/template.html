@@ -43,7 +43,7 @@
         <h2>Latests alerts in Berlin</h2>
         <div ng-repeat="alert in vm.alerts">
             <h3><i class="material-icons" style="top: 4px; position: relative;">label_outline</i><a ui-sref="station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
-            <p>{{alert.report.date | date : 'fullDate' }}<br/>{{ alert.report.kind}}: {{ alert.value }} µg/m³</p>
+            <p>{{ alert.report.kind}}: {{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
         </div>
     </div>
 </div>

@@ -54,7 +54,10 @@
                 resolve: {
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');
-                        return Stations.get().$promise;
+                        return Stations.get().$promise.then(function(s) {
+                            s.name = s.name.replace('B ', '');
+                            return s;
+                        });
                     }],
                     alerts: ['$resource', 'station', function($resource, station) {
                         var Alerts = $resource('http://localhost:8000/api/alerts/?limit=10&station=' + station.id + '/');
