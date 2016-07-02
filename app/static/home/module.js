@@ -35,11 +35,15 @@
                     var stations = resolved[1];
                     var closest;
                     var distanceMin = 99999;
+                    var near = [];
                     stations.forEach(function(s) {
                         var dist = getDistanceFromLatLonInKm(userCoord.lat, userCoord.lon, s.lat, s.lon);
                         if (dist < distanceMin) {
                             closest = s;
                             distanceMin = dist;
+                        }
+                        if (dist < 100) {
+                            near.push(s);
                         }
                     });
                     function createMarker(station, focus) {
@@ -51,8 +55,10 @@
                         };
                     }
                     var markers = {closest: createMarker(closest, true)};
-                    stations.forEach(function(s) {
-                        markers[s.id] = createMarker(s);
+                    near.forEach(function(s) {
+                        if (s !== closest) {
+                            markers[s.id] = createMarker(s);
+                        }
                     });
                     vm.suggestion = {
                         station: closest,
