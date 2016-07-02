@@ -35,7 +35,25 @@
                             'DEBE018',
                             'DEBE010'
                         ].join(',');
-                        var Alerts = $resource('http://localhost:8000/api/alerts/?limit=3&station=' + stations);
+                        var Alerts = $resource('api/alerts/?limit=3&station=' + stations);
+                        return Alerts.get().$promise.then(function(data) {
+                            return data.results;
+                        });
+                    }]
+                }
+            })
+            .state('station', {
+                url: '/station/:station/',
+                controllerAs: 'vm',
+                templateUrl: '/station/template.html',
+                controller: 'StationCtrl',
+                resolve: {
+                    station: ['$stateParams', '$resource', function($stateParams, $resource) {
+                        var Stations = $resource('api/stations/' + $stateParams.station  + '/');
+                        return Stations.get().$promise;
+                    }],
+                    alerts: ['$resource', 'station', function($resource, station) {
+                        var Alerts = $resource('http://localhost:8000/api/alerts/?limit=10&station=' + station.id + '/');
                         return Alerts.get().$promise.then(function(data) {
                             return data.results;
                         });

@@ -17,7 +17,7 @@
                             <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Sonnenalle 176">
                         </div>
                         <div class="col-sm-2 pull-right">
-                            <button type="submit" class="btn btn-primary btn-lg" form="loginForm">Track</button>
+                            <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Track</button>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,12 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
+    <div class="row" ng-if="vm.suggestion">
+        We found {{ vm.suggestion.id }} at <span ng-bind-html="vm.suggestion.name"></span> as the closest station.
+        <p>Do you want to check this station ?</p>
+        <button class="btn btn-success">Yes</button><button class="btn btn-default">No</button>
+    </div>
+    <div class="row" ng-if="!vm.suggestion">
         <h2>Latests alerts</h2>
         <div ng-repeat="alert in vm.alerts">
             <h3 ng-bind-html="alert.station.name"></h3>

@@ -21,6 +21,11 @@ class AlertSerializer(serializers.ModelSerializer):
         model = Alert
 
 
+class StationViewSet(viewsets.ModelViewSet):
+    queryset = Station.objects.all()
+    serializer_class = StationSerializer
+
+
 class AlertViewSet(viewsets.ModelViewSet):
     queryset = Alert.objects.all()
     serializer_class = AlertSerializer
