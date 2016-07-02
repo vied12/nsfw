@@ -1,1 +1,15 @@
-STATION
+<div class="container">
+
+    <h1 ng-bind-html="vm.station.name"></h1>
+
+    <h2>Track this station</h2>
+    <div>Rss: <a href="/alerts/rss/{{vm.station.id}}">/alerts/rss/{{vm.station.id}}</a></div>
+    <div>Atom: <a href="/alerts/atom/{{vm.station.id}}">/alerts/atom/{{vm.station.id}}</a></div>
+    <div>Mail</div>
+
+    <h2>Latests alerts</h2>
+    <div ng-repeat="alert in vm.alerts">
+        <h3 ng-bind-html="alert.station.name"></h3>
+        <p>{{alert.report.date | date : 'fullDate' }}<br/>{{ alert.report.kind}}: {{ alert.value }} µg/m³</p>
+    </div>
+</div>

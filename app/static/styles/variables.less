@@ -14,7 +14,7 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         darken(#0a3fc0, 6.5%); // #337ab7
+@brand-primary:         #fff68f;
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
@@ -26,14 +26,14 @@
 //## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-@body-bg:               #1A1A1A;
+@body-bg:               #f3f3f3;
 //** Global text color on `<body>`.
-@text-color:            #e3e3e3;
+@text-color:            #1A1A1A;
 
 //** Global textual link color.
-@link-color:            @brand-primary;
+@link-color:            @text-color;
 //** Link hover color set via `darken()` function.
-@link-hover-color:      darken(@link-color, 15%);
+@link-hover-color:      @link-color;
 //** Link hover decoration.
 @link-hover-decoration: underline;
 
@@ -148,7 +148,7 @@
 @btn-default-bg:                 #fff;
 @btn-default-border:             #ccc;
 
-@btn-primary-color:              #fff;
+@btn-primary-color:              @gray-dark;
 @btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 

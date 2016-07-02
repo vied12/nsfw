@@ -3,6 +3,7 @@
     angular.module('nsfw', [
         'ngResource',
         'geocoder-service',
+        'ui-leaflet',
         'ngSanitize',
         'ui.router'
     ])
@@ -37,6 +38,9 @@
                         ].join(',');
                         var Alerts = $resource('api/alerts/?limit=3&station=' + stations);
                         return Alerts.get().$promise.then(function(data) {
+                            data.results.forEach(function(r) {
+                                r.station.name = r.station.name.replace('B ', '');
+                            });
                             return data.results;
                         });
                     }]

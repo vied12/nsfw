@@ -18,8 +18,8 @@
     }
 
 
-    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q'];
-    function HomeCtrl(alerts, geocoderService, $resource, $q) {
+    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$scope', '$state'];
+    function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state) {
         var vm = this;
         angular.extend(vm, {
             alerts: alerts,
@@ -42,8 +42,37 @@
                             distanceMin = dist;
                         }
                     });
-                    vm.suggestion = closest;
+                    function createMarker(station, focus) {
+                        return {
+                            lat: station.lat,
+                            lng: station.lon,
+                            message: '<a ui-sref="station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
+                            focus: focus
+                        };
+                    }
+                    var markers = {closest: createMarker(closest, true)};
+                    stations.forEach(function(s) {
+                        markers[s.id] = createMarker(s);
+                    });
+                    vm.suggestion = {
+                        station: closest,
+                        markers: markers,
+                        center: {
+                            lat: closest.lat,
+                            lng: closest.lon,
+                            zoom: 14
+                        }
+                    };
                 });
+            },
+            defaults: {
+                tileLayer: 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
+                maxZoom: 18,
+                path: {
+                    weight: 10,
+                    color: '#800000',
+                    opacity: 1
+                }
             }
         });
     }

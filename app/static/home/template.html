@@ -11,10 +11,10 @@
         <div class="row Home__address">
             <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
                 <div class="form-group">
-                    <label for="address">You can track the closest air quality station to you.<br/>But we need an address for that.</label>
+                    <label for="address">Find the closest air quality station</label>
                     <div class="row">
                         <div class="col-sm-10">
-                            <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Sonnenalle 176">
+                            <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Address, city">
                         </div>
                         <div class="col-sm-2 pull-right">
                             <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Track</button>
@@ -26,16 +26,24 @@
     </div>
 </div>
 <div class="container">
-    <div class="row" ng-if="vm.suggestion">
-        We found {{ vm.suggestion.id }} at <span ng-bind-html="vm.suggestion.name"></span> as the closest station.
-        <p>Do you want to check this station ?</p>
-        <button class="btn btn-success">Yes</button><button class="btn btn-default">No</button>
+    <div class="row Home__suggestion" ng-if="vm.suggestion">
+        <div class="col-sm-4 col-sm-push-8">
+            We found <a ui-sref="station({station: vm.suggestion.station.id})"><strong ng-bind-html="vm.suggestion.station.name"></strong></a> as the closest station.
+            <p>Do you want to check this station ?</p>
+            <div class="row center-text">
+                <button class="btn btn-success" ui-sref="station({station: vm.suggestion.station.id})">Yes</button>
+                <button class="btn btn-default" ng-click="vm.suggestion = undefined">No</button>
+            </div>
+        </div>
+        <div class="col-sm-8  col-sm-pull-4">
+            <leaflet defaults="vm.defaults" lf-center="vm.suggestion.center" markers="vm.suggestion.markers" height="480px" width="100%"></leaflet>
+        </div>
     </div>
-    <div class="row" ng-if="!vm.suggestion">
-        <h2>Latests alerts</h2>
+    <div class="row" ng-if="!vm.suggestion && vm.alerts">
+        <h2>Latests alerts in Berlin</h2>
         <div ng-repeat="alert in vm.alerts">
-            <h3 ng-bind-html="alert.station.name"></h3>
-            <p>{{alert.report.date | date : 'fullDate' }}<br/>{{ alert.report.kind}}: {{ alert.value }}</p>
+            <h3><i class="material-icons" style="top: 4px; position: relative;">label_outline</i><a ui-sref="station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
+            <p>{{alert.report.date | date : 'fullDate' }}<br/>{{ alert.report.kind}}: {{ alert.value }} µg/m³</p>
         </div>
     </div>
 </div>
