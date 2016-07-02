@@ -2,6 +2,7 @@
     'use strict';
     angular.module('nsfw', [
         'ngResource',
+        'geocoder-service',
         'ngSanitize',
         'ui.router'
     ])
@@ -33,8 +34,8 @@
                             'DEBE027',
                             'DEBE018',
                             'DEBE010'
-                        ];
-                        var Alerts = $resource('http://localhost:8000/api/alerts/?limit=3&station=' + stations.join(','));
+                        ].join(',');
+                        var Alerts = $resource('http://localhost:8000/api/alerts/?limit=3&station=' + stations);
                         return Alerts.get().$promise.then(function(data) {
                             return data.results;
                         });

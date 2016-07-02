@@ -22,6 +22,12 @@
     <body>
         {% csrf_token %}
         <div ui-view></div>
+        <footer class="container">
+            <div class="row">
+                Developed by Edouard, from a brillant idea of Jan, with the helpful Carmen's advices and the UBA's data.
+            </div>
+        </footer>
+
         {% compress js %}
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/modernizr/modernizr.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/jquery/dist/jquery.min.js" />
@@ -33,6 +39,7 @@
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/bootstrap/dist/js/bootstrap.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/restangular/dist/restangular.min.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js" />
+        <script type="text/javascript" charset="utf-8" src="/static/bower_components/geocoder-service/geocoder-service.js" />
         <script type="text/javascript" charset="utf-8" src="/static/main.js" />
         <script type="text/javascript" charset="utf-8" src="/static/home/module.js" />
         {% endcompress %}

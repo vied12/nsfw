@@ -1,12 +1,27 @@
 <div class="Home__background">
     <div class="container">
-        <div class="row">
+        <div class="row Home__title">
             <h1>
                 Neukölln<br/>
                 Service<br/>
                 For Feinstaub<br/>
                 Warning
             </h1>
+        </div>
+        <div class="row Home__address">
+            <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
+                <div class="form-group">
+                    <label for="address">You can track the closest air quality station to you.<br/>But we need an address for that.</label>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Sonnenalle 176">
+                        </div>
+                        <div class="col-sm-2 pull-right">
+                            <button type="submit" class="btn btn-primary btn-lg" form="loginForm">Track</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
