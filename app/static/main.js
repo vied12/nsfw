@@ -2,6 +2,7 @@
     'use strict';
     angular.module('nsfw', [
         'ngResource',
+        'ngSanitize',
         'ui.router'
     ])
     .config(['$stateProvider', '$locationProvider',
@@ -14,21 +15,29 @@
                 templateUrl: '/home/template.html',
                 controller: 'HomeCtrl',
                 resolve: {
-                    alerts: ['$http', function($http) {
-                        return [
-                            {
-                                report: {
-                                    kind: 'PM10'
-                                },
-                                value: 55
-                            },
-                            {
-                                report: {
-                                    kind: 'PM10'
-                                },
-                                value: 40
-                            }
+                    alerts: ['$resource', function($resource) {
+                        var stations = [
+                            'DEBE069',
+                            'DEBE068',
+                            'DEBE067',
+                            'DEBE066',
+                            'DEBE065',
+                            'DEBE064',
+                            'DEBE063',
+                            'DEBE062',
+                            'DEBE061',
+                            'DEBE056',
+                            'DEBE051',
+                            'DEBE034',
+                            'DEBE032',
+                            'DEBE027',
+                            'DEBE018',
+                            'DEBE010'
                         ];
+                        var Alerts = $resource('http://localhost:8000/api/alerts/?limit=3&station=' + stations.join(','));
+                        return Alerts.get().$promise.then(function(data) {
+                            return data.results;
+                        });
                     }]
                 }
             });

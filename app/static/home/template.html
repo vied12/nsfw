@@ -14,7 +14,8 @@
     <div class="row">
         <h2>Latests alerts</h2>
         <div ng-repeat="alert in vm.alerts">
-            <h3>{{ alert.report.kind}}: {{ alert.value }}</h3>
+            <h3 ng-bind-html="alert.station.name"></h3>
+            <p>{{alert.report.date | date : 'fullDate' }}<br/>{{ alert.report.kind}}: {{ alert.value }}</p>
         </div>
     </div>
 </div>
