@@ -47,11 +47,10 @@ a, [ng-click], [ui-sref], [uib-dropdown-toggle] {
         :-ms-input-placeholder {color: darken(white, 10%);}
     }
     &__suggestion {
-        .angular-leaflet-map {
-            margin: 20px 0;
-        }
         button {margin: 0 10px}
-        .leaflet-popup-content {color: black;}
-        .leaflet-popup-content-wrapper {border-radius: 0;}
     }
 }
+body .angular-leaflet-map {margin: 20px 0;}
+body .leaflet-container a {color: @link-hover-color;}
+body .leaflet-popup-content {color: black;}
+body .leaflet-popup-content-wrapper {border-radius: 0;}

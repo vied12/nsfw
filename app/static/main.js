@@ -66,6 +66,9 @@
                                 }
                             };
                         }
+                        angular.forEach($stateParams.markers, function(marker, name) {
+                            marker.focus = name === station.id;
+                        });
                         return $stateParams.markers;
                     }],
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {

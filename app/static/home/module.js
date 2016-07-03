@@ -62,7 +62,8 @@
                             focus: focus
                         };
                     }
-                    var markers = {closest: createMarker(closest, true)};
+                    var markers = {};
+                    markers[closest.id] = createMarker(closest, true);
                     near.forEach(function(s) {
                         if (s !== closest) {
                             markers[s.id] = createMarker(s);
@@ -73,15 +74,6 @@
                     };
                     $state.go('home.station', {station: closest.id, markers: markers});
                 });
-            },
-            defaults: {
-                tileLayer: 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
-                maxZoom: 18,
-                path: {
-                    weight: 10,
-                    color: '#800000',
-                    opacity: 1
-                }
             }
         });
     }
