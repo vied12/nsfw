@@ -69,7 +69,6 @@
                         return $stateParams.markers;
                     }],
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {
-                        console.log('sta');
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');
                         return Stations.get().$promise.then(function(s) {
                             s.name = s.name.replace('B ', '');

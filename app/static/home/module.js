@@ -24,13 +24,21 @@
         angular.extend(vm, {
             alerts: alerts,
             suggestion: undefined,
-            search: function() {
-                vm.suggestion = undefined;
-                var userCoord = geocoderService.getLatLong(vm.address).then(function(latlng){
-                    return {lat: latlng.lat(), lon: latlng.lng()};
+            geolocationAvailable: 'geolocation' in navigator,
+            searchWhereIam: function() {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    vm.search({lat: position.coords.latitude, lon: position.coords.longitude});
                 });
+            },
+            search: function(coord) {
+                vm.suggestion = undefined;
+                if (!coord) {
+                    coord = geocoderService.getLatLong(vm.address).then(function(latlng){
+                        return {lat: latlng.lat(), lon: latlng.lng()};
+                    });
+                }
                 var stations = $resource('api/stations/').query().$promise;
-                $q.all([userCoord, stations]).then(function(resolved) {
+                $q.all([$q.when(coord), stations]).then(function(resolved) {
                     var userCoord = resolved[0];
                     var stations = resolved[1];
                     var closest;
