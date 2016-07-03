@@ -50,7 +50,7 @@
                         return {
                             lat: station.lat,
                             lng: station.lon,
-                            message: '<a ui-sref="station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
+                            message: '<a ui-sref="home.station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
                             focus: focus
                         };
                     }
@@ -61,14 +61,9 @@
                         }
                     });
                     vm.suggestion = {
-                        station: closest,
-                        markers: markers,
-                        center: {
-                            lat: closest.lat,
-                            lng: closest.lon,
-                            zoom: 14
-                        }
+                        station: closest
                     };
+                    $state.go('home.station', {station: closest.id});
                 });
             },
             defaults: {

@@ -27,22 +27,13 @@
 </div>
 <div class="container">
     <div class="row Home__suggestion" ng-if="vm.suggestion">
-        <div class="col-sm-4 col-sm-push-8">
-            We found <a ui-sref="station({station: vm.suggestion.station.id})"><strong ng-bind-html="vm.suggestion.station.name"></strong></a> as the closest station.
-            <p>Do you want to check this station ?</p>
-            <div class="row center-text">
-                <button class="btn btn-success" ui-sref="station({station: vm.suggestion.station.id})">Yes</button>
-                <button class="btn btn-default" ng-click="vm.suggestion = undefined">No</button>
-            </div>
-        </div>
-        <div class="col-sm-8  col-sm-pull-4">
-            <leaflet defaults="vm.defaults" lf-center="vm.suggestion.center" markers="vm.suggestion.markers" height="480px" width="100%"></leaflet>
-        </div>
+        We found <a ui-sref="home.station({station: vm.suggestion.station.id})"><strong ng-bind-html="vm.suggestion.station.name"></strong></a> as the closest station.
     </div>
+    <div ui-view></div>
     <div class="row" ng-if="!vm.suggestion && vm.alerts">
         <h2>Latests alerts in Berlin</h2>
         <div ng-repeat="alert in vm.alerts">
-            <h3><i class="material-icons" style="top: 4px; position: relative;">label_outline</i><a ui-sref="station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
+            <h3><i class="material-icons" style="top: 4px; position: relative;">label_outline</i><a ui-sref="home.station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
             <p>{{ alert.report.kind}}: {{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
         </div>
     </div>
