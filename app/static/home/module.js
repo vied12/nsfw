@@ -63,7 +63,7 @@
                     vm.suggestion = {
                         station: closest
                     };
-                    $state.go('home.station', {station: closest.id});
+                    $state.go('home.station', {station: closest.id, markers: markers});
                 });
             },
             defaults: {

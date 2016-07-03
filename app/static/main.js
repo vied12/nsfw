@@ -48,10 +48,26 @@
             })
             .state('home.station', {
                 url: 'station/:station/',
+                params: {
+                    markers: []
+                },
                 controllerAs: 'vm',
                 templateUrl: '/station/template.html',
                 controller: 'StationCtrl',
                 resolve: {
+                    markers: ['$stateParams', 'station', function($stateParams, station) {
+                        if ($stateParams.markers.length < 1) {
+                            return {
+                                main: {
+                                    lat: station.lat,
+                                    lng: station.lon,
+                                    message: '<a ui-sref="home.station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
+                                    focus: true
+                                }
+                            };
+                        }
+                        return $stateParams.markers;
+                    }],
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {
                         console.log('sta');
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');

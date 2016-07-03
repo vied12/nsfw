@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h1 ng-bind-html="vm.station.name"></h1>
     </div>
-    <div class="col-sm-4 col-sm-push-8">
+    <div class="col-sm-6 col-sm-push-6">
         <h2>Track this station</h2>
         <div>Rss: <a target="_blank" href="/alerts/rss/{{vm.station.id}}">/alerts/rss/{{vm.station.id}}</a></div>
         <div>Atom: <a target="_blank" href="/alerts/atom/{{vm.station.id}}">/alerts/atom/{{vm.station.id}}</a></div>
@@ -12,7 +12,7 @@
             {{ alert.report.kind}}: {{ alert.value }} µg/m³ ({{alert.report.date | date : 'fullDate' }})
         </div>
     </div>
-    <div class="col-sm-8  col-sm-pull-4">
-        <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="480px" width="100%"></leaflet>
+    <div class="col-sm-6  col-sm-pull-6">
+        <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
     </div>
 </div>

@@ -1,12 +1,12 @@
 (function() {
     'use strict';
-    StationCtrl.$inject = ['alerts', 'station'];
-    function StationCtrl(alerts, station) {
+    StationCtrl.$inject = ['alerts', 'station', 'markers'];
+    function StationCtrl(alerts, station, markers) {
         var vm = this;
         angular.extend(vm, {
             station: station,
             alerts: alerts,
-            // markers: markers,
+            markers: markers,
             center: {
                 lat: station.lat,
                 lng: station.lon,
