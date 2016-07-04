@@ -64,6 +64,24 @@ class Alert(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
 
+class Subscription(models.Model):
+    email = models.ForeignKey('Email')
+    station = models.ForeignKey('Station')
+
+    def __str__(self):
+        return '%s\'s subscription to %s' % (self.email.email, self.station)
+
+
+class Email(models.Model):
+    email = models.EmailField(unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    verified = models.BooleanField(default=False)
+
+    def __str__(self):
+        return '%s' % self.email
+
+
 @receiver(post_save, sender=Report)
 def on_report_save(sender, **kwargs):
     instance = kwargs['instance']

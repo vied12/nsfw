@@ -17,12 +17,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from .nsfw.feeds import RssLatestEntriesFeed, AtomLatestEntriesFeed
 from .nsfw.views import HomePageView
-from .nsfw.api import AlertViewSet, StationViewSet
+from .nsfw.api import AlertViewSet, StationViewSet, SubscriptionViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'alerts', AlertViewSet)
 router.register(r'stations', StationViewSet)
+router.register(r'subscriptions', SubscriptionViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

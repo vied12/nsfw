@@ -7,8 +7,11 @@
         'ngSanitize',
         'ui.router'
     ])
-    .config(['$stateProvider', '$locationProvider',
-        function($stateProvider, $locationProvider) {
+    .config(['$stateProvider', '$locationProvider', '$resourceProvider', '$httpProvider',
+        function($stateProvider, $locationProvider, $resourceProvider, $httpProvider) {
+            $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+            $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+            $resourceProvider.defaults.stripTrailingSlashes = false;
             $locationProvider.html5Mode({enabled:true}).hashPrefix('#');
             $stateProvider
             .state('home', {

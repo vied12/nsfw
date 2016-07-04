@@ -1,9 +1,22 @@
 (function() {
     'use strict';
-    StationCtrl.$inject = ['alerts', 'station', 'markers'];
-    function StationCtrl(alerts, station, markers) {
+    StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource'];
+    function StationCtrl(alerts, station, markers, $resource) {
         var vm = this;
         angular.extend(vm, {
+            subscribe: function() {
+                vm.subscribed = false;
+                vm.errorOnSubscription = false;
+                $resource('/api/subscriptions/').save({
+                    email: vm.email,
+                    station: station.id
+                }).$promise.then(function() {
+                    vm.email = '';
+                    vm.subscribed = true;
+                }, function onError() {
+                    vm.errorOnSubscription = true;
+                });
+            },
             station: station,
             alerts: alerts,
             markers: markers,

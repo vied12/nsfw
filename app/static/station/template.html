@@ -6,6 +6,21 @@
         <h2>Track this station</h2>
         <div>Rss: <a target="_blank" href="/alerts/rss/{{vm.station.id}}">/alerts/rss/{{vm.station.id}}</a></div>
         <div>Atom: <a target="_blank" href="/alerts/atom/{{vm.station.id}}">/alerts/atom/{{vm.station.id}}</a></div>
+        <form ng-submit="vm.subscribe()">
+            <div class="form-group">
+                <label for="inputEmail1">Email address</label>
+                <div class="row" ng-if="!vm.subscribed">
+                    <div class="col-sm-4">
+                        <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
+                    </div>
+                    <div class="col-sm-8">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </div>
+                <div ng-if="vm.subscribed">Subscribed!</div>
+                <div ng-if="vm.errorOnSubscription">an error occured!</div>
+            </div>
+        </form>
         <h2>Latests alerts</h2>
         <div ng-if="vm.alerts.length < 1">No alert found</div>
         <div ng-repeat="alert in vm.alerts">
