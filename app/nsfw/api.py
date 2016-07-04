@@ -1,6 +1,6 @@
 from .models import Alert, Station, Report, Subscription, Email
 from rest_framework import serializers, viewsets
-
+import rest_framework.permissions
 
 class ReportSerializer(serializers.ModelSerializer):
     class Meta:
@@ -38,6 +38,7 @@ class SubscriptionSerializer(serializers.ModelSerializer):
 class SubscriptionViewSet(viewsets.ModelViewSet):
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
+    permission_classes = (rest_framework.permissions.AllowAny,)
 
 
 class StationViewSet(viewsets.ModelViewSet):

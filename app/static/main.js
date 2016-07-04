@@ -82,7 +82,7 @@
                         });
                     }],
                     alerts: ['$resource', 'station', function($resource, station) {
-                        var Alerts = $resource('/api/alerts/?limit=10&station=' + station.id + '/');
+                        var Alerts = $resource('/api/alerts/?limit=10&station=' + station.id);
                         return Alerts.get().$promise.then(function(data) {
                             return data.results;
                         });
