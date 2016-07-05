@@ -5,14 +5,28 @@ a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
     text-decoration: none;
     cursor: pointer;
 }
-
+h1, h2, h3, h4 {
+    font-family: @font-family-serif;
+}
+label {
+    font-family: @font-family-sans-serif;
+}
 .Home {
     &__title {
         h1 {
             color: @brand-primary;
             margin-top: 0;
             padding-top: 20px;
+            cursor: pointer;
         }
+    }
+    &__help {
+        font-size: 1.4em;
+        background-color: rgba(255, 246, 143, 0.76);
+        color: black;
+        padding: 5px 35px;
+        margin: 0 -35px;
+        margin-top: 20px;
     }
     &__background {
         margin-bottom: 20px;
@@ -33,7 +47,7 @@ a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
         }
     }
     &__address {
-        margin-top: 60px;
+        margin-top: 20px;
         label {
             font-size: 1.4em;
         }
@@ -43,6 +57,10 @@ a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
             border-bottom: 1px solid rgba(251, 251, 251, 0.4);
             color: white;
             box-shadow: none;
+            &:focus {
+                background-color: rgba(17, 16, 16, 0.68);
+
+            }
         }
         ::-webkit-input-placeholder {color: darken(white, 10%);}
         :-moz-placeholder {color: darken(white, 10%);}

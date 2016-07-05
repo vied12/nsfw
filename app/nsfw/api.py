@@ -2,6 +2,7 @@ from .models import Alert, Station, Report, Subscription, Email
 from rest_framework import serializers, viewsets
 import rest_framework.permissions
 
+
 class ReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = Report

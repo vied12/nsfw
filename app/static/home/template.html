@@ -1,12 +1,15 @@
 <div class="Home__background" ng-class="{'Home__background--reduced': vm.$state.is('home.station')}">
     <div class="container">
         <div class="row Home__title">
-            <h1 class="col-md-12" ui-sref="home">
+            <h1 class="col-md-12" ui-sref="home" ui-sref-opts="{reload: true}">
                 <div class="title__line">Neukölln</div>
                 <div class="title__line">Service for</div>
                 <div class="title__line">Feinstaub</div>
                 <div class="title__line">Warning</div>
             </h1>
+        </div>
+        <div class="Home__help" ng-if="vm.$state.is('home')">
+            We are collecting the daily reports from UBA air quality stations network in Germany and give you a chance to follow one of them by receiving alerts.
         </div>
         <div class="Home__address">
             <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
@@ -21,7 +24,7 @@
                         <div class="text-right"><a ng-click="vm.searchWhereIam()" ng-if="vm.geolocationAvailable">or try to geolocate me</a></div>
                     </div>
                     <div class="col-sm-2 pull-right">
-                        <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Track</button>
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Find</button>
                     </div>
                 </div>
             </form>
@@ -36,10 +39,12 @@
     </div>
     <div ui-view></div>
     <div class="row" ng-if="!vm.suggestion && vm.alerts">
-        <h2>Latests alerts in Berlin</h2>
-        <div ng-repeat="alert in vm.alerts">
-            <h3><i class="material-icons" style="top: 4px; position: relative;">label_outline</i><a ui-sref="home.station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
-            <p>{{ alert.report.kind}}: {{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
+        <div class="col-md-12">
+            <h2>Latests alerts in Berlin</h2>
+            <div ng-repeat="alert in vm.alerts">
+                <h3>Station <a ui-sref="home.station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
+                <p>{{ alert.report.kind}}: {{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
+            </div>
         </div>
     </div>
 </div>

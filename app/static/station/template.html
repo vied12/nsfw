@@ -1,14 +1,12 @@
 <div class="row Station">
     <div class="col-md-12">
-        <h1 ng-bind-html="vm.station.name"></h1>
+        <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
     </div>
     <div class="col-sm-6 col-sm-push-6">
         <h2>Track this station</h2>
-        <div>Rss: <a target="_blank" href="/alerts/rss/{{vm.station.id}}">/alerts/rss/{{vm.station.id}}</a></div>
-        <div>Atom: <a target="_blank" href="/alerts/atom/{{vm.station.id}}">/alerts/atom/{{vm.station.id}}</a></div>
         <form ng-submit="vm.subscribe()">
             <div class="form-group">
-                <label for="inputEmail1">Email address</label>
+                <label for="inputEmail1">Leave your email address to receive alerts</label>
                 <div class="row" ng-if="!vm.subscribed">
                     <div class="col-sm-4">
                         <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
@@ -21,7 +19,10 @@
                 <div ng-if="vm.errorOnSubscription">an error occured!</div>
             </div>
         </form>
-        <h2>Latests alerts</h2>
+        You can also subscribe to its feed
+        <div>Rss: <a target="_blank" href="/alerts/rss/{{vm.station.id}}">/alerts/rss/{{vm.station.id}}</a></div>
+        <div>Atom: <a target="_blank" href="/alerts/atom/{{vm.station.id}}">/alerts/atom/{{vm.station.id}}</a></div>
+        <h2>Latests alerts on this station</h2>
         <div ng-if="vm.alerts.length < 1">No alert found</div>
         <div ng-repeat="alert in vm.alerts">
             {{ alert.report.kind}}: {{ alert.value }} µg/m³ ({{alert.report.date | date : 'fullDate' }})
