@@ -1,11 +1,11 @@
-<div class="Home__background">
+<div class="Home__background" ng-class="{'Home__background--reduced': vm.$state.is('home.station')}">
     <div class="container">
         <div class="row Home__title">
-            <h1 class="col-md-12">
-                Neukölln<br/>
-                Service for<br/>
-                Feinstaub<br/>
-                Warning
+            <h1 class="col-md-12" ui-sref="home">
+                <div class="title__line">Neukölln</div>
+                <div class="title__line">Service for</div>
+                <div class="title__line">Feinstaub</div>
+                <div class="title__line">Warning</div>
             </h1>
         </div>
         <div class="Home__address">

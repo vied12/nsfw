@@ -1,13 +1,9 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import "variables.less";
 
-a, [ng-click], [ui-sref], [uib-dropdown-toggle] {
+a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
     text-decoration: none;
     cursor: pointer;
-    &:hover {
-        text-decoration: @link-hover-decoration;
-        color: @link-hover-color;
-    }
 }
 
 .Home {
@@ -28,6 +24,13 @@ a, [ng-click], [ui-sref], [uib-dropdown-toggle] {
         color: white;
         min-height: 390px;
         a {color: @brand-primary;}
+        transition-property: min-height;
+        transition-duration: .55s;
+        &--reduced {
+            min-height: 0px;
+            .title__line {display: inline-block;}
+            .Home__address { margin-top: 0;}
+        }
     }
     &__address {
         margin-top: 60px;

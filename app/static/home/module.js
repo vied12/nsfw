@@ -22,6 +22,7 @@
     function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state) {
         var vm = this;
         angular.extend(vm, {
+            $state: $state,
             alerts: alerts,
             suggestion: undefined,
             geolocationAvailable: 'geolocation' in navigator,
