@@ -23,11 +23,16 @@
     <body>
         {% csrf_token %}
         <div ui-view></div>
-        <!-- <footer class="container">
+        <footer class="container">
             <div class="row">
-                Developed by Edouard, from a brillant idea of Jan, with the helpful Carmen's advices and the UBA's data.
+                <div class="col-md-12">
+                    Developed by <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
+                    from a brillant idea of <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
+                    with the helpful Carmen's advices
+                    and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.
+                </div>
             </div>
-        </footer> -->
+        </footer>
 
         {% compress js %}
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/modernizr/modernizr.js" />
