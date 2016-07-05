@@ -3,6 +3,8 @@
 
 We are collecting the daily reports from [Umweltbundesamt](https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany) air quality stations network in Germany and give you a chance to track them by receiving alerts via email or rss.
 
+http://nsfw.herokuapp.com/
+
 # Install and run
 
 ```bash
