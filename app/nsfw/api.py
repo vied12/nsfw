@@ -1,5 +1,5 @@
 from .models import Alert, Station, Report, Subscription, Email
-from rest_framework import serializers, viewsets
+from rest_framework import serializers, viewsets, mixins
 import rest_framework.permissions
 
 
@@ -36,7 +36,8 @@ class SubscriptionSerializer(serializers.ModelSerializer):
         return sub
 
 
-class SubscriptionViewSet(viewsets.ModelViewSet):
+class SubscriptionViewSet(mixins.CreateModelMixin,
+                          viewsets.GenericViewSet):
     queryset = Subscription.objects.all()
     serializer_class = SubscriptionSerializer
     permission_classes = (rest_framework.permissions.AllowAny,)
