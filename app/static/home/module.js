@@ -73,6 +73,9 @@
                     vm.suggestion = {
                         station: closest
                     };
+                    if (!vm.address) {
+                        vm.address = closest.name;
+                    }
                     $state.go('home.station', {station: closest.id, markers: markers});
                 });
             }

@@ -29,12 +29,7 @@ footer {
         }
     }
     &__help {
-        font-size: 1.4em;
-        background-color: fade(@brand-primary, 80%);
-        color: black;
-        padding: 5px 35px;
-        margin: 0 -35px;
-        margin-top: 20px;
+        font-size: 1.6em;
     }
     &__background {
         margin-bottom: 20px;
@@ -49,13 +44,16 @@ footer {
         transition-property: min-height;
         transition-duration: .55s;
         &--reduced {
+            h1 {
+                font-size: 1.4em;
+            }
             min-height: 0px;
             .title__line {display: inline-block;}
             .Home__address { margin-top: 0;}
         }
     }
     &__address {
-        margin-top: 20px;
+        margin-top: 80px;
         label {
             font-size: 1.4em;
         }
@@ -68,6 +66,14 @@ footer {
             &:focus {
                 background-color: rgba(17, 16, 16, 0.68);
             }
+        }
+        .address-bar {
+            padding-right: 151px;
+        }
+        .address-bar .actions {
+            position: absolute;
+            top: 0;
+            right: 15px;
         }
         ::-webkit-input-placeholder {color: darken(@brand-primary, 10%);}
         :-moz-placeholder {color: darken(@brand-primary, 10%);}
