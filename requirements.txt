@@ -8,3 +8,4 @@ django-filter==0.13.0
 gunicorn==19.4.5
 dj-database-url==0.4.0
 psycopg2
+newrelic
