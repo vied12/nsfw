@@ -2,7 +2,6 @@
 @import "variables.less";
 
 a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
-    text-decoration: none;
     cursor: pointer;
 }
 h1, h2, h3, h4 {
@@ -12,10 +11,16 @@ label {
     font-family: @font-family-sans-serif;
 }
 footer {
-    border-top: 1px solid gray;
+    border-top: 1px solid @gray-light;
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 20px 0px;
+    a {
+        font-weight: bold;
+    }
+}
+div[class^='col-sm'] {
+    margin-top: 20px;
 }
 .Home {
     &__title {
@@ -28,7 +33,7 @@ footer {
     }
     &__help {
         font-size: 1.4em;
-        background-color: rgba(255, 246, 143, 0.76);
+        background-color: fade(@brand-primary, 80%);
         color: black;
         padding: 5px 35px;
         margin: 0 -35px;
@@ -60,17 +65,17 @@ footer {
         input#address {
             background-color: rgba(17, 16, 16, 0.18);
             border: 0;
-            border-bottom: 1px solid rgba(251, 251, 251, 0.4);
+            border-bottom: 1px solid @brand-primary;
             color: white;
             box-shadow: none;
             &:focus {
                 background-color: rgba(17, 16, 16, 0.68);
             }
         }
-        ::-webkit-input-placeholder {color: darken(white, 10%);}
-        :-moz-placeholder {color: darken(white, 10%);}
-        ::-moz-placeholder {color: darken(white, 10%);}
-        :-ms-input-placeholder {color: darken(white, 10%);}
+        ::-webkit-input-placeholder {color: darken(@brand-primary, 10%);}
+        :-moz-placeholder {color: darken(@brand-primary, 10%);}
+        ::-moz-placeholder {color: darken(@brand-primary, 10%);}
+        :-ms-input-placeholder {color: darken(@brand-primary, 10%);}
     }
     &__suggestion {
         button {margin: 0 10px}
