@@ -2,16 +2,16 @@
     <div class="col-md-12">
         <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
     </div>
-    <div class="col-sm-6 col-sm-push-6">
+    <div class="col-sm-6">
         <h2>Track this station</h2>
         <form ng-submit="vm.subscribe()">
             <div class="form-group">
                 <label for="inputEmail1">Leave your email address to receive alerts</label>
                 <div class="row" ng-if="!vm.subscribed">
-                    <div class="col-sm-4">
+                    <div class="col-sm-8">
                         <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-sm-4">
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
             {{ alert.report.kind}}: {{ alert.value }} µg/m³ ({{alert.report.date | date : 'fullDate' }})
         </div>
     </div>
-    <div class="col-sm-6  col-sm-pull-6">
+    <div class="col-sm-6">
         <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
     </div>
 </div>
