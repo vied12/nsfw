@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from .models import Station
 from django.utils.text import normalize_newlines
 from django.conf import settings
 import os
@@ -23,6 +24,10 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['title'] = 'NSFW'
+        if 'station_id' in kwargs:
+            s = Station.objects.get(pk=kwargs['station_id'])
+            context['title'] = 'NSFW // Station %s' % (s.name)
         # add templates
         context['templates'] = angular_templates()
         return context
