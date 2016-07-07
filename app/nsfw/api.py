@@ -56,7 +56,7 @@ class AlertViewSet(viewsets.ModelViewSet):
         id_value = self.request.query_params.get('station', None)
         if id_value:
             id_list = id_value.split(',')
-            queryset = Alert.objects.filter(station__in=id_list)
+            queryset = Alert.objects.filter(station__in=id_list).order_by('-report__date')
             return queryset
         else:
             return Alert.objects.all()
