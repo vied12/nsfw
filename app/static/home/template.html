@@ -12,7 +12,7 @@
             <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
                 <div class="row" ng-hide="vm.$state.is('home.station')">
                     <div class="col-md-12">
-                        <label for="address">Find the closest air quality station</label>
+                        <label for="address">Find the closest station measuring air quality</label>
                     </div>
                 </div>
                 <div class="row">
@@ -41,7 +41,8 @@
     <div class="row">
         <div class="col-md-push-8 col-md-4" ng-if="vm.$state.is('home')">
             <div class="well lead">
-                We are collecting the daily reports from UBA air quality stations network in Germany and give you a chance to follow one of them by receiving alerts.
+                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality network
+                in Germany and give you the possibility to follow some of them by receiving alerts.
             </div>
         </div>
         <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="!vm.suggestion && vm.alerts">
