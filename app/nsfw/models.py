@@ -3,6 +3,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 import csv
 
+# From WHO
+# see: http://www.who.int/mediacentre/factsheets/fs313/en/
 THRESHOLD_PM10 = 50
 THRESHOLD_NO2 = 200
 
