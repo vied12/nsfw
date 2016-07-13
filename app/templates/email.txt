@@ -1,0 +1,8 @@
+Hello,
+{% for alert in alerts %}
+{% if alert.report %}Yesterday we reached {{ alert.value }}µg/m³ of {{ alert.report.kind }} pollution at the station {{ station }}.{% endif %}
+{% if alert.description %}{{ alert.description | safe }}{% endif %}
+{% endfor %}
+You subscribed on http://nsfw.fahrradfreundliches-neukoelln.de to receive alerts about station {{ station }}. If you don't want to receive alerts anymore, reply to this message.
+
+The fahrradfreundliches-neukoelln.de team

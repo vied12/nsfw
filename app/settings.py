@@ -180,4 +180,5 @@ def get_cache():
         }
 
 CACHES = get_cache()
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -21,7 +21,7 @@ class AlertAdmin(admin.ModelAdmin):
     list_filter = ('report',)
 
     def report_date(self, obj):
-        return obj.report.date
+        return obj.report and obj.report.date or ''
 admin.site.register(Alert, AlertAdmin)
 
 
