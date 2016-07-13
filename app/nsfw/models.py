@@ -4,6 +4,8 @@ from django.dispatch import receiver
 import csv
 import html
 
+# From WHO
+# see: http://www.who.int/mediacentre/factsheets/fs313/en/
 THRESHOLD_PM10 = 50
 THRESHOLD_NO2 = 200
 
