@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 import csv
+import html
 
 THRESHOLD_PM10 = 50
 THRESHOLD_NO2 = 200
@@ -36,21 +37,15 @@ class Report(models.Model):
             val = int(station['val'].replace(' µg/m³', ''))
             station, created = Station.objects.get_or_create(
                 id=station['stationCode'],
-                name=station['title'].replace(' %s' % (station['stationCode']), ''),
+                name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
                 lat=station['lat'],
                 lon=station['lon'])
             if val > thresholds[self.kind]:
-                Alert.objects.create(
+                Alert.objects.get_or_create(
                     report=self,
                     station=station,
                     value=val,
                 )
-
-    def _process_no2_report(self):
-        self._process_report(THRESHOLD_NO2)
-
-    def _process_pm1_report(self):
-        self._process_report(THRESHOLD_PM10)
 
 
 class Alert(models.Model):
