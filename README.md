@@ -1,7 +1,7 @@
 # Neukölln Service for Feinstaub Warning (NSFW)
 *Berlin, July 2016*
 
-We are collecting the daily reports from [Umweltbundesamt](https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany) air quality stations network in Germany and give you a chance to track them by receiving alerts via email or rss.
+We are collecting the daily reports from [Umwelt Bundesamt](https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany) stations measuring air quality network in Germany and give you the possibility to follow some of them by receiving alerts.
 
 http://nsfw.fahrradfreundliches-neukoelln.de
 
