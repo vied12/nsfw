@@ -59,9 +59,12 @@ class AlertViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         id_value = self.request.query_params.get('station', None)
+        max_date = self.request.query_params.get('max_date', None)
         if id_value:
             id_list = id_value.split(',')
             queryset = Alert.objects.filter(station__in=id_list).order_by('-report__date')
-            return queryset
         else:
-            return Alert.objects.all()
+            queryset = Alert.objects.all()
+        if max_date:
+            queryset = queryset.filter(report__date__gte=max_date)
+        return queryset

@@ -18,11 +18,14 @@
             $stateProvider
             .state('home', {
                 url: '/',
+                params: {
+                    showOlderAlerts: false
+                },
                 controllerAs: 'vm',
                 templateUrl: '/home/template.html',
                 controller: 'HomeCtrl',
                 resolve: {
-                    alerts: ['$resource', function($resource) {
+                    alerts: ['$stateParams', '$resource', '$filter', function($stateParams, $resource, $filter) {
                         var stations = [
                             'DEBE069',
                             'DEBE068',
@@ -41,8 +44,15 @@
                             'DEBE018',
                             'DEBE010'
                         ].join(',');
-                        var Alerts = $resource('api/alerts/?limit=3&station=' + stations);
-                        return Alerts.get().$promise.then(function(data) {
+                        var url = 'api/alerts/?&limit=3&station=' + stations;
+                        if (!$stateParams.showOlderAlerts) {
+                            var x = new Date();
+                            x.setDate(1);
+                            x.setMonth(x.getMonth()-1);
+                            var date = $filter('date')(x, 'yyyy-MM-dd');
+                            url += '&max_date='+ date;
+                        }
+                        return $resource(url).get().$promise.then(function(data) {
                             data.results.forEach(function(r) {
                                 r.station.name = r.station.name.replace('B ', '');
                             });

@@ -46,8 +46,14 @@
             </div>
         </div>
         <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="vm.$state.is('home') && !vm.suggestion && vm.alerts">
-            <h2>Last alerts in Berlin</h2>
-            <last-alert data-alerts="vm.alerts"></last-alert>
+            <div ng-if="vm.alerts.length > 0">
+                <h2>Last alerts in Berlin</h2>
+                <last-alert data-alerts="vm.alerts"></last-alert>
+            </div>
+            <div ng-if="vm.alerts.length === 0">
+                <h2>There is no recent alert in Berlin <i class="material-icons md-36">sentiment_very_satisfied</i></h2>
+                <a ui-sref="home({showOlderAlerts: true})">See older alerts</a>
+            </div>
         </div>
     </div>
 
