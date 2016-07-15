@@ -27,7 +27,7 @@ class Report(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return '%s (%s)' % (self.kind, self.date)
+        return '%s (%s)' % (self.get_kind_display(), self.date)
 
     def process_report(self):
         thresholds = {

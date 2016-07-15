@@ -15,7 +15,7 @@ class RssLatestEntriesFeed(Feed):
         return Alert.objects.filter(station=obj).order_by('-report__date')[:5]
 
     def item_title(self, alert):
-        return '%s: %d µg/m³ the %s' % (alert.report.kind, alert.value, alert.report.date)
+        return '%s: %d µg/m³ the %s' % (alert.report.get_kind_display(), alert.value, alert.report.date)
 
     def item_description(self, item):
         return 'station: %s' % item.station

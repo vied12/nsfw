@@ -4,9 +4,14 @@ import rest_framework.permissions
 
 
 class ReportSerializer(serializers.ModelSerializer):
+    kind = serializers.SerializerMethodField()
+
     class Meta:
         model = Report
         fields = ('id', 'kind', 'date')
+
+    def get_kind(self, obj):
+        return obj.get_kind_display()
 
 
 class StationSerializer(serializers.ModelSerializer):

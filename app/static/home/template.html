@@ -41,15 +41,15 @@
     <div class="row">
         <div class="col-md-push-8 col-md-4" ng-if="vm.$state.is('home')">
             <div class="well lead">
-                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality network
+                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality
                 in Germany and give you the possibility to follow some of them by receiving alerts.
             </div>
         </div>
         <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="!vm.suggestion && vm.alerts">
             <h2>Latests alerts in Berlin</h2>
             <div ng-repeat="alert in vm.alerts">
-                <h3>Station <a ui-sref="home.station({station: alert.station.id})" ng-bind-html="alert.station.name"></a></h3>
-                <p>{{ alert.report.kind}}: {{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
+                <h3>{{ alert.report.kind}} pollution at <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a> station</h3>
+                <p>{{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
             </div>
         </div>
     </div>
