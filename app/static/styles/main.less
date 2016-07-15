@@ -1,8 +1,11 @@
 @import "../bower_components/bootstrap/less/bootstrap.less";
 @import "variables.less";
+@import "../station/style.less";
+@import "../alerts/style.less";
 
-a, [ng-click], a [ui-sref], [uib-dropdown-toggle] {
+a, a [ui-sref] {
     cursor: pointer;
+    text-decoration: underline;
 }
 h1, h2, h3, h4 {
     font-family: @font-family-serif;
@@ -19,6 +22,7 @@ footer {
         font-weight: bold;
     }
 }
+.material-icons {vertical-align: bottom;}
 .Home {
     &__title {
         h1 {

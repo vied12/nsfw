@@ -22,5 +22,5 @@ bower install
 Developed by <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
 from a brillant idea of <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
 an illustration from <a href="https://www.flickr.com/photos/davdenic/20265152826/" target="_blank">David Denicolò</a>
-with the helpful Carmen's advices
+with the helpful Carmen's design advices
 and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.

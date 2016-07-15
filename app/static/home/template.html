@@ -12,12 +12,12 @@
             <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
                 <div class="row" ng-hide="vm.$state.is('home.station')">
                     <div class="col-md-12">
-                        <label for="address">Find the closest station measuring air quality</label>
+                        <label for="address">Find the closest station measuring air quality in Germany</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 address-bar">
-                        <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Type here an address with a city">
+                        <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Address, city">
                         <div class="actions">
                             <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Find</button>
                             <button type="reset" class="btn btn-primary btn-lg" ng-click="vm.searchWhereIam()" ng-if="vm.geolocationAvailable"><i class="material-icons">my_location</i></button>
@@ -45,12 +45,9 @@
                 in Germany and give you the possibility to follow some of them by receiving alerts.
             </div>
         </div>
-        <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="!vm.suggestion && vm.alerts">
-            <h2>Latests alerts in Berlin</h2>
-            <div ng-repeat="alert in vm.alerts">
-                <h3>{{ alert.report.kind}} pollution at <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a> station</h3>
-                <p>{{ alert.value }} µg/m³<br/>{{alert.report.date | date : 'fullDate' }}</p>
-            </div>
+        <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="vm.$state.is('home') && !vm.suggestion && vm.alerts">
+            <h2>Last alerts in Berlin</h2>
+            <last-alert data-alerts="vm.alerts"></last-alert>
         </div>
     </div>
 
@@ -62,7 +59,7 @@
                 Developed by <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
                 from a brillant idea of <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
                 an illustration from <a href="https://www.flickr.com/photos/davdenic/20265152826/" target="_blank">David Denicolò</a>
-                with the helpful Carmen's advices
+                with the helpful Carmen's design advices
                 and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.
             </div>
         </div>

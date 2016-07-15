@@ -4,6 +4,7 @@
     function StationCtrl(alerts, station, markers, $resource) {
         var vm = this;
         angular.extend(vm, {
+            host: location.host,
             subscribe: function() {
                 vm.subscribed = false;
                 vm.errorOnSubscription = false;

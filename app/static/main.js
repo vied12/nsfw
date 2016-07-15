@@ -3,6 +3,7 @@
     angular.module('nsfw', [
         'ngResource',
         'geocoder-service',
+        'ui.bootstrap',
         'ngAnimate',
         'ui-leaflet',
         'ngSanitize',
