@@ -86,7 +86,7 @@ d3.json("/static/data.json", function(error, json) {
   rect.filter(function(d) { return d in data; })
       .attr("class", function(d) { return "day " + color(data[d][0]); })
     .select("title")
-      .text(function(d) { return d + ': ' + data[d][0]; });
+      .text(function(d) { return d + ': ' + data[d][0] + 'µg/m³'; });
 });
 
 function monthPath(t0) {
