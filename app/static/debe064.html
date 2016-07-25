@@ -87,7 +87,6 @@ months.append("text")
         var padding = d.getDay() === 0 ? 0 : 1;
         return (d3.time.weekOfYear(d) + padding) * cellSize;
     })
-    // .attr('x', function(d) {return (d3.time.weekOfYear(d) + 1) * cellSize;})
     .text(function(d) { return formatMonth(d); });
 months.append("path")
     .attr("class", "month")
@@ -99,7 +98,7 @@ d3.json("/static/data.json", function(error, json) {
     rect.filter(function(d) { return d in data; })
     .attr("class", function(d) { return "day " + color(data[d][0]); })
     .select("title")
-    .text(function(d) { return d + ': ' + data[d][0] + 'µg/m³'; });
+    .text(function(d) {return format.parse(d).toISOString().slice(0, 10) + ': ' + data[d][0] + 'µg/m³'; });
 });
 
 function monthPath(t0) {
