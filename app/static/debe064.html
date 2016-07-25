@@ -5,33 +5,37 @@
 body {
     font: 10px sans-serif;
     shape-rendering: crispEdges;
+    background-color: rgba(196, 225, 254, 0.5);
+}
+
+
+.caption {
+  font-weight: bold;
+}
+
+.key path {
+  display: none;
+}
+
+.key line {
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
 
 .day {
   fill: #fff;
-  stroke: #ccc;
+  stroke: white;
 }
 
 .month {
   fill: none;
-  stroke: #000;
-  stroke-width: 2px;
+  stroke: RGBA(96, 39, 12, 0.84);
+  stroke-width: 3px;
 }
 
-.RdYlGn {
+.year {
     padding-top: 20px;
 }
-.RdYlGn .q0-11{fill:rgb(165,0,38)}
-.RdYlGn .q1-11{fill:rgb(215,48,39)}
-.RdYlGn .q2-11{fill:rgb(244,109,67)}
-.RdYlGn .q3-11{fill:rgb(253,174,97)}
-.RdYlGn .q4-11{fill:rgb(254,224,139)}
-.RdYlGn .q5-11{fill:rgb(255,255,191)}
-.RdYlGn .q6-11{fill:rgb(217,239,139)}
-.RdYlGn .q7-11{fill:rgb(166,217,106)}
-.RdYlGn .q8-11{fill:rgb(102,189,99)}
-.RdYlGn .q9-11{fill:rgb(26,152,80)}
-.RdYlGn .q10-11{fill:rgb(0,104,55)}
 
 </style>
 <body>
@@ -45,18 +49,20 @@ var width = 960,
 
 var percent = d3.format(".1%"),
     format = d3.time.format("%Y%m%d")
-    formatMonth = d3.time.format("%B");
+    formatMonth = d3.time.format("%B")
+    formatPercent = d3.format(".0%"),
+    formatNumber = d3.format(".0f");
 
-var color = d3.scale.quantize()
-    .domain([50, 0])
-    .range(d3.range(11).map(function(d) {return "q" + d + "-11"; }));
+var threshold = d3.scale.threshold()
+    .domain([0, 35, 50])
+    .range(["rgb(0,104,55)", "rgb(254,224,139)", "rgb(227, 161, 140)", "rgb(213, 19, 19)"]);
 
 var svg = d3.select("body").selectAll("svg")
-    .data(d3.range(2013, 2016))
+    .data(d3.range(2014, 2016))
     .enter().append("svg")
         .attr("width", width)
         .attr("height", height)
-        .attr("class", "RdYlGn")
+        .attr("class", "year")
         .append("g")
             .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
 
@@ -96,7 +102,7 @@ d3.json("/static/data.json", function(error, json) {
     if (error) throw error;
     var data = json.values;
     rect.filter(function(d) { return d in data; })
-    .attr("class", function(d) { return "day " + color(data[d][0]); })
+    .style("fill", function(d) { return threshold(data[d][0]); })
     .select("title")
     .text(function(d) {return format.parse(d).toISOString().slice(0, 10) + ': ' + data[d][0] + 'µg/m³'; });
 });
@@ -111,5 +117,45 @@ function monthPath(t0) {
             + "H" + (w1 + 1) * cellSize + "V" + 0
             + "H" + (w0 + 1) * cellSize + "Z";
 }
+
+
+// A position encoding for the key only.
+var x = d3.scale.linear()
+    .domain([0, 70])
+    .range([0, 240]);
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom")
+    .tickSize(13)
+    .tickValues(threshold.domain())
+    // .tickFormat(function(d) { return d === .5 ? formatPercent(d) : formatNumber(100 * d); });
+
+var legend = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var g = legend.append("g")
+    .attr("class", "key")
+    .attr("transform", "translate(" + (width - 240) + "," + height / 2 + ")");
+
+g.selectAll("rect")
+    .data(threshold.range().map(function(color) {
+      var d = threshold.invertExtent(color);
+
+      if (d[0] == null) d[0] = x.domain()[0];
+      if (d[1] == null) d[1] = x.domain()[1];
+      return d;
+    }))
+  .enter().append("rect")
+    .attr("height", 8)
+    .attr("x", function(d) { return x(d[0]); })
+    .attr("width", function(d) { return x(d[1]) - x(d[0]); })
+    .style("fill", function(d) { return threshold(d[0]); });
+
+g.call(xAxis)
+.append("text")
+    .attr("class", "caption")
+    .attr("y", -6)
+    .text("Concentration of PM10 pollution in µg/m³");
 
 </script>
