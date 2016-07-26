@@ -46,6 +46,7 @@
 
                 var percent = d3.format('.1%'),
                     format = d3.time.format('%Y%m%d'),
+                    formatDate = d3.time.format('%d-%m-%Y'),
                     formatMonth = d3.time.format('%B'),
                     formatPercent = d3.format('.0%'),
                     formatNumber = d3.format('.0f');
@@ -102,7 +103,7 @@
                     rect.filter(function(d) { return d in data; })
                     .style('fill', function(d) { return threshold(data[d][0]); })
                     .select('title')
-                    .text(function(d) {return format.parse(d).toISOString().slice(0, 10) + ': ' + data[d][0] + 'µg/m³'; });
+                    .text(function(d) {return formatDate(format.parse(d)) + ': ' + data[d][0] + 'µg/m³'; });
                 });
 
                 function monthPath(t0) {
