@@ -79,9 +79,6 @@
                     .attr('y', function(d) { return d.getDay() * cellSize; })
                     .datum(format);
 
-                rect.append('title')
-                    .text(function(d) { return d; });
-
                 var months = svg.selectAll('.month')
                     .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
                     .enter();
@@ -102,8 +99,10 @@
                     var data = json.values;
                     rect.filter(function(d) { return d in data; })
                     .style('fill', function(d) { return threshold(data[d][0]); })
-                    .select('title')
-                    .text(function(d) {return formatDate(format.parse(d)) + ': ' + data[d][0] + 'µg/m³'; });
+                    .append('title')
+                    .text(function(d) {
+                        return formatDate(format.parse(d)) + ': ' + data[d][0] + 'µg/m³';
+                    });
                 });
 
                 function monthPath(t0) {
