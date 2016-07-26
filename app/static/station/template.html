@@ -1,32 +1,40 @@
-<div class="row Station">
-    <div class="col-md-12">
-        <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
-    </div>
-    <div class="col-sm-6">
-        <h2>Track this station</h2>
-        <form ng-submit="vm.subscribe()">
-            <div class="form-group">
-                <label for="inputEmail1"><i class="material-icons">notifications_active</i> Leave your email address to receive alerts</label>
-                <div class="row" ng-if="!vm.subscribed">
-                    <div class="col-sm-8">
-                        <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
+<div class="Station">
+    <div class="row">
+        <div class="col-md-12">
+            <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
+        </div>
+        <div class="col-sm-6">
+            <h2>Track this station</h2>
+            <form ng-submit="vm.subscribe()">
+                <div class="form-group">
+                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> Leave your email address to receive alerts</label>
+                    <div class="row" ng-if="!vm.subscribed">
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
+                        </div>
+                        <div class="col-sm-4">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </div>
+                    <div ng-if="vm.subscribed">Subscribed!</div>
+                    <div ng-if="vm.errorOnSubscription">an error occured!</div>
                 </div>
-                <div ng-if="vm.subscribed">Subscribed!</div>
-                <div ng-if="vm.errorOnSubscription">an error occured!</div>
-            </div>
-        </form>
-        You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
-        <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
+            </form>
+            You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
+            <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
 
-        <h2>Last alerts on this station</h2>
-        <div ng-if="vm.alerts.length < 1">No alert found</div>
-        <last-alert data-alerts="vm.alerts" data-hide-station="true"></last-alert>
+            <h2>Last alerts on this station</h2>
+            <div ng-if="vm.alerts.length < 1">No alert found</div>
+            <last-alert data-alerts="vm.alerts" data-hide-station="true"></last-alert>
+        </div>
+        <div class="col-sm-6">
+            <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
+        </div>
     </div>
-    <div class="col-sm-6">
-        <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
+    <div class="row" ng-if="vm.station.id === 'DEBE064'">
+        <div class="col-md-12">
+            <h2>PM10 pollution in time</h2>
+            <nsfw-datavis></nsfw-datavis>
+        </div>
     </div>
 </div>
