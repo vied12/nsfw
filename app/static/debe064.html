@@ -1,14 +1,21 @@
 <!DOCTYPE html>
+<html lang="">
+
 <meta charset="utf-8">
+<head>
+    <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+</head>
 <style>
 
 body {
     font: 10px sans-serif;
     shape-rendering: crispEdges;
-    background-color: rgba(196, 225, 254, 0.5);
+    font-family: "Montserrat";
+    background-color: rgb(172, 196, 255);
 }
-
-
+h1 {
+    margin:40px;
+}
 .caption {
   font-weight: bold;
 }
@@ -38,6 +45,7 @@ body {
 }
 
 </style>
+
 <body>
     <h1>PM10 pollution at Neukölln-Karl-Marx-Str. 76 in time</h1>
 <script src="//d3js.org/d3.v3.min.js"></script>
@@ -159,3 +167,4 @@ g.call(xAxis)
     .text("Concentration of PM10 pollution in µg/m³");
 
 </script>
+</html>
