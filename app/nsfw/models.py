@@ -36,7 +36,11 @@ class Report(models.Model):
         }
         for station in list(csv.DictReader(self.data.splitlines(),
                                            delimiter='\t')):
-            val = int(station['val'].replace(' µg/m³', ''))
+            try:
+                val = int(station['val'].replace(' µg/m³', ''))
+            except Exception as e:
+                print('ERROR', e, station)
+                continue
             station, created = Station.objects.get_or_create(
                 id=station['stationCode'],
                 name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
