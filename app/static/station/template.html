@@ -31,7 +31,7 @@
             <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
         </div>
     </div>
-    <div class="row" ng-if="vm.station.data">
+    <div class="row" ng-if="vm.station.pm10_data">
         <div class="col-md-12">
             <h2>PM10 pollution in time</h2>
             <nsfw-datavis data-station="vm.station"></nsfw-datavis>

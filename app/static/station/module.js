@@ -46,8 +46,7 @@
                     height = 156,
                     cellSize = 17; // cell size
 
-                var percent = d3.format('.1%'),
-                    format = d3.time.format('%Y%m%d'),
+                var format = d3.time.format('%Y%m%d'),
                     formatDate = d3.time.format('%d-%m-%Y'),
                     formatMonth = d3.time.format('%B'),
                     formatPercent = d3.format('.0%'),
@@ -96,7 +95,7 @@
                     .attr('class', 'month')
                     .attr('d', monthPath);
 
-                    var data = JSON.parse(scope.station.data).values;
+                    var data = JSON.parse(scope.station.pm10_data).values;
                     rect.filter(function(d) { return d in data; })
                     .style('fill', function(d) { return threshold(data[d][0]); })
                     .append('title')
