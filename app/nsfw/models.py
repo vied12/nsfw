@@ -15,6 +15,7 @@ class Station(models.Model):
     name = models.CharField(max_length=255)
     lat = models.FloatField()
     lon = models.FloatField()
+    data = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return '%s (%s)' % (self.id, self.name)

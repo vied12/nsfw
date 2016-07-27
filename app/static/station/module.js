@@ -38,7 +38,9 @@
     .controller('StationCtrl', StationCtrl)
     .directive('nsfwDatavis', function() {
         return {
-            scope: {},
+            scope: {
+                station: '='
+            },
             link: function(scope, element) {
                 var width = 960,
                     height = 156,
@@ -94,16 +96,13 @@
                     .attr('class', 'month')
                     .attr('d', monthPath);
 
-                d3.json('/static/data.json', function(error, json) {
-                    if (error) throw error;
-                    var data = json.values;
+                    var data = JSON.parse(scope.station.data).values;
                     rect.filter(function(d) { return d in data; })
                     .style('fill', function(d) { return threshold(data[d][0]); })
                     .append('title')
                     .text(function(d) {
                         return formatDate(format.parse(d)) + ': ' + data[d][0] + 'µg/m³';
                     });
-                });
 
                 function monthPath(t0) {
                     var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
