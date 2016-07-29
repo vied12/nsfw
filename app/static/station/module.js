@@ -3,6 +3,56 @@
     StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource'];
     function StationCtrl(alerts, station, markers, $resource) {
         var vm = this;
+        var formatDate = d3.time.format('%Y%m%d');
+        function getAverage(data) {
+            if (!data) {return;}
+            var lastYear = new Date();
+            lastYear.setFullYear(lastYear.getFullYear() - 1);
+            var values = _.map(
+                _.filter(data.values, function(v, k) {
+                    return parseInt(k) > parseInt(formatDate(lastYear));
+                }),
+                function(d) {return parseInt(d[0]);}
+            );
+            var sum = values.reduce(function(a, b) { return a + b; });
+            var avg = sum / values.length;
+            return avg;
+        }
+        function getLongestStreak(data, limit) {
+            if (!data) {return;}
+            var lastYear = new Date();
+            lastYear.setFullYear(lastYear.getFullYear() - 1);
+            console.log(lastYear);
+            var result = [0, null];
+            var occurences = 0;
+            var reloadCounting = true;
+            var dateStart;
+            _.forEach(
+                _.pick(data.values, function(v, k) {
+                    return parseInt(k) > parseInt(formatDate(lastYear));
+                    // return k.substr(0, 4) === new Date().getFullYear().toString();
+                }),
+                function(v, k) {
+                    var value = parseInt(v[0]);
+                    if (value >= limit) {
+                        if (reloadCounting) {
+                            dateStart = k;
+                            occurences = 0;
+                            reloadCounting = false;
+                        }
+                        occurences += 1;
+                        if (result[0] <= occurences) {
+                            var toDate = new Date(formatDate.parse(dateStart));
+                            toDate.setDate(toDate.getDate() + occurences);
+                            result = [occurences, formatDate.parse(dateStart), toDate];
+                        }
+                    } else {
+                        reloadCounting = true;
+                    }
+                }
+            );
+            return result;
+        }
         angular.extend(vm, {
             host: location.host,
             subscribe: function() {
@@ -20,6 +70,9 @@
             },
             station: station,
             alerts: alerts,
+            mp10Average: getAverage(station.pm10_data),
+            mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
+            // map
             markers: markers,
             center: {
                 lat: station.lat,
@@ -48,16 +101,14 @@
 
                 var format = d3.time.format('%Y%m%d'),
                     formatDate = d3.time.format('%d-%m-%Y'),
-                    formatMonth = d3.time.format('%B'),
-                    formatPercent = d3.format('.0%'),
-                    formatNumber = d3.format('.0f');
+                    formatMonth = d3.time.format('%B');
 
                 var threshold = d3.scale.threshold()
                     .domain([0, 35, 50])
                     .range(['#fff68d', '#fff68f', 'rgb(227, 161, 140)', '#d9534f']);
 
                 var svg = d3.select(element.get(0)).selectAll('svg')
-                    .data(d3.range(2013, 2017))
+                    .data(d3.range(2015, 2017))
                     .enter().append('svg')
                         .attr('width', width)
                         .attr('height', height)
@@ -95,7 +146,7 @@
                     .attr('class', 'month')
                     .attr('d', monthPath);
 
-                    var data = JSON.parse(scope.station.pm10_data).values;
+                    var data = scope.station.pm10_data.values;
                     rect.filter(function(d) { return d in data; })
                     .style('fill', function(d) { return threshold(data[d][0]); })
                     .append('title')

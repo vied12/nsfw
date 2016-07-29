@@ -89,6 +89,8 @@
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');
                         return Stations.get().$promise.then(function(s) {
+                            s.pm10_data = JSON.parse(s.pm10_data);
+                            s.no2_data = JSON.parse(s.no2_data);
                             s.name = s.name.replace('B ', '');
                             return s;
                         });
