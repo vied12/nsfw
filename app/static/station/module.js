@@ -14,6 +14,7 @@
                 }),
                 function(d) {return parseInt(d[0]);}
             );
+            if (values.length < 1) {return;}
             var sum = values.reduce(function(a, b) { return a + b; });
             var avg = sum / values.length;
             return avg;
@@ -22,7 +23,6 @@
             if (!data) {return;}
             var lastYear = new Date();
             lastYear.setFullYear(lastYear.getFullYear() - 1);
-            console.log(lastYear);
             var result = [0, null];
             var occurences = 0;
             var reloadCounting = true;
