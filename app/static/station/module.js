@@ -5,6 +5,7 @@
         var vm = this;
         var formatDate = d3.time.format('%Y%m%d');
         function getLastMeasure(data) {
+                if (!data) {return;}
                 var keys = Object.keys(station.pm10_data.values);
                 var lastKey = keys[keys.length - 1];
                 return {

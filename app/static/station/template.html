@@ -25,7 +25,7 @@
             You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
             <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" ng-if="vm.mp10LastMeasure.value">
             <h2>Last measure</h2>
             <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
             <div class="">{{ vm.mp10LastMeasure.date | date }}</div>
