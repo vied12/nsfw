@@ -4,6 +4,14 @@
     function StationCtrl(alerts, station, markers, $resource) {
         var vm = this;
         var formatDate = d3.time.format('%Y%m%d');
+        function getLastMeasure(data) {
+                var keys = Object.keys(station.pm10_data.values);
+                var lastKey = keys[keys.length - 1];
+                return {
+                    value: station.pm10_data.values[lastKey][0],
+                    date: formatDate.parse(lastKey)
+                };
+        }
         function getAverage(data) {
             if (!data) {return;}
             var lastYear = new Date();
@@ -35,7 +43,7 @@
             if (!data) {return;}
             var lastYear = new Date();
             lastYear.setFullYear(lastYear.getFullYear() - 1);
-            var result = [0, null];
+            var result = {value: 0, date: null};
             var occurences = 0;
             var reloadCounting = true;
             var dateStart;
@@ -52,10 +60,12 @@
                             reloadCounting = false;
                         }
                         occurences += 1;
-                        if (result[0] <= occurences) {
+                        if (result.value <= occurences) {
                             var toDate = new Date(formatDate.parse(dateStart));
                             toDate.setDate(toDate.getDate() + occurences);
-                            result = [occurences, formatDate.parse(dateStart), toDate];
+                            result.value = occurences;
+                            result.date = formatDate.parse(dateStart);
+                            result.toDate = toDate;
                         }
                     } else {
                         reloadCounting = true;
@@ -81,6 +91,7 @@
             },
             station: station,
             alerts: alerts,
+            mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
             mp10Sum: getSum(station.pm10_data, 50),

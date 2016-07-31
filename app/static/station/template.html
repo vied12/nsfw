@@ -3,7 +3,9 @@
         <div class="col-md-12">
             <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
         </div>
-        <div class="col-sm-12">
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
             <h2>Track this station</h2>
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
@@ -23,6 +25,13 @@
             You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
             <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
         </div>
+        <div class="col-sm-6">
+            <h2>Last measure</h2>
+            <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
+            <div class="">{{ vm.mp10LastMeasure.date | date }}</div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
             <h2>During last year <span class="small">we got</span></h2>
             <div class="row">
@@ -40,9 +49,9 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="Station__stats">
-                        <div class="number">{{ vm.mp10LongestStreak[0] }} days</div>
+                        <div class="number">{{ vm.mp10LongestStreak.value }} days</div>
                         <div class="description">Longest PM10 pollution streak<br/>
-                        {{ vm.mp10LongestStreak[1] | date }} - {{ vm.mp10LongestStreak[2] | date }}</div>
+                        {{ vm.mp10LongestStreak.date | date }} - {{ vm.mp10LongestStreak.toDate | date }}</div>
                     </div>
                 </div>
             </div>
