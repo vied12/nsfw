@@ -19,6 +19,18 @@
             var avg = sum / values.length;
             return avg;
         }
+        function getSum(data, limit) {
+            if (!data) {return;}
+            var lastYear = new Date();
+            lastYear.setFullYear(lastYear.getFullYear() - 1);
+            var values = _.map(
+                _.filter(data.values, function(v, k) {
+                    return parseInt(k) > parseInt(formatDate(lastYear)) && v > limit;
+                }),
+                function(d) {return parseInt(d[0]);}
+            );
+            return values.length;
+        }
         function getLongestStreak(data, limit) {
             if (!data) {return;}
             var lastYear = new Date();
@@ -30,7 +42,6 @@
             _.forEach(
                 _.pick(data.values, function(v, k) {
                     return parseInt(k) > parseInt(formatDate(lastYear));
-                    // return k.substr(0, 4) === new Date().getFullYear().toString();
                 }),
                 function(v, k) {
                     var value = parseInt(v[0]);
@@ -72,6 +83,7 @@
             alerts: alerts,
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
+            mp10Sum: getSum(station.pm10_data, 50),
             // map
             markers: markers,
             center: {
@@ -108,7 +120,7 @@
                     .range(['#fff68d', '#fff68f', 'rgb(227, 161, 140)', '#d9534f']);
 
                 var svg = d3.select(element.get(0)).selectAll('svg')
-                    .data(d3.range(2015, 2017))
+                    .data(d3.range(2015, 2017).reverse())
                     .enter().append('svg')
                         .attr('width', width)
                         .attr('height', height)

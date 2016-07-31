@@ -3,24 +3,6 @@
         <div class="col-md-12">
             <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
         </div>
-        <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
-            <h2>During last year <span class="small">we got</span></h2>
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
-                        <div class="description">Average PM10 pollution</div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number">{{ vm.mp10LongestStreak[0] }} days</div>
-                        <div class="description">Longest PM10 pollution streak<br/>
-                        {{ vm.mp10LongestStreak[1] | date }} - {{ vm.mp10LongestStreak[2] | date }}</div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="col-sm-12">
             <h2>Track this station</h2>
             <form ng-submit="vm.subscribe()">
@@ -40,6 +22,30 @@
             </form>
             You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
             <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
+        </div>
+        <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
+            <h2>During last year <span class="small">we got</span></h2>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="Station__stats">
+                        <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
+                        <div class="description">Average PM10 pollution</div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="Station__stats">
+                        <div class="number">{{ vm.mp10Sum }} days</div>
+                        <div class="description">Number of polluted days</div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="Station__stats">
+                        <div class="number">{{ vm.mp10LongestStreak[0] }} days</div>
+                        <div class="description">Longest PM10 pollution streak<br/>
+                        {{ vm.mp10LongestStreak[1] | date }} - {{ vm.mp10LongestStreak[2] | date }}</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row" ng-if="!vm.station.pm10_data || !vm.mp10Average">
