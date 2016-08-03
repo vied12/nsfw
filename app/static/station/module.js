@@ -75,6 +75,11 @@
             );
             return result;
         }
+        function dateIsYesterday(date) {
+            var yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            return yesterday.toDateString() === date.toDateString();
+        }
         angular.extend(vm, {
             host: location.host,
             subscribe: function() {
@@ -92,6 +97,7 @@
             },
             station: station,
             alerts: alerts,
+            dateIsYesterday: dateIsYesterday,
             mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
@@ -206,7 +212,7 @@
 
                 var g = legend.append('g')
                     .attr('class', 'key')
-                    .attr('transform', 'translate(' + (width - 240) + ',' + height / 2 + ')');
+                    .attr('transform', 'translate(' + 20 + ',' + height / 2 + ')');
 
                 g.selectAll('rect')
                     .data(threshold.range().map(function(color) {
@@ -225,7 +231,7 @@
                 .append('text')
                     .attr('class', 'caption')
                     .attr('y', -6)
-                    .text('Concentration of PM10 pollution in µg/m³');
+                    .text('Concentration of PM10 particles (µg/m³)');
 
             }
         };

@@ -1,12 +1,15 @@
 <div class="Station">
     <div class="row">
         <div class="col-md-12">
-            <h1><span>Station: </span><span ng-bind-html="vm.station.name"></span></h1>
+            <h1>
+                Station:
+                <span ng-bind-html="vm.station.name"></span>
+                <a href="#map" uib-tooltip="See on a map"><i class="material-icons">map</i></a>
+            </h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-6">
-            <h2>Track this station</h2>
+        <div class="col-md-12">
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
                     <label for="inputEmail1"><i class="material-icons">notifications_active</i> Leave your email address to receive alerts</label>
@@ -25,35 +28,45 @@
             You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
             <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
         </div>
-        <div class="col-sm-6" ng-if="vm.mp10LastMeasure.value">
-            <h2>Last measure</h2>
-            <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
-            <div class="">{{ vm.mp10LastMeasure.date | date }}</div>
-        </div>
     </div>
     <div class="row">
         <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
-            <h2>During last year <span class="small">we got</span></h2>
+            <h2>Summary</h2>
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
-                        <div class="description">Average PM10 pollution</div>
+                <div class="col-sm-3" ng-if="vm.mp10LastMeasure.value">
+                    <div class="number"><i class="material-icons md-36">today</i> {{ vm.mp10LastMeasure.value }}µg/m³</div>
+                    <div>
+                        PM10 particles on
+                        <span ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)">
+                            Yesterday
+                        </span>
+                        <span ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.mp10LastMeasure.date | date }}</span>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="Station__stats">
-                        <div class="number">{{ vm.mp10Sum }} days</div>
-                        <div class="description">Polluted days</div>
+                        <div class="number"><i class="material-icons md-36">insert_chart</i> {{ vm.mp10Average | number:0 }}µg/m³</div>
+                        <div class="description">Average PM10 particules during last year</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="Station__stats">
-                        <div class="number">{{ vm.mp10LongestStreak.value }} days</div>
-                        <div class="description">Longest PM10 pollution streak<br/>
+                        <div class="number"><i class="material-icons md-36">error</i> {{ vm.mp10Sum }} days</div>
+                        <div class="description">Polluted days during last year</div>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="Station__stats">
+                        <div class="number"><i class="material-icons md-36">flash_on</i> {{ vm.mp10LongestStreak.value }} days</div>
+                        <div class="description">Longest PM10 pollution streak during last year<br/>
                         {{ vm.mp10LongestStreak.date | date }} - {{ vm.mp10LongestStreak.toDate | date }}</div>
                     </div>
                 </div>
+            </div>
+            <div class="help-block">
+                PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants
+                typically found in cities.
+                The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
             </div>
         </div>
     </div>
@@ -64,12 +77,13 @@
     </div>
     <div class="row" ng-if="vm.station.pm10_data">
         <div class="col-md-12">
-            <h2>PM10 pollution in time</h2>
+            <h2>PM10 particles pollution in time</h2>
         </div>
         <div class="col-md-12" style="overflow-x: auto;">
             <nsfw-datavis data-station="vm.station"></nsfw-datavis>
         </div>
     </div>
+    <h2 id="map">Where the data come from</h2>
     <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
 
 </div>
