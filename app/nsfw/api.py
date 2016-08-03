@@ -15,7 +15,16 @@ class ReportSerializer(serializers.ModelSerializer):
 
 
 class StationSerializer(serializers.ModelSerializer):
+
     class Meta:
+        fields = ('id', 'name', 'lat', 'lon',)
+        model = Station
+
+
+class FullStationSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        fields = ('id', 'name', 'lat', 'lon', 'pm10_data')
         model = Station
 
 
@@ -51,6 +60,12 @@ class SubscriptionViewSet(mixins.CreateModelMixin,
 class StationViewSet(viewsets.ModelViewSet):
     queryset = Station.objects.all()
     serializer_class = StationSerializer
+
+    def get_serializer_class(self):
+        if self.action == 'retrieve':
+            return FullStationSerializer
+        else:
+            return StationSerializer
 
 
 class AlertViewSet(viewsets.ModelViewSet):
