@@ -33,14 +33,16 @@
         <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
             <h2>Summary</h2>
             <div class="row">
-                <div class="col-sm-3" ng-if="vm.mp10LastMeasure.value">
-                    <div class="number"><i class="material-icons md-36">today</i> {{ vm.mp10LastMeasure.value }}µg/m³</div>
-                    <div>
-                        PM10 particles on
-                        <span ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)">
+                <div class="col-sm-3 Station__stats" ng-if="vm.mp10LastMeasure.value">
+                    <div class="number">
+                        <i class="material-icons md-36">today</i> {{ vm.mp10LastMeasure.value }}µg/m³
+                    </div>
+                    <div class="description">
+                        PM10 particles
+                        <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)">
                             Yesterday
-                        </span>
-                        <span ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.mp10LastMeasure.date | date }}</span>
+                        </div>
+                        <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.mp10LastMeasure.date | date }}</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
