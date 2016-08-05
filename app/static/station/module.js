@@ -119,7 +119,7 @@
     }
     angular.module('nsfw')
     .controller('StationCtrl', StationCtrl)
-    .directive('nsfwDatavis', function() {
+    .directive('nsfwDatavis', ['$filter', function($filter) {
         return {
             scope: {
                 station: '='
@@ -181,7 +181,7 @@
                     .style('fill', function(d) { return threshold(data[d][0]); })
                     .append('title')
                     .text(function(d) {
-                        return formatDate(format.parse(d)) + ': ' + data[d][0] + 'µg/m³';
+                        return $filter('date')(format.parse(d), 'fullDate') + ': ' + data[d][0] + 'µg/m³';
                     });
 
                 function monthPath(t0) {
@@ -235,5 +235,5 @@
 
             }
         };
-    });
+    }]);
 })();
