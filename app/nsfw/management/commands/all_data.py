@@ -23,7 +23,9 @@ data?pollutant=NO2&data_type=1TMAX&date=20130101&\
 dateTo={today}&station={station}'.format(today=today, station=station.id))
             pm10 = pm10_r.content.decode('utf8')
             no2 = no2.content.decode('utf8')
-            if pm10 or no2:
+            if pm10:
                 station.pm10_data = pm10
+            if no2:
                 station.no2_data = no2
+            if pm10 or no2:
                 station.save()
