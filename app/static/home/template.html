@@ -12,14 +12,14 @@
             <form name="vm.searchForm" id="searchForm" ng-submit="vm.search()" novalidate>
                 <div class="row" ng-hide="vm.$state.is('home.station')">
                     <div class="col-md-12">
-                        <label for="address">Find the closest station measuring air quality in Germany</label>
+                        <label for="address" translate>Find the closest station measuring air quality in Germany</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12 address-bar">
-                        <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="Address, city">
+                        <input type="text" class="form-control input-lg" id="address" ng-model="vm.address" placeholder="{{'Address, City'|translate}}">
                         <div class="actions">
-                            <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm">Find</button>
+                            <button type="submit" class="btn btn-primary btn-lg" ng-click="vm.search()" form="loginForm" translate>Find</button>
                             <button type="reset" class="btn btn-primary btn-lg" ng-click="vm.searchWhereIam()" ng-if="vm.geolocationAvailable"><i class="material-icons">my_location</i></button>
                         </div>
                     </div>
@@ -32,28 +32,25 @@
 <div class="container">
     <div class="row Home__suggestion" ng-if="vm.suggestion">
         <div class="col-md-12">
-            <div class="alert alert-success" role="alert">
-                This is the closest station
-            </div>
+            <div class="alert alert-success" role="alert" translate>This is the closest station</div>
         </div>
     </div>
     <div ui-view></div>
     <div class="row">
         <div class="col-md-push-8 col-md-4" ng-if="vm.$state.is('home')">
-            <div class="well lead">
-                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality
-                in Germany and give you the possibility to follow some of them by receiving alerts.
+            <div class="well lead" translate>
+                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality in Germany and give you the possibility to follow some of them by receiving alerts.
             </div>
         </div>
         <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('home')}" ng-if="vm.$state.is('home') && !vm.suggestion && vm.alerts">
             <div ng-if="vm.alerts.length > 0">
-                <h2>Last alerts in Berlin</h2>
+                <h2 translate>Last alerts in Berlin</h2>
                 <last-alert data-alerts="vm.alerts"></last-alert>
             </div>
             <div ng-if="vm.alerts.length === 0">
-                <h2>There is no recent alert in Berlin <i class="material-icons md-36">sentiment_very_satisfied</i></h2>
-                <p>During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter.</p>
-                <a ui-sref="home({showOlderAlerts: true})">See older alerts</a>
+                <h2>{{'There is no recent alert in Berlin'|translate}} <i class="material-icons md-36">sentiment_very_satisfied</i></h2>
+                <p translate>During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter.</p>
+                <a ui-sref="home({showOlderAlerts: true})" translate>See older alerts</a>
             </div>
         </div>
     </div>
@@ -63,12 +60,12 @@
     <footer>
         <div class="row">
             <div class="col-md-12">
-                Developed by <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
-                from a brillant idea of <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
-                an illustration from <a href="https://www.flickr.com/photos/davdenic/20265152826/" target="_blank">David Denicolò</a>
-                with the helpful Carmen's design advices
-                and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.
-                Give us feedback on <a href="https://github.com/vied12/nsfw/issues" target="_blank">github</a> or <a href="mailto:nsfw@fahrradfreundliches-neukoelln.de">send us a mail<a/>.
+                {{'Developed by'|translate}} <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
+                {{'from a brillant idea of'|translate}} <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
+                {{'an illustration from'|translate}} <a href="https://www.flickr.com/photos/davdenic/20265152826/" target="_blank">David Denicolò</a>
+                {{'with the helpful Carmen\'s design advices'|translate}}
+                <span translate>and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.</span>
+                <span translate>Give us feedback on <a href="https://github.com/vied12/nsfw/issues" target="_blank">github</a> or <a href="mailto:nsfw@fahrradfreundliches-neukoelln.de">send us a mail</a>.<span>
             </div>
         </div>
     </footer>

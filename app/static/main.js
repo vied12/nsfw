@@ -6,6 +6,7 @@
         'ui.bootstrap',
         'ngAnimate',
         'ui-leaflet',
+        'gettext',
         'ngSanitize',
         'ui.router'
     ])
@@ -104,5 +105,9 @@
                 }
             });
         }
-    ]);
+    ])
+    .run(['gettextCatalog', function (gettextCatalog) {
+        gettextCatalog.setCurrentLanguage('en');
+        gettextCatalog.debug = true;
+    }]);
 })();
