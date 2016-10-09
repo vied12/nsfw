@@ -18,7 +18,7 @@
             $locationProvider.html5Mode({enabled:true}).hashPrefix('#');
             $stateProvider
             .state('home', {
-                url: '/',
+                url: '/?ln',
                 params: {
                     showOlderAlerts: false
                 },
@@ -107,7 +107,6 @@
         }
     ])
     .run(['gettextCatalog', function (gettextCatalog) {
-        gettextCatalog.setCurrentLanguage('en');
         gettextCatalog.debug = true;
     }]);
 })();

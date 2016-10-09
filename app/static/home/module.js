@@ -18,9 +18,11 @@
     }
 
 
-    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$scope', '$state'];
-    function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state) {
+    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$scope', '$state', '$stateParams', 'gettextCatalog'];
+    function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state, $stateParams, gettextCatalog) {
         var vm = this;
+        // set language
+        gettextCatalog.setCurrentLanguage(angular.isDefined($stateParams.ln) ? $stateParams.ln : 'en');
         angular.extend(vm, {
             $state: $state,
             alerts: alerts,
