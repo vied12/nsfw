@@ -29,7 +29,6 @@
     "ui-leaflet": "^1.0.1",
     "angular-animate": "^1.5.7",
     "d3": "3.5.17",
-    "angular-translate": "^2.12.1",
     "angular-gettext": "^2.3.8"
   }
 }

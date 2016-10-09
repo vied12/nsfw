@@ -9,8 +9,7 @@
   },
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-angular-gettext": "^2.2.3",
-    "grunt-angular-translate": "^0.3.0"
+    "grunt-angular-gettext": "^2.2.3"
   },
   "scripts": {},
   "author": "",
