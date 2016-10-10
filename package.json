@@ -7,7 +7,10 @@
     "bower": "^1.7.9",
     "less": "^2.7.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-angular-gettext": "^2.2.3"
+  },
   "scripts": {},
   "author": "",
   "license": "ISC"

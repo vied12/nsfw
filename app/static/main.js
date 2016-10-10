@@ -6,6 +6,7 @@
         'ui.bootstrap',
         'ngAnimate',
         'ui-leaflet',
+        'gettext',
         'ngSanitize',
         'ui.router'
     ])
@@ -17,7 +18,7 @@
             $locationProvider.html5Mode({enabled:true}).hashPrefix('#');
             $stateProvider
             .state('home', {
-                url: '/',
+                url: '/?ln',
                 params: {
                     showOlderAlerts: false
                 },
@@ -104,5 +105,8 @@
                 }
             });
         }
-    ]);
+    ])
+    .run(['gettextCatalog', function (gettextCatalog) {
+        gettextCatalog.debug = true;
+    }]);
 })();

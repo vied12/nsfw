@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12">
             <h1>
-                Station:
+                {{'Station'|translate}}:
                 <span ng-bind-html="vm.station.name"></span>
                 <a href="#map" uib-tooltip="See on a map"><i class="material-icons">map</i></a>
             </h1>
@@ -12,34 +12,34 @@
         <div class="col-md-12">
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
-                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> Leave your email address to receive alerts</label>
+                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}</label>
                     <div class="row" ng-if="!vm.subscribed">
                         <div class="col-sm-8">
                             <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
                         </div>
                         <div class="col-sm-4">
-                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                            <button type="submit" class="btn btn-primary" translate>Subscribe</button>
                         </div>
                     </div>
-                    <div ng-if="vm.subscribed">Subscribed!</div>
-                    <div ng-if="vm.errorOnSubscription">an error occured!</div>
+                    <div ng-if="vm.subscribed" translate>Subscribed!</div>
+                    <div ng-if="vm.errorOnSubscription" translate>an error occured!</div>
                 </div>
             </form>
-            You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
-            <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i>
+            <span translate>You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or
+            <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i></span>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
-            <h2>Summary</h2>
+            <h2 translate>Summary</h2>
             <div class="row">
                 <div class="col-sm-3 Station__stats" ng-if="vm.mp10LastMeasure.value">
                     <div class="number">
                         <i class="material-icons md-36">today</i> {{ vm.mp10LastMeasure.value }}µg/m³
                     </div>
                     <div class="description">
-                        PM10 particles
-                        <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)">
+                        {{'PM10 particles'|translate}}
+                        <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
                             Yesterday
                         </div>
                         <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.mp10LastMeasure.date | date }}</div>
@@ -48,44 +48,42 @@
                 <div class="col-sm-3">
                     <div class="Station__stats">
                         <div class="number"><i class="material-icons md-36">insert_chart</i> {{ vm.mp10Average | number:0 }}µg/m³</div>
-                        <div class="description">Average PM10 particules during last year</div>
+                        <div class="description" translate>Average PM10 particules during last year</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="Station__stats">
                         <div class="number"><i class="material-icons md-36">error</i> {{ vm.mp10Sum }} days</div>
-                        <div class="description">Polluted days during last year</div>
+                        <div class="description" translate>Polluted days during last year</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="Station__stats">
-                        <div class="number"><i class="material-icons md-36">flash_on</i> {{ vm.mp10LongestStreak.value }} days</div>
-                        <div class="description">Longest PM10 pollution streak during last year<br/>
+                        <div class="number"><i class="material-icons md-36">flash_on</i> {{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
+                        <div class="description">{{'Longest PM10 pollution streak during last year'|translate}}<br/>
                         {{ vm.mp10LongestStreak.date | date }} - {{ vm.mp10LongestStreak.toDate | date }}</div>
                     </div>
                 </div>
             </div>
-            <div class="help-block">
-                PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants
-                typically found in cities.
-                The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
+            <div class="help-block" translate>
+                PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
             </div>
         </div>
     </div>
     <div class="row" ng-if="!vm.station.pm10_data || !vm.mp10Average">
-        <h2>Last alerts on this station</h2>
-        <div ng-if="vm.alerts.length < 1">No alert found</div>
+        <h2 translate>Last alerts on this station</h2>
+        <div ng-if="vm.alerts.length < 1" translate>No alert found</div>
         <last-alert data-alerts="vm.alerts" data-hide-station="true"></last-alert>
     </div>
     <div class="row" ng-if="vm.station.pm10_data">
         <div class="col-md-12">
-            <h2>PM10 particles pollution in time</h2>
+            <h2 translate>PM10 particles pollution in time</h2>
         </div>
         <div class="col-md-12" style="overflow-x: auto;">
             <nsfw-datavis data-station="vm.station"></nsfw-datavis>
         </div>
     </div>
-    <h2 id="map">Where the data come from</h2>
+    <h2 id="map" translate>Where the data come from</h2>
     <leaflet defaults="vm.defaults" lf-center="vm.center" markers="vm.markers" height="320px" width="100%"></leaflet>
 
 </div>

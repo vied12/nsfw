@@ -1,4 +1,9 @@
 <div ng-repeat="alert in vm.alerts" class="Last">
-    <h3><span class="label label-danger">{{ alert.report.kind}}</span> pollution<span ng-if="!vm.hideStation"> at <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a> station</span></h3>
-    <span class="pollution" uib-tooltip="{{vm.limits[alert.report.kind]}}µg/m³ is the limit for {{ alert.report.kind }} pollution based on WHO recommendations" tooltip-placement="bottom">{{ alert.value }}</span> on {{alert.report.date | date : 'fullDate' }}
+    <h3>
+        <span class="label label-danger">{{ alert.report.kind }}</span>
+        {{'pollution'| translate }}
+        <span ng-if="!vm.hideStation">
+            {{'at station'| translate }} <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a>
+        </span>
+    </h3>
 </div>
