@@ -6,5 +6,4 @@
             {{'at station'| translate }} <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a>
         </span>
     </h3>
-    <span class="pollution" uib-tooltip="{{vm.limits[alert.report.kind]}}µg/m³ {{'is the limit for {{ alert.report.kind }} pollution based on WHO recommendations'|translate}}" tooltip-placement="bottom">{{ alert.value }}</span> {{'on'|translate}} {{alert.report.date | date : 'fullDate' }}
 </div>
