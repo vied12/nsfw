@@ -140,12 +140,8 @@ msgstr ""
 msgid "from a brillant idea of"
 msgstr ""
 
-#: app/static/alerts/last.html:9
-msgid "is the limit for {{ alert.report.kind }} pollution based on WHO recommendations"
-msgstr ""
-
-#: app/static/alerts/last.html:9
-msgid "on"
+#: app/static/alerts/last.html:4
+msgid "pollution"
 msgstr ""
 
 #: app/static/home/template.html:66
