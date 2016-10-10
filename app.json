@@ -1,0 +1,40 @@
+{
+    "name": "nsfw",
+    "scripts": {
+        "postdeploy": "scripts/post_deploy_pr.sh"
+    },
+    "env": {
+        "COMPRESS_ENABLED": {
+            "required": true
+        },
+        "COMPRESS_OFFLINE": {
+            "required": true
+        },
+        "DEBUG": {
+            "required": true
+        },
+        "DISABLE_COLLECTSTATIC": {
+            "required": true
+        },
+        "DJANGO_SETTINGS_MODULE": {
+            "required": true
+        }
+    },
+    "formation": {
+        "web": {
+            "quantity": 1
+        }
+    },
+    "addons": [
+        "memcachier",
+        "newrelic",
+        "heroku-postgresql",
+        "scheduler",
+        "sendgrid"
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-python"
+        }
+    ]
+}
