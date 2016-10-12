@@ -119,7 +119,7 @@
     }
     angular.module('nsfw')
     .controller('StationCtrl', StationCtrl)
-    .directive('nsfwDatavis', ['$filter', function($filter) {
+    .directive('nsfwDatavis', ['$filter', 'gettextCatalog', function($filter, gettextCatalog) {
         return {
             scope: {
                 station: '='
@@ -231,8 +231,7 @@
                 .append('text')
                     .attr('class', 'caption')
                     .attr('y', -6)
-                    .text('Concentration of PM10 particles (µg/m³)');
-
+                    .text(gettextCatalog.getString('Concentration of PM10 particles (µg/m³)'));
             }
         };
     }]);

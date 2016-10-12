@@ -12,6 +12,10 @@ msgstr ""
 msgid "Average PM10 particules during last year"
 msgstr ""
 
+#: app/static/station/module.js:234
+msgid "Concentration of PM10 particles (µg/m³)"
+msgstr ""
+
 #: app/static/home/template.html:63
 msgid "Developed by"
 msgstr ""
