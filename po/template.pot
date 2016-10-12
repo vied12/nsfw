@@ -19,7 +19,7 @@ msgstr ""
 msgid "Address, City"
 msgstr ""
 
-#: app/static/station/template.html:51
+#: app/static/station/template.html:50
 msgid "Average PM10 particules during last year"
 msgstr ""
 
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Last alerts in Berlin"
 msgstr ""
 
-#: app/static/station/template.html:74
+#: app/static/station/template.html:73
 msgid "Last alerts on this station"
 msgstr ""
 
@@ -59,27 +59,27 @@ msgstr ""
 msgid "Leave your email address to receive alerts"
 msgstr ""
 
-#: app/static/station/template.html:63
+#: app/static/station/template.html:62
 msgid "Longest PM10 pollution streak during last year"
 msgstr ""
 
-#: app/static/station/template.html:75
+#: app/static/station/template.html:74
 msgid "No alert found"
 msgstr ""
 
-#: app/static/station/template.html:68
+#: app/static/station/template.html:67
 msgid "PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
 msgstr ""
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:40
 msgid "PM10 particles"
 msgstr ""
 
-#: app/static/station/template.html:80
+#: app/static/station/template.html:79
 msgid "PM10 particles pollution in time"
 msgstr ""
 
-#: app/static/station/template.html:57
+#: app/static/station/template.html:56
 msgid "Polluted days during last year"
 msgstr ""
 
@@ -99,7 +99,7 @@ msgstr ""
 msgid "Subscribed!"
 msgstr ""
 
-#: app/static/station/template.html:34
+#: app/static/station/template.html:33
 msgid "Summary"
 msgstr ""
 
@@ -115,18 +115,16 @@ msgstr ""
 msgid "We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality in Germany and give you the possibility to follow some of them by receiving alerts."
 msgstr ""
 
-#: app/static/station/template.html:86
+#: app/static/station/template.html:85
 msgid "Where the data come from"
 msgstr ""
 
-#: app/static/station/template.html:42
+#: app/static/station/template.html:41
 msgid "Yesterday"
 msgstr ""
 
 #: app/static/station/template.html:28
-msgid ""
-"You can also subscribe to its <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or\n"
-"            <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-icons\">rss_feed</i>"
+msgid "You can also subscribe to its <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-icons\">rss_feed</i>"
 msgstr ""
 
 #: app/static/station/template.html:25
@@ -141,7 +139,7 @@ msgstr ""
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
-#: app/static/station/template.html:62
+#: app/static/station/template.html:61
 msgid "days"
 msgstr ""
 

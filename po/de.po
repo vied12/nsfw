@@ -11,15 +11,26 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: app/static/alerts/last.html:2
+msgid ""
+"<span class=\"label label-danger\">{{ alert.report.kind}}</span>\n"
+"        pollution\n"
+"        <span ng-if=\"!vm.hideStation\">\n"
+"            at\n"
+"            <a ui-sref=\"home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
+"            station\n"
+"        </span>"
+msgstr ""
+
 #: app/static/home/template.html:20
 msgid "Address, City"
 msgstr "Straße, PLZ Stadt"
 
-#: app/static/station/template.html:51
+#: app/static/station/template.html:50
 msgid "Average PM10 particules during last year"
 msgstr "Durchschnittliche Feinstaub-Belastung (PM10) des letzten Jahres"
 
-#: app/static/station/module.js:234
+#: app/static/station/module.js:233
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
@@ -59,7 +70,7 @@ msgstr ""
 msgid "Last alerts in Berlin"
 msgstr "Letzte Warnungen in Berlin"
 
-#: app/static/station/template.html:74
+#: app/static/station/template.html:73
 msgid "Last alerts on this station"
 msgstr "Letzte Warnungen an dieser Messstation"
 
@@ -67,15 +78,15 @@ msgstr "Letzte Warnungen an dieser Messstation"
 msgid "Leave your email address to receive alerts"
 msgstr "Hinterlassen Sie Ihre E-Mail-Adresse, um Warnmeldungen zu erhalten"
 
-#: app/static/station/template.html:63
+#: app/static/station/template.html:62
 msgid "Longest PM10 pollution streak during last year"
 msgstr "Längste Feinstaub-Belastung (PM10) des letzten Jahres"
 
-#: app/static/station/template.html:75
+#: app/static/station/template.html:74
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/station/template.html:68
+#: app/static/station/template.html:67
 msgid ""
 "PM10 is an important indicator of urban air pollution, and the health risks "
 "associated with the complex mixtures of pollutants typically found in "
@@ -89,15 +100,15 @@ msgstr ""
 "kleinere Feinstaub-Partikel können tief in das Lungengewebe eindringen, aber"
 " auch in die Blutbahn, was unterschiedlichste Organschäden verursachen kann."
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:40
 msgid "PM10 particles"
 msgstr "Feinstaub-Partikel (PM10)"
 
-#: app/static/station/template.html:80
+#: app/static/station/template.html:79
 msgid "PM10 particles pollution in time"
 msgstr "Übersicht über die Feinstaub-Belastung (PM10)"
 
-#: app/static/station/template.html:57
+#: app/static/station/template.html:56
 msgid "Polluted days during last year"
 msgstr "Luftverschmutzte Tage des letzten Jahres"
 
@@ -117,7 +128,7 @@ msgstr "Eintragen"
 msgid "Subscribed!"
 msgstr "Eingetragen!"
 
-#: app/static/station/template.html:34
+#: app/static/station/template.html:33
 msgid "Summary"
 msgstr "Zusammenfassung"
 
@@ -140,21 +151,23 @@ msgstr ""
 "Messstationen hier abonnieren und automatisch Warnmeldungen per E-Mail "
 "erhalten."
 
-#: app/static/station/template.html:86
+#: app/static/station/template.html:85
 msgid "Where the data come from"
 msgstr "Woher die Daten stammen"
 
-#: app/static/station/template.html:42
+#: app/static/station/template.html:41
 msgid "Yesterday"
 msgstr "Gestern"
 
 #: app/static/station/template.html:28
 msgid ""
-"You can also subscribe to its <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or\n"
-"            <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-icons\">rss_feed</i>"
+"You can also subscribe to its <a target=\"_blank\" "
+"href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or <a target=\"_blank\" "
+"href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-"
+"icons\">rss_feed</i>"
 msgstr ""
 "Sie können außerdem unseren <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">RSS-Feed</a> oder\n"
-"<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a><i class=\"material-icons\">rss_feed</i> abonnieren."
+"<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a> abonnieren <i class=\"material-icons\">rss_feed</i>"
 
 #: app/static/station/template.html:25
 msgid "an error occured!"
@@ -174,11 +187,7 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/alerts/last.html:6
-msgid "at station"
-msgstr "an der Messstation"
-
-#: app/static/station/template.html:62
+#: app/static/station/template.html:61
 msgid "days"
 msgstr "Tage"
 
@@ -186,10 +195,17 @@ msgstr "Tage"
 msgid "from a brillant idea of"
 msgstr "aufgrund einer brillanten Idee von"
 
-#: app/static/alerts/last.html:4
-msgid "pollution"
-msgstr "Luftverschmutzung"
+#: app/static/alerts/last.html:14
+msgctxt "before a full date. ex: on Saturday, October 1, 2016"
+msgid "on"
+msgstr ""
 
 #: app/static/home/template.html:66
 msgid "with the helpful Carmen's design advices"
 msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
+
+#: app/static/alerts/module.js:14
+msgid ""
+"{{ value }}µg/m³ is the limit for {{ kind }} pollution based on WHO "
+"recommendations"
+msgstr ""
