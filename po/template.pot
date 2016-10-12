@@ -33,9 +33,7 @@ msgid "Find the closest station measuring air quality in Germany"
 msgstr ""
 
 #: app/static/home/template.html:68
-msgid ""
-"Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>.<span>\n"
-"            </span>"
+msgid "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>."
 msgstr ""
 
 #: app/static/home/template.html:47
