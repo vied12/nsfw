@@ -24,7 +24,7 @@ class StationSerializer(serializers.ModelSerializer):
 class FullStationSerializer(serializers.ModelSerializer):
 
     class Meta:
-        fields = ('id', 'name', 'lat', 'lon', 'pm10_data')
+        fields = ('id', 'name', 'lat', 'lon', 'pm10_data', 'no2_data')
         model = Station
 
 

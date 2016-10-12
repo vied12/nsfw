@@ -91,7 +91,11 @@
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');
                         return Stations.get().$promise.then(function(s) {
                             s.pm10_data = JSON.parse(s.pm10_data);
-                            // s.no2_data = JSON.parse(s.no2_data);
+                            s.no2_data = JSON.parse(s.no2_data);
+                            // clean data
+                            s.no2_data.values = _.pick(s.no2_data.values, function(v, k) {
+                                    return v[0] !== '-999';
+                                });
                             s.name = s.name.replace('B ', '');
                             return s;
                         });
