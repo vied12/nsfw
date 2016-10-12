@@ -22,7 +22,9 @@
     function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state, $stateParams, gettextCatalog) {
         var vm = this;
         // set language
-        gettextCatalog.setCurrentLanguage(angular.isDefined($stateParams.ln) ? $stateParams.ln : 'en');
+        var language = angular.isDefined($stateParams.ln) ? $stateParams.ln : 'en';
+        gettextCatalog.setCurrentLanguage(language);
+        moment.locale(language);
         angular.extend(vm, {
             $state: $state,
             alerts: alerts,

@@ -119,7 +119,7 @@
     }
     angular.module('nsfw')
     .controller('StationCtrl', StationCtrl)
-    .directive('nsfwDatavis', ['$filter', 'gettextCatalog', function($filter, gettextCatalog) {
+    .directive('nsfwDatavis', ['$filter', 'gettextCatalog', 'moment', function($filter, gettextCatalog, moment) {
         return {
             scope: {
                 station: '='
@@ -130,8 +130,7 @@
                     cellSize = 17; // cell size
 
                 var format = d3.time.format('%Y%m%d'),
-                    formatDate = d3.time.format('%d-%m-%Y'),
-                    formatMonth = d3.time.format('%B');
+                    formatDate = d3.time.format('%d-%m-%Y');
 
                 var threshold = d3.scale.threshold()
                     .domain([0, 35, 50])
@@ -171,7 +170,7 @@
                         var padding = d.getDay() === 0 ? 0 : 1;
                         return (d3.time.weekOfYear(d) + padding) * cellSize;
                     })
-                    .text(function(d) { return formatMonth(d); });
+                    .text(function(d) { return moment(d).format('MMMM'); });
                 months.append('path')
                     .attr('class', 'month')
                     .attr('d', monthPath);
