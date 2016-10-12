@@ -1,4 +1,5 @@
 *.log
+.tx
 .env
 env/
 node_modules/
