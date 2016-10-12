@@ -12,5 +12,5 @@
     uib-tooltip="{{ vm.tooltipBody(alert) }}"
     tooltip-placement="bottom">{{ alert.value }}</span>
     <span translate translate-context="before a full date. ex: on Saturday, October 1, 2016">on</span>
-    {{alert.report.date | date : 'fullDate' }}
+    {{ vm.moment(alert.report.date).format('LL') }}
 </div>

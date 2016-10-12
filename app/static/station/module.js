@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource'];
-    function StationCtrl(alerts, station, markers, $resource) {
+    StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource', 'moment'];
+    function StationCtrl(alerts, station, markers, $resource, moment) {
         var vm = this;
         var formatDate = d3.time.format('%Y%m%d');
         function getLastMeasure(data) {
@@ -81,6 +81,7 @@
             return yesterday.toDateString() === date.toDateString();
         }
         angular.extend(vm, {
+            moment: moment,
             host: location.host,
             subscribe: function() {
                 vm.subscribed = false;

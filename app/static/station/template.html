@@ -41,7 +41,7 @@
                         <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
                             Yesterday
                         </div>
-                        <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.mp10LastMeasure.date | date }}</div>
+                        <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}</div>
                     </div>
                 </div>
                 <div class="col-sm-3">
@@ -60,7 +60,7 @@
                     <div class="Station__stats">
                         <div class="number"><i class="material-icons md-36">flash_on</i> {{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
                         <div class="description">{{'Longest PM10 pollution streak during last year'|translate}}<br/>
-                        {{ vm.mp10LongestStreak.date | date }} - {{ vm.mp10LongestStreak.toDate | date }}</div>
+                        {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} - {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}</div>
                     </div>
                 </div>
             </div>

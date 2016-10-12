@@ -9,7 +9,7 @@
             templateUrl: 'static/alerts/last.html',
             controllerAs: 'vm',
             bindToController: true,
-            controller: ['gettextCatalog', 'gettext', function(gettextCatalog, gettext) {
+            controller: ['gettextCatalog', 'gettext', 'moment', function(gettextCatalog, gettext, moment) {
                 var vm = this;
                 var tooltip = gettext('{{ value }}µg/m³ is the limit for {{ kind }} pollution based on WHO recommendations');
                 function tooltipBody(alert) {
@@ -20,6 +20,7 @@
                     );
                 }
                 angular.extend(vm, {
+                    moment: moment,
                     limits: {
                         PM10: 50,
                         NO2: 200,
