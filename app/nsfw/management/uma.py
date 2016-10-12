@@ -7,7 +7,7 @@ import datetime
 class UmaCommand(BaseCommand):
 
     def add_arguments(self, parser):
-        parser.add_argument('date', nargs='+', type=str)
+        parser.add_argument('date', nargs='+', type=str, help='13.12.2015')
 
     def handle(self, *args, **options):
         for date in options['date']:
