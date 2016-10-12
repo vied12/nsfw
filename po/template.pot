@@ -4,6 +4,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
+#: app/static/alerts/last.html:2
+msgid ""
+"<span class=\"label label-danger\">{{ alert.report.kind}}</span>\n"
+"        pollution\n"
+"        <span ng-if=\"!vm.hideStation\">\n"
+"            at\n"
+"            <a ui-sref=\"home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
+"            station\n"
+"        </span>"
+msgstr ""
+
 #: app/static/home/template.html:20
 msgid "Address, City"
 msgstr ""
@@ -12,7 +23,7 @@ msgstr ""
 msgid "Average PM10 particules during last year"
 msgstr ""
 
-#: app/static/station/module.js:234
+#: app/static/station/module.js:233
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
@@ -130,10 +141,6 @@ msgstr ""
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
-#: app/static/alerts/last.html:6
-msgid "at station"
-msgstr ""
-
 #: app/static/station/template.html:62
 msgid "days"
 msgstr ""
@@ -142,10 +149,15 @@ msgstr ""
 msgid "from a brillant idea of"
 msgstr ""
 
-#: app/static/alerts/last.html:4
-msgid "pollution"
+#: app/static/alerts/last.html:14
+msgctxt "before a full date. ex: on Saturday, October 1, 2016"
+msgid "on"
 msgstr ""
 
 #: app/static/home/template.html:66
 msgid "with the helpful Carmen's design advices"
+msgstr ""
+
+#: app/static/alerts/module.js:14
+msgid "{{ value }}µg/m³ is the limit for {{ kind }} pollution based on WHO recommendations"
 msgstr ""

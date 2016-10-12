@@ -1,9 +1,16 @@
 <div ng-repeat="alert in vm.alerts" class="Last">
-    <h3>
-        <span class="label label-danger">{{ alert.report.kind }}</span>
-        {{'pollution'| translate }}
+    <h3 translate>
+        <span class="label label-danger">{{ alert.report.kind}}</span>
+        pollution
         <span ng-if="!vm.hideStation">
-            {{'at station'| translate }} <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a>
+            at
+            <a ui-sref="home.station({station: alert.station.id})" ng-bind="alert.station.name"></a>
+            station
         </span>
     </h3>
+    <span class="pollution"
+    uib-tooltip="{{ vm.tooltipBody(alert) }}"
+    tooltip-placement="bottom">{{ alert.value }}</span>
+    <span translate translate-context="before a full date. ex: on Saturday, October 1, 2016">on</span>
+    {{alert.report.date | date : 'fullDate' }}
 </div>
