@@ -1,9 +1,10 @@
 # Translators:
-# Edouard Richard <edou4rd@gmail.com>, 2016
+# Edouard <edou4rd@gmail.com>, 2016
+# Yvonne Hagenbach <yvonne@lesotre.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Last-Translator: Edouard Richard <edou4rd@gmail.com>, 2016\n"
+"Last-Translator: Yvonne Hagenbach <yvonne@lesotre.de>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,11 +13,11 @@ msgstr ""
 
 #: app/static/home/template.html:20
 msgid "Address, City"
-msgstr ""
+msgstr "Straße, PLZ Stadt"
 
 #: app/static/station/template.html:51
 msgid "Average PM10 particules during last year"
-msgstr ""
+msgstr "Durchschnittliche Feinstaub-Belastung (PM10) des letzten Jahres"
 
 #: app/static/home/template.html:63
 msgid "Developed by"
@@ -27,40 +28,45 @@ msgid ""
 "During summer, the air quality in Berlin is quite good. But winter is "
 "coming. Find the closest station to be prepared for next winter."
 msgstr ""
+"Im Sommer ist die Luftqualität in Berlin grundsätzlich gut, aber der Winter "
+"kommt. Finden Sie die nächstgelegene Messstation, um für den Winter "
+"gewappnet zu sein."
 
 #: app/static/home/template.html:22
 msgid "Find"
-msgstr ""
+msgstr "Finden"
 
 #: app/static/home/template.html:15
 msgid "Find the closest station measuring air quality in Germany"
-msgstr ""
+msgstr "Finden Sie die am nächstgelegene Messstation (in Deutschland)"
 
 #: app/static/home/template.html:68
 msgid ""
 "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>.<span>\n"
 "            </span>"
 msgstr ""
+"Geben Sie uns Feedback unter <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> oder <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">senden Sie uns eine E-Mail</a>.<span>\n"
+"</span>"
 
 #: app/static/home/template.html:47
 msgid "Last alerts in Berlin"
-msgstr ""
+msgstr "Letzte Warnungen in Berlin"
 
 #: app/static/station/template.html:74
 msgid "Last alerts on this station"
-msgstr ""
+msgstr "Letzte Warnungen an dieser Messstation"
 
 #: app/static/station/template.html:15
 msgid "Leave your email address to receive alerts"
-msgstr ""
+msgstr "Hinterlassen Sie Ihre E-Mail-Adresse, um Warnmeldungen zu erhalten"
 
 #: app/static/station/template.html:63
 msgid "Longest PM10 pollution streak during last year"
-msgstr ""
+msgstr "Längste Feinstaub-Belastung (PM10) des letzten Jahres"
 
 #: app/static/station/template.html:75
 msgid "No alert found"
-msgstr ""
+msgstr "Keine Warnmeldungen gefunden"
 
 #: app/static/station/template.html:68
 msgid ""
@@ -70,46 +76,51 @@ msgid ""
 "lungs, and also to cross into the blood, causing damage in many organ "
 "systems."
 msgstr ""
+"Das Auftreten von Feinstaub (PM10) ist ein wichtiger Indikator für die "
+"Luftqualität. Die für Städte häufig typische daraus resultierende "
+"Luftverschmutzung stellt ein erhöhtes Gesundheitsrisiko dar. Besonders "
+"kleinere Feinstaub-Partikel können tief in das Lungengewebe eindringen, aber"
+" auch in die Blutbahn, was unterschiedlichste Organschäden verursachen kann."
 
 #: app/static/station/template.html:41
 msgid "PM10 particles"
-msgstr ""
+msgstr "Feinstaub-Partikel (PM10)"
 
 #: app/static/station/template.html:80
 msgid "PM10 particles pollution in time"
-msgstr ""
+msgstr "Übersicht über die Feinstaub-Belastung (PM10)"
 
 #: app/static/station/template.html:57
 msgid "Polluted days during last year"
-msgstr ""
+msgstr "Luftverschmutzte Tage des letzten Jahres"
 
 #: app/static/home/template.html:53
 msgid "See older alerts"
-msgstr ""
+msgstr "Ältere Warnungen anzeigen"
 
 #: app/static/station/template.html:5
 msgid "Station"
-msgstr ""
+msgstr "Messstation"
 
 #: app/static/station/template.html:21
 msgid "Subscribe"
-msgstr ""
+msgstr "Eintragen"
 
 #: app/static/station/template.html:24
 msgid "Subscribed!"
-msgstr ""
+msgstr "Eingetragen!"
 
 #: app/static/station/template.html:34
 msgid "Summary"
-msgstr ""
+msgstr "Zusammenfassung"
 
 #: app/static/home/template.html:51
 msgid "There is no recent alert in Berlin"
-msgstr ""
+msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 
 #: app/static/home/template.html:35
 msgid "This is the closest station"
-msgstr ""
+msgstr "Dies ist die nächstgelegene Messstation"
 
 #: app/static/home/template.html:41
 msgid ""
@@ -117,28 +128,34 @@ msgid ""
 " air quality in Germany and give you the possibility to follow some of them "
 "by receiving alerts."
 msgstr ""
+"Wir sammeln die täglichen Daten des Umweltbundesamts, dessen Messstationen "
+"die Luftqualität in Deutschland messen. Sie können Daten ausgewählter "
+"Messstationen hier abonnieren und automatisch Warnmeldungen per E-Mail "
+"erhalten."
 
 #: app/static/station/template.html:86
 msgid "Where the data come from"
-msgstr ""
+msgstr "Woher die Daten stammen"
 
 #: app/static/station/template.html:42
 msgid "Yesterday"
-msgstr ""
+msgstr "Gestern"
 
 #: app/static/station/template.html:28
 msgid ""
 "You can also subscribe to its <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or\n"
 "            <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-icons\">rss_feed</i>"
 msgstr ""
+"Sie können außerdem unseren <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">RSS-Feed</a> oder\n"
+"<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a><i class=\"material-icons\">rss_feed</i> abonnieren."
 
 #: app/static/station/template.html:25
 msgid "an error occured!"
-msgstr ""
+msgstr "Es ist ein Fehler aufgetreten."
 
 #: app/static/home/template.html:65
 msgid "an illustration from"
-msgstr ""
+msgstr "einer Grafik von"
 
 #: app/static/home/template.html:67
 msgid ""
@@ -146,29 +163,26 @@ msgid ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's "
 "data</a>."
 msgstr ""
+"und den <a href=\"https://www.umweltbundesamt.de/en/data/current-"
+"concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
+"Umweltbundesamts</a>."
 
 #: app/static/alerts/last.html:6
 msgid "at station"
-msgstr ""
+msgstr "an der Messstation"
 
 #: app/static/station/template.html:62
 msgid "days"
-msgstr ""
+msgstr "Tage"
 
 #: app/static/home/template.html:64
 msgid "from a brillant idea of"
-msgstr ""
+msgstr "aufgrund einer brillanten Idee von"
 
-#: app/static/alerts/last.html:9
-msgid ""
-"is the limit for {{ alert.report.kind }} pollution based on WHO "
-"recommendations"
-msgstr ""
-
-#: app/static/alerts/last.html:9
-msgid "on"
-msgstr ""
+#: app/static/alerts/last.html:4
+msgid "pollution"
+msgstr "Luftverschmutzung"
 
 #: app/static/home/template.html:66
 msgid "with the helpful Carmen's design advices"
-msgstr ""
+msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
