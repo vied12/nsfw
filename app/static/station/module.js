@@ -99,6 +99,9 @@
             station: station,
             alerts: alerts,
             dateIsYesterday: dateIsYesterday,
+            isDatavisPossible: _.any(_.keys(station.pm10_data.values), function(k) {
+                return _.startsWith(k.toString(), '2014');
+            }),
             mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),

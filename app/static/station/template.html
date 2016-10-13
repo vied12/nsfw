@@ -112,17 +112,17 @@
             </div>
         </div>
     </div>
-    <div class="row" ng-if="!vm.station.pm10_data || !vm.mp10Average">
+    <div class="row" ng-if="::!vm.station.pm10_data || !vm.mp10Average">
         <h2 translate>Last alerts on this station</h2>
         <div ng-if="vm.alerts.length < 1" translate>No alert found</div>
-        <last-alert data-alerts="vm.alerts" data-hide-station="true"></last-alert>
+        <last-alert data-alerts="::vm.alerts" data-hide-station="true"></last-alert>
     </div>
-    <div class="row" ng-if="vm.station.pm10_data">
+    <div class="row" ng-if="::vm.isDatavisPossible">
         <div class="col-md-12">
             <h2 translate>PM10 particles pollution in time</h2>
         </div>
         <div class="col-md-12" style="overflow-x: auto;">
-            <nsfw-datavis data-station="vm.station"></nsfw-datavis>
+            <nsfw-datavis data-station="::vm.station"></nsfw-datavis>
         </div>
     </div>
     <h2 id="map" translate>Where the data come from</h2>
