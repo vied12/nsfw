@@ -34,17 +34,31 @@
     .help-block {
         margin-top: 20px;
     }
+    table {
+        thead th {vertical-align: top;}
+        td, th {text-align: center;}
+        tbody th {
+            vertical-align: middle;
+            font-size: 1.5em;
+        }
+    }
     .number {
         i {
             color: @text-color;
         }
         white-space: nowrap;
-        font-size: 2em;
+        font-size: 1.5em;
         color: @brand-danger;
     }
     &__stats {
+        position: relative;
+        margin-top: 20px;
         .description {
-            font-size: 1.2em;
+            font-size: .8em;
+        }
+        .legend {
+            padding-top: 15px;
+            font-size: 1.4em;
         }
     }
 }

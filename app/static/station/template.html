@@ -29,57 +29,114 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-12" ng-if="vm.station.pm10_data && vm.mp10Average">
+        <div class="col-xs-12" ng-if="vm.station.pm10_data && vm.mp10Average">
             <h2 translate>Summary</h2>
-            <div class="row">
-                <div class="col-sm-3 Station__stats" ng-if="vm.mp10LastMeasure.value">
-                    <div class="number">
-                        <i class="material-icons md-36">today</i> {{ vm.mp10LastMeasure.value }}µg/m³
-                    </div>
-                    <div class="description">
-                        {{'PM10 particles'|translate}}
-                        <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
-                            Yesterday
-                        </div>
-                        <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">{{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}</div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number"><i class="material-icons md-36">insert_chart</i> {{ vm.mp10Average | number:0 }}µg/m³</div>
-                        <div class="description" translate>Average PM10 particules during last year</div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number"><i class="material-icons md-36">error</i> {{ vm.mp10Sum }} days</div>
-                        <div class="description" translate>Polluted days during last year</div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="Station__stats">
-                        <div class="number"><i class="material-icons md-36">flash_on</i> {{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
-                        <div class="description">{{'Longest PM10 pollution streak during last year'|translate}}<br/>
-                        {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} - {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}</div>
-                    </div>
-                </div>
+            <div class="table-responsive">
+                <table class="table Station__stats">
+                    <thead>
+                        <th>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">today</i>
+                            <div translate>Last value</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">insert_chart</i>
+                            <div translate>Average during last year</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">error</i>
+                            <div translate>Polluted days<br/>during last year</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">flash_on</i>
+                            <div translate>Longest pollution streak<br/> during last year</div>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><span class="label label-danger">PM<sub>10</sub></span></th>
+                            <td>
+                                <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
+                                <div class="description">
+                                    <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
+                                        Yesterday
+                                    </div>
+                                    <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">
+                                        {{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.mp10Sum }} days</div>
+                            </td>
+                            <td>
+                                <div ng-if="!vm.mp10LongestStreak.value">
+                                    <div class="number">—</div>
+                                </div>
+                                <div ng-if="vm.mp10LongestStreak.value">
+                                    <div class="number">{{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
+                                    <div class="description">
+                                        {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} -
+                                        {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="label label-danger">NO<sub>2</sub></span></th>
+                            <td>
+                                <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
+                                <div class="description">
+                                    <div ng-if="::vm.dateIsYesterday(vm.no2LastMeasure.date)" translate>
+                                        Yesterday
+                                    </div>
+                                    <div ng-if="::!vm.dateIsYesterday(vm.no2LastMeasure.date)">
+                                        {{ vm.moment(vm.no2LastMeasure.date).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Sum }} days</div>
+                            </td>
+                            <td>
+                                <div ng-if="!vm.no2LongestStreak.value">
+                                    <div class="number">—</div>
+                                </div>
+                                <div ng-if="vm.no2LongestStreak.value">
+                                    <div class="number">{{ vm.no2LongestStreak.value }} {{'days'|translate}}</div>
+                                    <div class="description">
+                                        {{ vm.moment(vm.no2LongestStreak.date).format('ll') }} -
+                                        {{ vm.moment(vm.no2LongestStreak.toDate).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="help-block" translate>
-                PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
+                PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
             </div>
         </div>
     </div>
-    <div class="row" ng-if="!vm.station.pm10_data || !vm.mp10Average">
+    <div class="row" ng-if="::!vm.station.pm10_data || !vm.mp10Average">
         <h2 translate>Last alerts on this station</h2>
         <div ng-if="vm.alerts.length < 1" translate>No alert found</div>
-        <last-alert data-alerts="vm.alerts" data-hide-station="true"></last-alert>
+        <last-alert data-alerts="::vm.alerts" data-hide-station="true"></last-alert>
     </div>
-    <div class="row" ng-if="vm.station.pm10_data">
+    <div class="row" ng-if="::vm.isDatavisPossible">
         <div class="col-md-12">
-            <h2 translate>PM10 particles pollution in time</h2>
+            <h2 translate>PM<sub>10</sub> particles pollution in time</h2>
         </div>
         <div class="col-md-12" style="overflow-x: auto;">
-            <nsfw-datavis data-station="vm.station"></nsfw-datavis>
+            <nsfw-datavis data-station="::vm.station"></nsfw-datavis>
         </div>
     </div>
     <h2 id="map" translate>Where the data come from</h2>

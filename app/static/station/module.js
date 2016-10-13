@@ -6,10 +6,10 @@
         var formatDate = d3.time.format('%Y%m%d');
         function getLastMeasure(data) {
                 if (!data) {return;}
-                var keys = Object.keys(station.pm10_data.values);
+                var keys = Object.keys(data.values);
                 var lastKey = keys[keys.length - 1];
                 return {
-                    value: station.pm10_data.values[lastKey][0],
+                    value: data.values[lastKey][0],
                     date: formatDate.parse(lastKey)
                 };
         }
@@ -99,10 +99,17 @@
             station: station,
             alerts: alerts,
             dateIsYesterday: dateIsYesterday,
+            isDatavisPossible: _.any(_.keys(station.pm10_data.values), function(k) {
+                return _.startsWith(k.toString(), '2014');
+            }),
             mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
             mp10Sum: getSum(station.pm10_data, 50),
+            no2LastMeasure: getLastMeasure(station.no2_data),
+            no2Average: getAverage(station.no2_data),
+            no2LongestStreak: getLongestStreak(station.no2_data, 200),
+            no2Sum: getSum(station.no2_data, 200),
             // map
             markers: markers,
             center: {
