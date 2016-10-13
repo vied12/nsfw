@@ -31,87 +31,81 @@
     <div class="row">
         <div class="col-xs-12" ng-if="vm.station.pm10_data && vm.mp10Average">
             <h2 translate>Summary</h2>
-            <div class="row">
-                <!-- <div class="legend"></div> -->
-                <div class="col-xs-2 text-center"></div>
-                <div class="col-xs-3 text-center">
-                    <i class="material-icons md-36">today</i>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <i class="material-icons md-36">insert_chart</i>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <i class="material-icons md-36">error</i>
-                    </div>
-                <!-- <div class="col-xs-3 text-center">
-                    <i class="material-icons md-36">flash_on</i>
-                </div> -->
-            </div>
-            <div class="row">
-                <!-- <div class="legend"></div> -->
-                <div class="col-xs-2 text-center"></div>
-                <div class="col-xs-3 text-center">
-                    Last value
-                </div>
-                <div class="col-xs-3 text-center">
-                    Average during last year
-                </div>
-                <div class="col-xs-3 text-center">
-                    Polluted days during last year
-                    </div>
-                <!-- <div class="col-xs-3 text-center">
-                    Longest pollution streak during last year
-                </div> -->
-            </div>
-            <div class="row Station__stats">
-                <div class="col-xs-2 legend"><span class="label label-danger">NO2</span></div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
-                    <div class="description">{{ vm.moment(vm.no2LastMeasure.date).format('ll') }}</div>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.no2Sum }} days</div>
-                </div>
-                <!-- <div class="col-xs-3 text-center">
-                    <div ng-if="!vm.no2LongestStreak.value">
-                        <div class="number">—</div>
-                    </div>
-                    <div ng-if="vm.no2LongestStreak.value">
-                        <div class="number">{{ vm.no2LongestStreak.value }} {{'days'|translate}}</div>
-                        <div class="description">
-                            {{ vm.moment(vm.no2LongestStreak.date).format('ll') }} -
-                            {{ vm.moment(vm.no2LongestStreak.toDate).format('ll') }}
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-            <div class="row Station__stats">
-                <div class="col-xs-2 legend"><span class="label label-danger">PM10</span></div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
-                    <div class="description">{{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}</div>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
-                </div>
-                <div class="col-xs-3 text-center">
-                    <div class="number">{{ vm.mp10Sum }} days</div>
-                </div>
-                <!-- <div class="col-xs-3 text-center">
-                    <div ng-if="!vm.mp10LongestStreak.value">
-                        <div class="number">—</div>
-                    </div>
-                    <div ng-if="vm.mp10LongestStreak.value">
-                        <div class="number">{{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
-                        <div class="description">
-                            {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} -
-                            {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}
-                        </div>
-                    </div>
-                </div> -->
+            <div class="table-responsive">
+                <table class="table Station__stats">
+                    <thead>
+                        <th>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">today</i>
+                            <div class="">Last value</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">insert_chart</i>
+                            <div class="">Average during last year</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">error</i>
+                            <div class="">Polluted days<br/>during last year</div>
+                        </th>
+                        <th>
+                            <i class="material-icons md-36">flash_on</i>
+                            <div class="">Longest pollution streak<br/> during last year</div>
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><span class="label label-danger">No2</span></th>
+                            <td>
+                                <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
+                                <div class="description">{{ vm.moment(vm.no2LastMeasure.date).format('ll') }}</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Sum }} days</div>
+                            </td>
+                            <td>
+                                <div ng-if="!vm.no2LongestStreak.value">
+                                    <div class="number">—</div>
+                                </div>
+                                <div ng-if="vm.no2LongestStreak.value">
+                                    <div class="number">{{ vm.no2LongestStreak.value }} {{'days'|translate}}</div>
+                                    <div class="description">
+                                        {{ vm.moment(vm.no2LongestStreak.date).format('ll') }} -
+                                        {{ vm.moment(vm.no2LongestStreak.toDate).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="label label-danger">PM10</span></th>
+                            <td>
+                                <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
+                                <div class="description">{{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.mp10Sum }} days</div>
+                            </td>
+                            <td>
+                                <div ng-if="!vm.mp10LongestStreak.value">
+                                    <div class="number">—</div>
+                                </div>
+                                <div ng-if="vm.mp10LongestStreak.value">
+                                    <div class="number">{{ vm.mp10LongestStreak.value }} {{'days'|translate}}</div>
+                                    <div class="description">
+                                        {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} -
+                                        {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="help-block" translate>
                 PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
