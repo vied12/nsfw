@@ -55,31 +55,6 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th><span class="label label-danger">No2</span></th>
-                            <td>
-                                <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
-                                <div class="description">{{ vm.moment(vm.no2LastMeasure.date).format('ll') }}</div>
-                            </td>
-                            <td>
-                                <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
-                            </td>
-                            <td>
-                                <div class="number">{{ vm.no2Sum }} days</div>
-                            </td>
-                            <td>
-                                <div ng-if="!vm.no2LongestStreak.value">
-                                    <div class="number">—</div>
-                                </div>
-                                <div ng-if="vm.no2LongestStreak.value">
-                                    <div class="number">{{ vm.no2LongestStreak.value }} {{'days'|translate}}</div>
-                                    <div class="description">
-                                        {{ vm.moment(vm.no2LongestStreak.date).format('ll') }} -
-                                        {{ vm.moment(vm.no2LongestStreak.toDate).format('ll') }}
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
                             <th><span class="label label-danger">PM10</span></th>
                             <td>
                                 <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
@@ -100,6 +75,31 @@
                                     <div class="description">
                                         {{ vm.moment(vm.mp10LongestStreak.date).format('ll') }} -
                                         {{ vm.moment(vm.mp10LongestStreak.toDate).format('ll') }}
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="label label-danger">No2</span></th>
+                            <td>
+                                <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
+                                <div class="description">{{ vm.moment(vm.no2LastMeasure.date).format('ll') }}</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
+                            </td>
+                            <td>
+                                <div class="number">{{ vm.no2Sum }} days</div>
+                            </td>
+                            <td>
+                                <div ng-if="!vm.no2LongestStreak.value">
+                                    <div class="number">—</div>
+                                </div>
+                                <div ng-if="vm.no2LongestStreak.value">
+                                    <div class="number">{{ vm.no2LongestStreak.value }} {{'days'|translate}}</div>
+                                    <div class="description">
+                                        {{ vm.moment(vm.no2LongestStreak.date).format('ll') }} -
+                                        {{ vm.moment(vm.no2LongestStreak.toDate).format('ll') }}
                                     </div>
                                 </div>
                             </td>
