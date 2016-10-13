@@ -21,6 +21,12 @@ msgid ""
 "            station\n"
 "        </span>"
 msgstr ""
+"<span class=\"label label-danger\">{{ alert.report.kind}}</span>\n"
+"Luftverschmutzung\n"
+"<span ng-if=\"!vm.hideStation\">\n"
+"an der Messstation\n"
+"<a ui-sref=\"home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
+"</span>"
 
 #: app/static/home/template.html:20
 msgid "Address, City"
@@ -32,7 +38,7 @@ msgstr "Durchschnittliche Feinstaub-Belastung (PM10) des letzten Jahres"
 
 #: app/static/station/module.js:233
 msgid "Concentration of PM10 particles (µg/m³)"
-msgstr ""
+msgstr "Feinstaub-Konzentration (µg/m³)"
 
 #: app/static/home/template.html:63
 msgid "Developed by"
@@ -198,7 +204,7 @@ msgstr "aufgrund einer brillanten Idee von"
 #: app/static/alerts/last.html:14
 msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
-msgstr ""
+msgstr "am"
 
 #: app/static/home/template.html:66
 msgid "with the helpful Carmen's design advices"
@@ -209,3 +215,5 @@ msgid ""
 "{{ value }}µg/m³ is the limit for {{ kind }} pollution based on WHO "
 "recommendations"
 msgstr ""
+"{{ value }}µg/m³ ist der Grenzwert für {{ kind }} Luftverschmutzung "
+"basierend auf den Bewertungen der WHO"
