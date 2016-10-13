@@ -38,27 +38,34 @@
                         </th>
                         <th>
                             <i class="material-icons md-36">today</i>
-                            <div class="">Last value</div>
+                            <div translate>Last value</div>
                         </th>
                         <th>
                             <i class="material-icons md-36">insert_chart</i>
-                            <div class="">Average during last year</div>
+                            <div translate>Average during last year</div>
                         </th>
                         <th>
                             <i class="material-icons md-36">error</i>
-                            <div class="">Polluted days<br/>during last year</div>
+                            <div translate>Polluted days<br/>during last year</div>
                         </th>
                         <th>
                             <i class="material-icons md-36">flash_on</i>
-                            <div class="">Longest pollution streak<br/> during last year</div>
+                            <div translate>Longest pollution streak<br/> during last year</div>
                         </th>
                     </thead>
                     <tbody>
                         <tr>
-                            <th><span class="label label-danger">PM10</span></th>
+                            <th><span class="label label-danger">PM<sub>10</sub></span></th>
                             <td>
                                 <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
-                                <div class="description">{{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}</div>
+                                <div class="description">
+                                    <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
+                                        Yesterday
+                                    </div>
+                                    <div ng-if="::!vm.dateIsYesterday(vm.mp10LastMeasure.date)">
+                                        {{ vm.moment(vm.mp10LastMeasure.date).format('ll') }}
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
@@ -80,10 +87,17 @@
                             </td>
                         </tr>
                         <tr>
-                            <th><span class="label label-danger">No2</span></th>
+                            <th><span class="label label-danger">NO<sub>2</sub></span></th>
                             <td>
                                 <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
-                                <div class="description">{{ vm.moment(vm.no2LastMeasure.date).format('ll') }}</div>
+                                <div class="description">
+                                    <div ng-if="::vm.dateIsYesterday(vm.no2LastMeasure.date)" translate>
+                                        Yesterday
+                                    </div>
+                                    <div ng-if="::!vm.dateIsYesterday(vm.no2LastMeasure.date)">
+                                        {{ vm.moment(vm.no2LastMeasure.date).format('ll') }}
+                                    </div>
+                                </div>
                             </td>
                             <td>
                                 <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
@@ -108,7 +122,7 @@
                 </table>
             </div>
             <div class="help-block" translate>
-                PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
+                PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems.
             </div>
         </div>
     </div>
@@ -119,7 +133,7 @@
     </div>
     <div class="row" ng-if="::vm.isDatavisPossible">
         <div class="col-md-12">
-            <h2 translate>PM10 particles pollution in time</h2>
+            <h2 translate>PM<sub>10</sub> particles pollution in time</h2>
         </div>
         <div class="col-md-12" style="overflow-x: auto;">
             <nsfw-datavis data-station="::vm.station"></nsfw-datavis>

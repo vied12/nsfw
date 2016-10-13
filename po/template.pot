@@ -19,11 +19,11 @@ msgstr ""
 msgid "Address, City"
 msgstr ""
 
-#: app/static/station/template.html:50
-msgid "Average PM10 particules during last year"
+#: app/static/station/template.html:45
+msgid "Average during last year"
 msgstr ""
 
-#: app/static/station/module.js:233
+#: app/static/station/module.js:241
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
@@ -51,36 +51,36 @@ msgstr ""
 msgid "Last alerts in Berlin"
 msgstr ""
 
-#: app/static/station/template.html:73
+#: app/static/station/template.html:130
 msgid "Last alerts on this station"
+msgstr ""
+
+#: app/static/station/template.html:41
+msgid "Last value"
 msgstr ""
 
 #: app/static/station/template.html:15
 msgid "Leave your email address to receive alerts"
 msgstr ""
 
-#: app/static/station/template.html:62
-msgid "Longest PM10 pollution streak during last year"
+#: app/static/station/template.html:53
+msgid "Longest pollution streak<br> during last year"
 msgstr ""
 
-#: app/static/station/template.html:74
+#: app/static/station/template.html:131
 msgid "No alert found"
 msgstr ""
 
-#: app/static/station/template.html:67
-msgid "PM10 is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
+#: app/static/station/template.html:124
+msgid "PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
 msgstr ""
 
-#: app/static/station/template.html:40
-msgid "PM10 particles"
+#: app/static/station/template.html:136
+msgid "PM<sub>10</sub> particles pollution in time"
 msgstr ""
 
-#: app/static/station/template.html:79
-msgid "PM10 particles pollution in time"
-msgstr ""
-
-#: app/static/station/template.html:56
-msgid "Polluted days during last year"
+#: app/static/station/template.html:49
+msgid "Polluted days<br>during last year"
 msgstr ""
 
 #: app/static/home/template.html:53
@@ -115,11 +115,12 @@ msgstr ""
 msgid "We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality in Germany and give you the possibility to follow some of them by receiving alerts."
 msgstr ""
 
-#: app/static/station/template.html:85
+#: app/static/station/template.html:142
 msgid "Where the data come from"
 msgstr ""
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:62
+#: app/static/station/template.html:94
 msgid "Yesterday"
 msgstr ""
 
@@ -139,7 +140,8 @@ msgstr ""
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
-#: app/static/station/template.html:61
+#: app/static/station/template.html:113
+#: app/static/station/template.html:81
 msgid "days"
 msgstr ""
 
