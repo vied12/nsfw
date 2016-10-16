@@ -23,7 +23,7 @@ msgstr ""
 msgid "Average during last year"
 msgstr ""
 
-#: app/static/station/module.js:241
+#: app/static/station/module.js:243
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgid "No alert found"
 msgstr ""
 
 #: app/static/station/template.html:124
-msgid "PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM10 particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
+msgid "PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM<sub>10</sub> particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
 msgstr ""
 
 #: app/static/station/template.html:136

@@ -2,26 +2,26 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-15 19:54+0200\n"
+"POT-Creation-Date: 2016-10-16 13:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Edouard <edou4rd@gmail.com>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: app/templates/home.html:11
 msgid ""
-"We are collecting the daily reports from Umwelt Bundesamt stations measuring"
-" air quality in Germany and give you the possibility to follow some of them "
+"We are collecting the daily reports from Umwelt Bundesamt stations measuring "
+"air quality in Germany and give you the possibility to follow some of them "
 "by receiving alerts."
 msgstr ""
 "Wir sammeln die täglichen Daten des Umweltbundesamts, dessen Messstationen "
