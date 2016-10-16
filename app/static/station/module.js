@@ -5,13 +5,15 @@
         var vm = this;
         var formatDate = d3.time.format('%Y%m%d');
         function getLastMeasure(data) {
-                if (!data) {return;}
+                if (!data || !data.values) {return;}
                 var keys = Object.keys(data.values);
                 var lastKey = keys[keys.length - 1];
-                return {
-                    value: data.values[lastKey][0],
-                    date: formatDate.parse(lastKey)
-                };
+                if (data.values[lastKey]) {
+                    return {
+                        value: data.values[lastKey][0],
+                        date: formatDate.parse(lastKey)
+                    };
+                }
         }
         function getAverage(data) {
             if (!data) {return;}
