@@ -71,7 +71,7 @@
                                 <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
                             </td>
                             <td>
-                                <div class="number">{{ vm.mp10Sum }} days</div>
+                                <div class="number">{{ vm.mp10Sum }} {{'days'|translate}}</div>
                             </td>
                             <td>
                                 <div ng-if="!vm.mp10LongestStreak.value">
@@ -103,7 +103,7 @@
                                 <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
                             </td>
                             <td>
-                                <div class="number">{{ vm.no2Sum }} days</div>
+                                <div class="number">{{ vm.no2Sum }} {{'days'|translate}}</div>
                             </td>
                             <td>
                                 <div ng-if="!vm.no2LongestStreak.value">
