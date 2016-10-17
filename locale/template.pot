@@ -35,6 +35,10 @@ msgstr ""
 msgid "During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter."
 msgstr ""
 
+#: app/static/station/template.html:18
+msgid "Email"
+msgstr ""
+
 #: app/static/home/template.html:22
 msgid "Find"
 msgstr ""
@@ -140,7 +144,9 @@ msgstr ""
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
+#: app/static/station/template.html:106
 #: app/static/station/template.html:113
+#: app/static/station/template.html:74
 #: app/static/station/template.html:81
 msgid "days"
 msgstr ""

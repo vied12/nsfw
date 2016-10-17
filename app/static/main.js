@@ -18,7 +18,7 @@
             $locationProvider.html5Mode({enabled:true}).hashPrefix('#');
             $stateProvider
             .state('home', {
-                url: '/?ln',
+                url: '/?language',
                 params: {
                     showOlderAlerts: false
                 },
