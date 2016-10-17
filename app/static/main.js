@@ -93,9 +93,11 @@
                             s.pm10_data = JSON.parse(s.pm10_data);
                             s.no2_data = JSON.parse(s.no2_data);
                             // clean data
-                            s.no2_data.values = _.pick(s.no2_data.values, function(v, k) {
+                            if (s.no2_data) {
+                                s.no2_data.values = _.pick(s.no2_data.values, function(v, k) {
                                     return v[0] !== '-999';
                                 });
+                            }
                             s.name = s.name.replace('B ', '');
                             return s;
                         });
