@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-10-17 21:46+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: nsfw/management/commands/mails.py:24
+#, python-format
+msgid "Pollution Alerts at %(name)s"
+msgstr ""
+
+#: templates/email.txt:2
+msgctxt "email"
+msgid "Hello,"
+msgstr ""
+
+#: templates/email.txt:4
+#, python-format
+msgctxt "email"
+msgid ""
+"Yesterday we reached %(value)sµg/m³ of %(kind)s pollution at the station "
+"%(station)s."
+msgstr ""
+
+#: templates/email.txt:7
+#, python-format
+msgctxt "email"
+msgid ""
+"You subscribed on http://nsfw.fahrradfreundliches-neukoelln.de to receive "
+"alerts about station %(station)s. If you don't want to receive alerts "
+"anymore, reply to this message.\n"
+"\n"
+"The fahrradfreundliches-neukoelln.de team"
+msgstr ""
+
+#: templates/home.html:11
+msgid ""
+"We are collecting the daily reports from Umwelt Bundesamt stations measuring "
+"air quality in Germany and give you the possibility to follow some of them "
+"by receiving alerts."
+msgstr ""

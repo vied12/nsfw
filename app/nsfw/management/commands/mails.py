@@ -3,6 +3,8 @@ from django.core.mail import send_mass_mail
 from app.nsfw.models import Subscription, Alert
 import datetime
 from django.template.loader import render_to_string
+from django.utils import translation
+from django.utils.translation import ugettext as _
 
 
 class Command(BaseCommand):
@@ -13,8 +15,14 @@ class Command(BaseCommand):
             alerts = Alert.objects.filter(station=sub.station, created__gte=datetime.date.today())
             if alerts:
                 ctx = {'alerts': alerts, 'station': sub.station, 'email': sub.email}
-                yield ('Pollution Alerts at %s' % (sub.station.name),  # subject
-                       render_to_string('email.txt', ctx),  # msg
+                cur_language = translation.get_language()
+                try:
+                    translation.activate('de')
+                    text = render_to_string('email.txt', ctx)
+                finally:
+                    translation.activate(cur_language)
+                yield (_('Pollution Alerts at %(name)s') % {'name': sub.station.name},  # subject
+                       text,  # msg
                        'nsfw@fahrradfreundliches-neukoelln.de',  # from
                        [sub.email.email])  # to
 

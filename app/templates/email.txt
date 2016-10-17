@@ -1,8 +1,9 @@
-Hello,
+{% load i18n %}
+{% blocktrans context "email" %}Hello,{% endblocktrans %}
 {% for alert in alerts %}
-{% if alert.report %}Yesterday we reached {{ alert.value }}µg/m³ of {{ alert.report.get_kind_display }} pollution at the station {{ station }}.{% endif %}
+{% if alert.report %}{% blocktrans with value=alert.value kind=alert.report.get_kind_display station=station context "email" %}Yesterday we reached {{ value }}µg/m³ of {{ kind }} pollution at the station {{ station }}.{% endblocktrans %}{% endif %}
 {% if alert.description %}{{ alert.description | safe }}{% endif %}
 {% endfor %}
-You subscribed on http://nsfw.fahrradfreundliches-neukoelln.de to receive alerts about station {{ station }}. If you don't want to receive alerts anymore, reply to this message.
+{% blocktrans with station=station context "email" %}You subscribed on http://nsfw.fahrradfreundliches-neukoelln.de to receive alerts about station {{ station }}. If you don't want to receive alerts anymore, reply to this message.
 
-The fahrradfreundliches-neukoelln.de team
+The fahrradfreundliches-neukoelln.de team{% endblocktrans %}

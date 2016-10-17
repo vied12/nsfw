@@ -15,7 +15,7 @@
                     <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}</label>
                     <div class="row" ng-if="!vm.subscribed">
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="Email">
+                            <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="{{'Email'|translate}}">
                         </div>
                         <div class="col-sm-4">
                             <button type="submit" class="btn btn-primary" translate>Subscribe</button>
