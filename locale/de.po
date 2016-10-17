@@ -1,10 +1,11 @@
 # Translators:
 # Edouard <edou4rd@gmail.com>, 2016
 # Yvonne Hagenbach <yvonne@lesotre.de>, 2016
+# Saskia <saskia@fahrradfreundliches-neukoelln.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Last-Translator: Yvonne Hagenbach <yvonne@lesotre.de>, 2016\n"
+"Last-Translator: Saskia <saskia@fahrradfreundliches-neukoelln.de>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,11 +33,11 @@ msgstr ""
 msgid "Address, City"
 msgstr "Straße, PLZ Stadt"
 
-#: app/static/station/template.html:50
-msgid "Average PM10 particules during last year"
-msgstr "Durchschnittliche Feinstaub-Belastung (PM10) des letzten Jahres"
+#: app/static/station/template.html:45
+msgid "Average during last year"
+msgstr "Durchschnittswert im letzten Jahr"
 
-#: app/static/station/module.js:233
+#: app/static/station/module.js:243
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
 
@@ -76,47 +77,48 @@ msgstr ""
 msgid "Last alerts in Berlin"
 msgstr "Letzte Warnungen in Berlin"
 
-#: app/static/station/template.html:73
+#: app/static/station/template.html:130
 msgid "Last alerts on this station"
 msgstr "Letzte Warnungen an dieser Messstation"
 
+#: app/static/station/template.html:41
+msgid "Last value"
+msgstr "Neuester Wert"
+
 #: app/static/station/template.html:15
 msgid "Leave your email address to receive alerts"
-msgstr "Hinterlassen Sie Ihre E-Mail-Adresse, um Warnmeldungen zu erhalten"
+msgstr ""
+"Hinterlassen Sie Ihre E-Mail-Adresse, um Feinstaub-Warnmeldungen zu erhalten"
 
-#: app/static/station/template.html:62
-msgid "Longest PM10 pollution streak during last year"
-msgstr "Längste Feinstaub-Belastung (PM10) des letzten Jahres"
+#: app/static/station/template.html:53
+msgid "Longest pollution streak<br> during last year"
+msgstr "Längste Periode mit täglicher Überschreitung im letzten Jahr"
 
-#: app/static/station/template.html:74
+#: app/static/station/template.html:131
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/station/template.html:67
+#: app/static/station/template.html:124
 msgid ""
-"PM10 is an important indicator of urban air pollution, and the health risks "
-"associated with the complex mixtures of pollutants typically found in "
-"cities. The smaller PM10 particles are able to penetrate deep into the "
-"lungs, and also to cross into the blood, causing damage in many organ "
-"systems."
+"PM<sub>10</sub> is an important indicator of urban air pollution, and the "
+"health risks associated with the complex mixtures of pollutants typically "
+"found in cities. The smaller PM<sub>10</sub> particles are able to penetrate"
+" deep into the lungs, and also to cross into the blood, causing damage in "
+"many organ systems."
 msgstr ""
-"Das Auftreten von Feinstaub (PM10) ist ein wichtiger Indikator für die "
-"Luftqualität. Die für Städte häufig typische daraus resultierende "
-"Luftverschmutzung stellt ein erhöhtes Gesundheitsrisiko dar. Besonders "
-"kleinere Feinstaub-Partikel können tief in das Lungengewebe eindringen, aber"
-" auch in die Blutbahn, was unterschiedlichste Organschäden verursachen kann."
+"PM<sub>10</sub> ist ein wichtiger Indikator für die städtische "
+"Luftverschmutzungund und die damit verbundenen Gesundheitsrisiken, die mit "
+"dem Ausstoß von Feinstaub in Städten entstehen. Die kleineren "
+"PM<sub>10</sub> Partikel können tief in die Lungen und den Blutkreislauf "
+"eindringen und damit Schäden an den verschiedenen Organen hervorrufen."
 
-#: app/static/station/template.html:40
-msgid "PM10 particles"
-msgstr "Feinstaub-Partikel (PM10)"
+#: app/static/station/template.html:136
+msgid "PM<sub>10</sub> particles pollution in time"
+msgstr "PM<sub>10</sub> Feinstaubwerte über die Zeit"
 
-#: app/static/station/template.html:79
-msgid "PM10 particles pollution in time"
-msgstr "Übersicht über die Feinstaub-Belastung (PM10)"
-
-#: app/static/station/template.html:56
-msgid "Polluted days during last year"
-msgstr "Luftverschmutzte Tage des letzten Jahres"
+#: app/static/station/template.html:49
+msgid "Polluted days<br>during last year"
+msgstr "Anzahl der Tage mit Überschreitungen im letzten Jahr"
 
 #: app/static/home/template.html:53
 msgid "See older alerts"
@@ -157,11 +159,11 @@ msgstr ""
 "Messstationen hier abonnieren und automatisch Warnmeldungen per E-Mail "
 "erhalten."
 
-#: app/static/station/template.html:85
+#: app/static/station/template.html:142
 msgid "Where the data come from"
 msgstr "Woher die Daten stammen"
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:62 app/static/station/template.html:94
 msgid "Yesterday"
 msgstr "Gestern"
 
@@ -193,7 +195,7 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/station/template.html:61
+#: app/static/station/template.html:113 app/static/station/template.html:81
 msgid "days"
 msgstr "Tage"
 
