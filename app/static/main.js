@@ -114,6 +114,6 @@
     ])
     .constant('moment', window.moment)
     .run(['gettextCatalog', function (gettextCatalog) {
-        gettextCatalog.debug = true;
+        gettextCatalog.debug = false;
     }]);
 })();
