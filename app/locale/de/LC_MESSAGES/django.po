@@ -3,14 +3,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-#, fuzzy
+# Translators:
+# Edouard <edou4rd@gmail.com>, 2016
+# Yvonne Hagenbach <yvonne@lesotre.de>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-17 21:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Edouard <edou4rd@gmail.com>, 2016\n"
+"Last-Translator: Yvonne Hagenbach <yvonne@lesotre.de>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,7 +23,7 @@ msgstr ""
 #: nsfw/management/commands/mails.py:24
 #, python-format
 msgid "Pollution Alerts at %(name)s"
-msgstr ""
+msgstr "Feinstaub-Warnung an %(name)s"
 
 #: templates/email.txt:2
 msgctxt "email"

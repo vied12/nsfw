@@ -54,13 +54,17 @@ msgstr ""
 "kommt. Finden Sie die nächstgelegene Messstation, um für den Winter "
 "gewappnet zu sein."
 
+#: app/static/station/template.html:18
+msgid "Email"
+msgstr "E-Mail"
+
 #: app/static/home/template.html:22
 msgid "Find"
 msgstr "Finden"
 
 #: app/static/home/template.html:15
 msgid "Find the closest station measuring air quality in Germany"
-msgstr "Finden Sie die am nächstgelegene Messstation (in Deutschland)"
+msgstr "Finden Sie die nächstgelegene Messstation (in Deutschland)"
 
 #: app/static/home/template.html:68
 msgid ""
@@ -195,7 +199,8 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/station/template.html:113 app/static/station/template.html:81
+#: app/static/station/template.html:106 app/static/station/template.html:113
+#: app/static/station/template.html:74 app/static/station/template.html:81
 msgid "days"
 msgstr "Tage"
 
