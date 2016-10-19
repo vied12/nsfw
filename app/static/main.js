@@ -17,8 +17,19 @@
             $resourceProvider.defaults.stripTrailingSlashes = false;
             $locationProvider.html5Mode({enabled:true}).hashPrefix('#');
             $stateProvider
-            .state('home', {
-                url: '/?language',
+            .state('app', {
+                abstract: true,
+                controller: ['$stateParams', 'gettextCatalog', function($stateParams, gettextCatalog) {
+                    // set language
+                    var language = angular.isDefined($stateParams.locale) ? $stateParams.locale : 'de';
+                    gettextCatalog.setCurrentLanguage(language);
+                    moment.locale(language);
+                }],
+                template: '<ui-view/>',
+                url: '/{locale}/'
+            })
+            .state('app.home', {
+                url: '',
                 params: {
                     showOlderAlerts: false
                 },
@@ -62,7 +73,7 @@
                     }]
                 }
             })
-            .state('home.station', {
+            .state('app.home.station', {
                 url: 'station/:station/',
                 params: {
                     markers: []

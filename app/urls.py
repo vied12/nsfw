@@ -20,6 +20,7 @@ from .nsfw.views import HomePageView
 from .nsfw.api import AlertViewSet, StationViewSet, SubscriptionViewSet
 from rest_framework import routers
 from django.views.decorators.cache import cache_page
+from django.conf.urls.i18n import i18n_patterns
 
 router = routers.DefaultRouter()
 router.register(r'alerts', AlertViewSet)
@@ -28,9 +29,13 @@ router.register(r'subscriptions', SubscriptionViewSet)
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),
+]
+
+urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^alerts/rss/(?P<station_id>\w+)/$', cache_page(60 * 60)(RssLatestEntriesFeed())),
     url(r'^alerts/atom/(?P<station_id>\w+)/$', cache_page(60 * 60)(AtomLatestEntriesFeed())),
     url(r'^$', cache_page(60 * 60)(HomePageView.as_view())),
     url(r'^station/(?P<station_id>\w+)/$', cache_page(60 * 60)(HomePageView.as_view())),
-]
+    # prefix_default_language=False
+)

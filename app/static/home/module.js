@@ -18,13 +18,9 @@
     }
 
 
-    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$scope', '$state', '$stateParams', 'gettextCatalog'];
-    function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state, $stateParams, gettextCatalog) {
+    HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$scope', '$state'];
+    function HomeCtrl(alerts, geocoderService, $resource, $q, $scope, $state) {
         var vm = this;
-        // set language
-        var language = angular.isDefined($stateParams.ln) ? $stateParams.ln : 'de';
-        gettextCatalog.setCurrentLanguage(language);
-        moment.locale(language);
         angular.extend(vm, {
             $state: $state,
             alerts: alerts,
@@ -80,7 +76,7 @@
                     if (!vm.address) {
                         vm.address = closest.name;
                     }
-                    $state.go('home.station', {station: closest.id, markers: markers});
+                    $state.go('app.home.station', {station: closest.id, markers: markers});
                 });
             }
         });
