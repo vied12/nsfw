@@ -18,10 +18,15 @@ msgid ""
 "term concentrations exceeding 200μg/m3, it is a toxic gas which causes "
 "significant inflammation of the airways."
 msgstr ""
+"200 μg/m³ ist der 1-Stunden-Grenzwert für NO<sub>2</sub>. Bei kurzfristigen"
+" Konzentrationen über 200 μg/m³ entsteht ein giftiges Gas, das eine "
+"erkennbare Entzündung der Atemwege verursacht."
 
 #: app/static/station/template.html:73
 msgid "20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
+"20 μg/m³ ist der zulässige Jahresmittelwert für die Belastung durch "
+"Feinstaub (PM<sub>10</sub>)."
 
 #: app/static/station/template.html:107
 msgid ""
@@ -31,10 +36,18 @@ msgid ""
 "lung function growth is also linked to NO2 at concentrations currently "
 "measured (or observed) in cities of Europe and North America."
 msgstr ""
+"40µg/m³ ist der zulässige Jahresmittelwert für die Luftverschmutzung durch "
+"Stickoxid (NO<sub>2</sub>). Epidemiologische Studien haben gezeigt, dass die"
+" Symptome von Bronchitis bei asthmatischen Kindern sich unter langfristigem "
+"Einfluss von NO<sub>2</sub> erhöhen. Ein verringertes Lungenwachstum wird "
+"ebenfalls der aktuell gemessenen (oder beobachteten) Konzentrationen von "
+"NO<sub>2</sub> in den Städten Europas und Nordamerikas zugeschrieben."
 
 #: app/static/station/template.html:61
 msgid "50μg/m3 mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
+"50 μg/m³ ist der durch die EU festgelegte Tages-Grenzwert für die "
+"Luftbelastung durch Feinstaub (PM<sub>10</sub>)."
 
 #: app/static/home/template.html:25
 msgid "Address, City"
@@ -46,7 +59,7 @@ msgstr "Durchschnittswert<br/>im letzten Jahr"
 
 #: app/static/home/template.html:54
 msgid "Click on a station to know more"
-msgstr ""
+msgstr "Auf die Messstation klicken, um mehr zu erfahren."
 
 #: app/static/station/module.js:244
 msgid "Concentration of PM10 particles (µg/m³)"
@@ -165,7 +178,7 @@ msgstr "Dies ist die nächstgelegene Messstation"
 
 #: app/static/home/template.html:76
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
-msgstr ""
+msgstr "Ins Deutsche übersetzt von Konstantin, Saskia und Yvonne."
 
 #: app/static/home/template.html:46
 msgid ""
