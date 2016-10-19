@@ -1,33 +1,40 @@
 # Translators:
-# Edouard <edou4rd@gmail.com>, 2016
 # Yvonne Hagenbach <yvonne@lesotre.de>, 2016
 # Saskia <saskia@fahrradfreundliches-neukoelln.de>, 2016
+# Edouard <edou4rd@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Last-Translator: Saskia <saskia@fahrradfreundliches-neukoelln.de>, 2016\n"
+"Last-Translator: Edouard <edou4rd@gmail.com>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/static/alerts/last.html:2
+#: app/static/station/template.html:95
 msgid ""
-"<span class=\"label label-danger\">{{ alert.report.kind}}</span>\n"
-"        pollution\n"
-"        <span ng-if=\"!vm.hideStation\">\n"
-"            at\n"
-"            <a ui-sref=\"app.home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
-"            station\n"
-"        </span>"
+"200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-"
+"term concentrations exceeding 200μg/m3, it is a toxic gas which causes "
+"significant inflammation of the airways."
 msgstr ""
-"<span class=\"label label-danger\">{{ alert.report.kind}}</span>\n"
-"Luftverschmutzung\n"
-"<span ng-if=\"!vm.hideStation\">\n"
-"an der Messstation\n"
-"<a ui-sref=\"app.home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
-"</span>"
+
+#: app/static/station/template.html:73
+msgid "20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution."
+msgstr ""
+
+#: app/static/station/template.html:107
+msgid ""
+"40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. "
+"Epidemiological studies have shown that symptoms of bronchitis in asthmatic "
+"children increase in association with long-term exposure to NO2. Reduced "
+"lung function growth is also linked to NO2 at concentrations currently "
+"measured (or observed) in cities of Europe and North America."
+msgstr ""
+
+#: app/static/station/template.html:61
+msgid "50μg/m3 mean is the limit for PM<sub>10</sub> pollution."
+msgstr ""
 
 #: app/static/home/template.html:25
 msgid "Address, City"
@@ -37,15 +44,15 @@ msgstr "Straße, PLZ Stadt"
 msgid "Average during last year"
 msgstr "Durchschnittswert<br/>im letzten Jahr"
 
-#: app/static/station/module.js:243
+#: app/static/home/template.html:54
+msgid "Click on a station to know more"
+msgstr ""
+
+#: app/static/station/module.js:244
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
 
-#: app/static/home/template.html:68
-msgid "Developed by"
-msgstr "Entwickelt von"
-
-#: app/static/home/template.html:57
+#: app/static/home/template.html:60
 msgid ""
 "During summer, the air quality in Berlin is quite good. But winter is "
 "coming. Find the closest station to be prepared for next winter."
@@ -66,7 +73,7 @@ msgstr "Finden"
 msgid "Find the closest station measuring air quality in Germany"
 msgstr "Finden Sie die nächstgelegene Messstation (in Deutschland)"
 
-#: app/static/home/template.html:73
+#: app/static/home/template.html:77
 msgid ""
 "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" "
 "target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-"
@@ -77,11 +84,11 @@ msgstr ""
 "oder <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">senden Sie uns"
 " eine E-Mail</a>"
 
-#: app/static/home/template.html:52
+#: app/static/home/template.html:53
 msgid "Last alerts in Berlin"
 msgstr "Letzte Warnungen in Berlin"
 
-#: app/static/station/template.html:130
+#: app/static/station/template.html:134
 msgid "Last alerts on this station"
 msgstr "Letzte Warnungen an dieser Messstation"
 
@@ -98,11 +105,15 @@ msgstr ""
 msgid "Longest pollution streak<br> during last year"
 msgstr "Längste Periode mit täglicher<br/>Überschreitung im letzten Jahr"
 
-#: app/static/station/template.html:131
+#: app/static/home/template.html:71
+msgid "Made by"
+msgstr "Entwickelt von"
+
+#: app/static/station/template.html:135
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/station/template.html:124
+#: app/static/station/template.html:128
 msgid ""
 "PM<sub>10</sub> is an important indicator of urban air pollution, and the "
 "health risks associated with the complex mixtures of pollutants typically "
@@ -116,7 +127,7 @@ msgstr ""
 "PM<sub>10</sub>-Partikel können tief in die Lungen und den Blutkreislauf "
 "eindringen und damit Schäden an den verschiedenen Organen hervorrufen."
 
-#: app/static/station/template.html:136
+#: app/static/station/template.html:140
 msgid "PM<sub>10</sub> particles pollution in time"
 msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 
@@ -124,7 +135,7 @@ msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 msgid "Polluted days<br>during last year"
 msgstr "Anzahl der Tage mit<br/>Überschreitungen im letzten Jahr"
 
-#: app/static/home/template.html:58
+#: app/static/home/template.html:61
 msgid "See older alerts"
 msgstr "Ältere Warnungen anzeigen"
 
@@ -144,7 +155,7 @@ msgstr "Eingetragen!"
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/static/home/template.html:56
+#: app/static/home/template.html:59
 msgid "There is no recent alert in Berlin"
 msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 
@@ -152,11 +163,17 @@ msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 msgid "This is the closest station"
 msgstr "Dies ist die nächstgelegene Messstation"
 
+#: app/static/home/template.html:76
+msgid "Translated into German by Saskia, Konstantin and Yvonne."
+msgstr ""
+
 #: app/static/home/template.html:46
 msgid ""
-"We are collecting the daily reports from Umwelt Bundesamt stations measuring"
-" air quality in Germany and give you the possibility to follow some of them "
-"by receiving alerts."
+"We are collecting the daily reports from the German Environmental Protection"
+" Agency who is measuring the air quality at different points in the country."
+" This tool helps you to find your closed station and give you the "
+"possibility to follow it by receiving email alerts or by subscribing to its "
+"RSS feed."
 msgstr ""
 "Wir sammeln die täglichen Daten des Umwelt&shy;bundes&shy;amts, dessen "
 "Messstationen die Luftqualität in Deutsch&shy;land messen. Verfolgen Sie die"
@@ -165,11 +182,11 @@ msgstr ""
 "(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
 "Feeds abonnieren."
 
-#: app/static/station/template.html:142
+#: app/static/station/template.html:146
 msgid "Where the data come from"
 msgstr "Woher die Daten stammen"
 
-#: app/static/station/template.html:62 app/static/station/template.html:94
+#: app/static/station/template.html:63 app/static/station/template.html:97
 msgid "Yesterday"
 msgstr "Gestern"
 
@@ -187,11 +204,11 @@ msgstr ""
 msgid "an error occured!"
 msgstr "Es ist ein Fehler aufgetreten."
 
-#: app/static/home/template.html:70
+#: app/static/home/template.html:73
 msgid "an illustration from"
 msgstr "einer Grafik von"
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:75
 msgid ""
 "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-"
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's "
@@ -201,25 +218,25 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/station/template.html:106 app/static/station/template.html:113
-#: app/static/station/template.html:74 app/static/station/template.html:81
+#: app/static/station/template.html:110 app/static/station/template.html:117
+#: app/static/station/template.html:76 app/static/station/template.html:83
 msgid "days"
 msgstr "Tage"
 
-#: app/static/home/template.html:69
+#: app/static/home/template.html:72
 msgid "from a brillant idea of"
 msgstr "aufgrund einer brillanten Idee von"
 
-#: app/static/alerts/last.html:14
+#: app/static/alerts/last.html:11
 msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr "am"
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:74
 msgid "with the helpful Carmen's design advices"
 msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
 
-#: app/static/alerts/module.js:14
+#: app/static/alerts/module.js:4
 msgid ""
 "{{ value }}µg/m³ is the limit for {{ kind }} pollution based on WHO "
 "recommendations"
