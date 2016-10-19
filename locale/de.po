@@ -118,7 +118,7 @@ msgstr ""
 
 #: app/static/station/template.html:136
 msgid "PM<sub>10</sub> particles pollution in time"
-msgstr "PM<sub>10</sub> Feinstaubwerte über die Zeit"
+msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 
 #: app/static/station/template.html:49
 msgid "Polluted days<br>during last year"
@@ -158,10 +158,12 @@ msgid ""
 " air quality in Germany and give you the possibility to follow some of them "
 "by receiving alerts."
 msgstr ""
-"Wir sammeln die täglichen Daten des Umweltbundesamts, dessen Messstationen "
-"die Luftqualität in Deutschland messen. Sie können Daten ausgewählter "
-"Messstationen hier abonnieren und automatisch Warnmeldungen per E-Mail "
-"erhalten."
+"Wir sammeln die täglichen Daten des Umwelt&shy;bundes&shy;amts, dessen "
+"Messstationen die Luftqualität in Deutschland messen. Verfolgen Sie die "
+"aktuellen Wert einer oder mehrerer ausgewählter Messstationen und erhalten "
+"automatisch Warnmeldungen per E-Mail. Einfach (1) oben Adresse eingeben, (2)"
+" unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
+"Feeds abonnieren."
 
 #: app/static/station/template.html:142
 msgid "Where the data come from"
