@@ -6,7 +6,7 @@
         </span>
     </h3>
     <span class="pollution"
-    uib-tooltip="{{ vm.tooltipBody(alert) }}"
+    uib-tooltip="{{ vm.tooltipBody(alert.report.kind) }}"
     tooltip-placement="bottom">{{ alert.value }}</span>
     <span translate translate-context="before a full date. ex: on Saturday, October 1, 2016">on</span>
     {{ vm.moment(alert.report.date).format('LL') }}

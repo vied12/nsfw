@@ -1,7 +1,7 @@
 (function() {
     'use strict';
-    StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource', 'moment'];
-    function StationCtrl(alerts, station, markers, $resource, moment) {
+    StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource', 'moment', 'tooltipBody'];
+    function StationCtrl(alerts, station, markers, $resource, moment, tooltipBody) {
         var vm = this;
         var formatDate = d3.time.format('%Y%m%d');
         function getLastMeasure(data) {
@@ -84,6 +84,7 @@
         }
         angular.extend(vm, {
             moment: moment,
+            tooltipBody: tooltipBody,
             host: location.host,
             subscribe: function() {
                 vm.subscribed = false;

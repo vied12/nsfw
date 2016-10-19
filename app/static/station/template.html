@@ -57,7 +57,8 @@
                         <tr>
                             <th><span class="label label-danger">PM<sub>10</sub></span></th>
                             <td>
-                                <div class="number">{{ vm.mp10LastMeasure.value }}µg/m³</div>
+                                <span class="number">{{ vm.mp10LastMeasure.value }}µg/m³</span>
+                                <i tooltip-append-to-body="true" uib-tooltip-html="'50μg/m3 mean is the limit for PM<sub>10</sub> pollution.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                                 <div class="description">
                                     <div ng-if="::vm.dateIsYesterday(vm.mp10LastMeasure.date)" translate>
                                         Yesterday
@@ -68,7 +69,8 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="number">{{ vm.mp10Average | number:0 }}µg/m³</div>
+                                <span class="number">{{ vm.mp10Average | number:0 }}µg/m³</span>
+                                <i tooltip-append-to-body="true" uib-tooltip-html="'20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                             </td>
                             <td>
                                 <div class="number">{{ vm.mp10Sum }} {{'days'|translate}}</div>
@@ -89,7 +91,8 @@
                         <tr>
                             <th><span class="label label-danger">NO<sub>2</sub></span></th>
                             <td>
-                                <div class="number">{{ vm.no2LastMeasure.value }}µg/m³</div>
+                                <span class="number">{{ vm.no2LastMeasure.value }}µg/m³</span>
+                                <i tooltip-append-to-body="true" uib-tooltip-html="'200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-term concentrations exceeding 200μg/m3, it is a toxic gas which causes significant inflammation of the airways.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                                 <div class="description">
                                     <div ng-if="::vm.dateIsYesterday(vm.no2LastMeasure.date)" translate>
                                         Yesterday
@@ -100,7 +103,8 @@
                                 </div>
                             </td>
                             <td>
-                                <div class="number">{{ vm.no2Average | number:0 }}µg/m³</div>
+                                <span class="number">{{ vm.no2Average | number:0 }}µg/m³</span>
+                                <i tooltip-append-to-body="true" uib-tooltip-html="'40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. Epidemiological studies have shown that symptoms of bronchitis in asthmatic children increase in association with long-term exposure to NO2. Reduced lung function growth is also linked to NO2 at concentrations currently measured (or observed) in cities of Europe and North America.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                             </td>
                             <td>
                                 <div class="number">{{ vm.no2Sum }} {{'days'|translate}}</div>

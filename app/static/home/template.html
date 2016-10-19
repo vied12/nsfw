@@ -49,7 +49,10 @@
         </div>
         <div class="col-md-7 col-md-pull-5" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
             <div ng-if="vm.alerts.length > 0">
-                <h2 translate>Last alerts in Berlin</h2>
+                <h2>
+                    <div translate>Last alerts in Berlin</div>
+                    <div translate class="small">Click on a station to know more</div>
+                </h2>
                 <last-alert data-alerts="vm.alerts"></last-alert>
             </div>
             <div ng-if="vm.alerts.length === 0">
