@@ -4,15 +4,15 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Edouard <edou4rd@gmail.com>, 2016
 # Yvonne Hagenbach <yvonne@lesotre.de>, 2016
+# Edouard <edou4rd@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-17 21:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Yvonne Hagenbach <yvonne@lesotre.de>, 2016\n"
+"Last-Translator: Edouard <edou4rd@gmail.com>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -58,7 +58,9 @@ msgid ""
 " air quality in Germany and give you the possibility to follow some of them "
 "by receiving alerts."
 msgstr ""
-"Wir sammeln die täglichen Daten des Umweltbundesamts, dessen Messstationen "
-"die Luftqualität in Deutschland messen. Sie können Daten ausgewählter "
-"Messstationen hier abonnieren und automatisch Warnmeldungen per E-Mail "
-"erhalten."
+"Wir sammeln die täglichen Daten des Umwelt&shy;bundes&shy;amts, dessen "
+"Messstationen die Luftqualität in Deutsch&shy;land messen. Verfolgen Sie die"
+" aktuellen Werte einer oder mehrerer ausgewählter Messstationen und erhalten"
+" automatisch Warnmeldungen per E-Mail. Einfach (1) oben Adresse eingeben, "
+"(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
+"Feeds abonnieren."
