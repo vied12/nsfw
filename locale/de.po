@@ -18,7 +18,7 @@ msgid ""
 "        pollution\n"
 "        <span ng-if=\"!vm.hideStation\">\n"
 "            at\n"
-"            <a ui-sref=\"home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
+"            <a ui-sref=\"app.home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
 "            station\n"
 "        </span>"
 msgstr ""
@@ -26,10 +26,10 @@ msgstr ""
 "Luftverschmutzung\n"
 "<span ng-if=\"!vm.hideStation\">\n"
 "an der Messstation\n"
-"<a ui-sref=\"home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
+"<a ui-sref=\"app.home.station({station: alert.station.id})\" ng-bind=\"alert.station.name\"></a>\n"
 "</span>"
 
-#: app/static/home/template.html:20
+#: app/static/home/template.html:25
 msgid "Address, City"
 msgstr "Straße, PLZ Stadt"
 
@@ -41,11 +41,11 @@ msgstr "Durchschnittswert<br/>im letzten Jahr"
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
 
-#: app/static/home/template.html:63
+#: app/static/home/template.html:68
 msgid "Developed by"
 msgstr "Entwickelt von"
 
-#: app/static/home/template.html:52
+#: app/static/home/template.html:57
 msgid ""
 "During summer, the air quality in Berlin is quite good. But winter is "
 "coming. Find the closest station to be prepared for next winter."
@@ -58,15 +58,15 @@ msgstr ""
 msgid "Email"
 msgstr "E-Mail"
 
-#: app/static/home/template.html:22
+#: app/static/home/template.html:27
 msgid "Find"
 msgstr "Finden"
 
-#: app/static/home/template.html:15
+#: app/static/home/template.html:20
 msgid "Find the closest station measuring air quality in Germany"
 msgstr "Finden Sie die nächstgelegene Messstation (in Deutschland)"
 
-#: app/static/home/template.html:68
+#: app/static/home/template.html:73
 msgid ""
 "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" "
 "target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-"
@@ -77,7 +77,7 @@ msgstr ""
 "oder <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">senden Sie uns"
 " eine E-Mail</a>"
 
-#: app/static/home/template.html:47
+#: app/static/home/template.html:52
 msgid "Last alerts in Berlin"
 msgstr "Letzte Warnungen in Berlin"
 
@@ -124,7 +124,7 @@ msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 msgid "Polluted days<br>during last year"
 msgstr "Anzahl der Tage mit<br/>Überschreitungen im letzten Jahr"
 
-#: app/static/home/template.html:53
+#: app/static/home/template.html:58
 msgid "See older alerts"
 msgstr "Ältere Warnungen anzeigen"
 
@@ -144,15 +144,15 @@ msgstr "Eingetragen!"
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/static/home/template.html:51
+#: app/static/home/template.html:56
 msgid "There is no recent alert in Berlin"
 msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 
-#: app/static/home/template.html:35
+#: app/static/home/template.html:40
 msgid "This is the closest station"
 msgstr "Dies ist die nächstgelegene Messstation"
 
-#: app/static/home/template.html:41
+#: app/static/home/template.html:46
 msgid ""
 "We are collecting the daily reports from Umwelt Bundesamt stations measuring"
 " air quality in Germany and give you the possibility to follow some of them "
@@ -187,11 +187,11 @@ msgstr ""
 msgid "an error occured!"
 msgstr "Es ist ein Fehler aufgetreten."
 
-#: app/static/home/template.html:65
+#: app/static/home/template.html:70
 msgid "an illustration from"
 msgstr "einer Grafik von"
 
-#: app/static/home/template.html:67
+#: app/static/home/template.html:72
 msgid ""
 "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-"
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's "
@@ -206,7 +206,7 @@ msgstr ""
 msgid "days"
 msgstr "Tage"
 
-#: app/static/home/template.html:64
+#: app/static/home/template.html:69
 msgid "from a brillant idea of"
 msgstr "aufgrund einer brillanten Idee von"
 
@@ -215,7 +215,7 @@ msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr "am"
 
-#: app/static/home/template.html:66
+#: app/static/home/template.html:71
 msgid "with the helpful Carmen's design advices"
 msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
 
