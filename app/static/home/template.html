@@ -42,14 +42,17 @@
     </div>
     <div ui-view></div>
     <div class="row">
-        <div class="col-md-push-8 col-md-4" ng-if="vm.$state.is('app.home')">
+        <div class="col-md-push-7 col-md-5" ng-if="vm.$state.is('app.home')">
             <div class="well lead" translate>
-                We are collecting the daily reports from Umwelt Bundesamt stations measuring air quality in Germany and give you the possibility to follow some of them by receiving alerts.
+                We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closed station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed.
             </div>
         </div>
-        <div class="col-md-8" ng-class="{'col-md-pull-4': vm.$state.is('app.home')}" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
+        <div class="col-md-7 col-md-pull-5" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
             <div ng-if="vm.alerts.length > 0">
-                <h2 translate>Last alerts in Berlin</h2>
+                <h2>
+                    <div translate>Last alerts in Berlin</div>
+                    <div translate class="small">Click on a station to know more</div>
+                </h2>
                 <last-alert data-alerts="vm.alerts"></last-alert>
             </div>
             <div ng-if="vm.alerts.length === 0">
@@ -65,15 +68,16 @@
     <footer>
         <div class="row">
             <div class="credits col-md-10 col-md-push-2">
-                {{'Developed by'|translate}} <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
+                {{'Made by'|translate}} <a href="https://twitter.com/vied12" target="_blank">Edouard</a>,
                 {{'from a brillant idea of'|translate}} <a href="https://twitter.com/jmi" target="_blank">Jan</a>,
                 {{'an illustration from'|translate}} <a href="https://www.flickr.com/photos/davdenic/20265152826/" target="_blank">David Denicolò</a>
                 {{'with the helpful Carmen\'s design advices'|translate}}
                 <span translate>and the <a href="https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany" target="_blank">UBA's data</a>.</span>
+                <span translate>Translated into German by Saskia, Konstantin and Yvonne.</span>
                 <span translate>Give us feedback on <a href="https://github.com/vied12/nsfw/issues" target="_blank">github</a> or <a href="mailto:nsfw@fahrradfreundliches-neukoelln.de">send us a mail</a>.</span>
             </div>
             <div class="col-md-2 col-md-pull-10">
-                <img src="/static/images/NFN_Logo_RGB.png"/>
+                <a href="http://fahrradfreundliches-neukoelln.de" target="_blank"><img src="/static/images/NFN_Logo_RGB.png"/></a>
             </div>
         </div>
     </footer>

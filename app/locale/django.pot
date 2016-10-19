@@ -3,11 +3,12 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-17 21:46+0200\n"
+"POT-Creation-Date: 2016-10-19 18:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,7 +48,8 @@ msgstr ""
 
 #: templates/home.html:11
 msgid ""
-"We are collecting the daily reports from Umwelt Bundesamt stations measuring "
-"air quality in Germany and give you the possibility to follow some of them "
-"by receiving alerts."
+"We are collecting the daily reports from the German Environmental Protection "
+"Agency who is measuring the air quality at different points in the country. "
+"This tool helps you to find your closed station and give you the possibility "
+"to follow it by receiving email alerts or by subscribing to its RSS feed."
 msgstr ""
