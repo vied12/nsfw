@@ -34,10 +34,14 @@
             if (!data) {return;}
             var lastYear = new Date();
             lastYear.setFullYear(lastYear.getFullYear() - 1);
-            var values = _.map(
-                _.filter(data.values, function(v, k) {
-                    return parseInt(k) > parseInt(formatDate(lastYear)) && v > limit;
-                }),
+            var values = _.filter(data.values, function(v, k) {
+                return parseInt(k) > parseInt(formatDate(lastYear));
+            });
+            if (values.length < 1) {return;}
+            values = _.filter(data.values, function(v, k) {
+                return v > limit;
+            });
+            values = _.map(values,
                 function(d) {return parseInt(d[0]);}
             );
             return values.length;
