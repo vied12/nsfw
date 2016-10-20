@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12" ng-if="vm.station.pm10_data && vm.mp10Average">
+        <div class="col-xs-12" ng-if="::vm.mp10Average || vm.no2Average">
             <h2 translate>Summary</h2>
             <div class="table-responsive">
                 <table class="table Station__stats">
@@ -56,7 +56,7 @@
                     <tbody>
                         <tr>
                             <th><span class="label label-danger">PM<sub>10</sub></span></th>
-                            <td>
+                            <td ng-if="vm.mp10LastMeasure.value">
                                 <span class="number">{{ vm.mp10LastMeasure.value }}µg/m³</span>
                                 <i tooltip-append-to-body="true" uib-tooltip-html="'50μg/m3 mean is the limit for PM<sub>10</sub> pollution.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                                 <div class="description">
@@ -68,12 +68,21 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td ng-if="!vm.mp10LastMeasure.value">
+                                <span class="number">—</span>
+                            </td>
+                            <td ng-if="vm.mp10Average">
                                 <span class="number">{{ vm.mp10Average | number:0 }}µg/m³</span>
                                 <i tooltip-append-to-body="true" uib-tooltip-html="'20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                             </td>
-                            <td>
+                            <td ng-if="!vm.mp10Average">
+                                <span class="number">—</span>
+                            </td>
+                            <td ng-if="vm.mp10Sum !== undefined">
                                 <div class="number">{{ vm.mp10Sum }} {{'days'|translate}}</div>
+                            </td>
+                            <td ng-if="vm.mp10Sum === undefined">
+                                <div class="number">—</div>
                             </td>
                             <td>
                                 <div ng-if="!vm.mp10LongestStreak.value">
@@ -90,7 +99,7 @@
                         </tr>
                         <tr>
                             <th><span class="label label-danger">NO<sub>2</sub></span></th>
-                            <td>
+                            <td ng-if="vm.no2LastMeasure.value">
                                 <span class="number">{{ vm.no2LastMeasure.value }}µg/m³</span>
                                 <i tooltip-append-to-body="true" uib-tooltip-html="'200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-term concentrations exceeding 200μg/m3, it is a toxic gas which causes significant inflammation of the airways.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                                 <div class="description">
@@ -102,12 +111,21 @@
                                     </div>
                                 </div>
                             </td>
-                            <td>
+                            <td ng-if="!vm.no2LastMeasure.value">
+                                <div class="number">—</div>
+                            </td>
+                            <td ng-if="vm.no2Average">
                                 <span class="number">{{ vm.no2Average | number:0 }}µg/m³</span>
                                 <i tooltip-append-to-body="true" uib-tooltip-html="'40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. Epidemiological studies have shown that symptoms of bronchitis in asthmatic children increase in association with long-term exposure to NO2. Reduced lung function growth is also linked to NO2 at concentrations currently measured (or observed) in cities of Europe and North America.'|translate" tooltip-placement="right" class="material-icons md-18">info_outline</i>
                             </td>
-                            <td>
+                            <td ng-if="!vm.no2Average">
+                                <div class="number">—</div>
+                            </td>
+                            <td ng-if="vm.no2Sum !== undefined">
                                 <div class="number">{{ vm.no2Sum }} {{'days'|translate}}</div>
+                            </td>
+                            <td ng-if="vm.no2Sum === undefined">
+                                <div class="number">—</div>
                             </td>
                             <td>
                                 <div ng-if="!vm.no2LongestStreak.value">
@@ -131,9 +149,11 @@
         </div>
     </div>
     <div class="row" ng-if="::!vm.station.pm10_data || !vm.mp10Average">
-        <h2 translate>Last alerts on this station</h2>
-        <div ng-if="vm.alerts.length < 1" translate>No alert found</div>
-        <last-alert data-alerts="::vm.alerts" data-hide-station="true"></last-alert>
+        <div class="col-md-12">
+            <h2 translate>Last alerts on this station</h2>
+            <div ng-if="vm.alerts.length < 1" translate>No alert found</div>
+            <last-alert data-alerts="::vm.alerts" data-hide-station="true"></last-alert>
+        </div>
     </div>
     <div class="row" ng-if="::vm.isDatavisPossible">
         <div class="col-md-12">
