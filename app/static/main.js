@@ -88,7 +88,7 @@
                                 main: {
                                     lat: station.lat,
                                     lng: station.lon,
-                                    message: '<a ui-sref="home.station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
+                                    message: '<a ui-sref="app.home.station({station: \'' + station.id +'\'})">' + station.name + ' ' + station.id + '</a>',
                                     focus: true
                                 }
                             };
