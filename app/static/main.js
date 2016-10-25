@@ -56,7 +56,7 @@
                             'DEBE018',
                             'DEBE010'
                         ].join(',');
-                        var url = 'api/alerts/?&limit=3&station=' + stations;
+                        var url = 'api/alerts/?&limit=10&station=' + stations;
                         if (!$stateParams.showOlderAlerts) {
                             var x = new Date();
                             x.setDate(1);
