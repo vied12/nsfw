@@ -3,7 +3,7 @@ import os
 import sys
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger('nsfw')
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
