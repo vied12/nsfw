@@ -21,6 +21,8 @@ dateTo={today}&station={station}'.format(today=today, station=station.id))
             no2 = requests.get('https://www.umweltbundesamt.de/en/luftdaten/\
 data?pollutant=NO2&data_type=1TMAX&date=20130101&\
 dateTo={today}&station={station}'.format(today=today, station=station.id))
+            assert no2.status_code is 200, 'error when downloading data for %s:\n%s' % (station, no2.__dict__)
+            assert pm10_r.status_code is 200, 'error when downloading data for %s:\n%s' % (station, pm10_r.__dict__)
             pm10 = pm10_r.content.decode('utf8')
             no2 = no2.content.decode('utf8')
             if pm10:
