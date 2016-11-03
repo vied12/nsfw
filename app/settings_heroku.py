@@ -43,6 +43,10 @@ LOGGING = {
         }
     },
     'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
         'nsfw': {
             'handlers': ['console'],
             'level': 'INFO',
