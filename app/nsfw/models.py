@@ -48,7 +48,7 @@ class Report(models.Model):
                 name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
                 lat=station['lat'],
                 lon=station['lon'])
-            if val > thresholds[self.kind]:
+            if val >= thresholds[self.kind]:
                 Alert.objects.get_or_create(
                     report=self,
                     station=station,
