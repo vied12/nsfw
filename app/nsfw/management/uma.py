@@ -13,11 +13,12 @@ class UmaCommand(BaseCommand):
         for date in options['date']:
             date = list(map(lambda _: int(_), date.split('.')))
             date = datetime.date(date[2], date[1], date[0])
-            req = requests.get('https://www.umweltbundesamt.de/en/luftdaten\
+            url = 'https://www.umweltbundesamt.de/en/luftdaten\
 /stations/locations?pollutant={pollutant}&data_type={data_type}&date={date}\
 &hour=15'.format(date=date.strftime('%Y%m%d'),
                  pollutant=self.pollutant,
-                 data_type=self.data_type))
+                 data_type=self.data_type)
+            req = requests.get(url)
             content = req.content.decode('utf8')
             if content:
                 res, created = Report.objects.get_or_create(
@@ -26,3 +27,5 @@ class UmaCommand(BaseCommand):
                     date=date)
                 if created:
                     self.stdout.write(self.style.SUCCESS('%s' % res))
+            else:
+                raise Exception('%s: no data available yet on %s. %s' % (self.pollutant, date, url))
