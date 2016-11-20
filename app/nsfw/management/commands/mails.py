@@ -11,7 +11,7 @@ class Command(BaseCommand):
     help = 'Send emails'
 
     def generate_messages(self):
-        for sub in Subscription.objects.all():
+        for sub in Subscription.objects.filter(email__isnull=False):
             alerts = Alert.objects.filter(station=sub.station, created__gte=datetime.date.today())
             if alerts:
                 ctx = {'alerts': alerts, 'station': sub.station, 'email': sub.email}
