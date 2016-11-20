@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'compressor',
     'app.nsfw',
+    'app.messenger_bot',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -176,11 +177,19 @@ def get_cache():
         }
     except:
         return {
+            # 'default': {
+            #     'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
+            # }
             'default': {
-                'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
+                'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+                'LOCATION': 'nsfw'
             }
         }
 
 CACHES = get_cache()
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+FB_VERIFY_TOKEN = os.environ.get('FB_VERIFY_TOKEN')
+WIT_TOKEN = os.environ.get('WIT_TOKEN')
+FB_PAGE_TOKEN = os.environ.get('FB_PAGE_TOKEN')

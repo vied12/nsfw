@@ -3,6 +3,8 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 import csv
 import html
+from app.messenger_bot.models import Messenger
+
 
 # From WHO
 # see: http://www.who.int/mediacentre/factsheets/fs313/en/
@@ -68,11 +70,12 @@ class Alert(models.Model):
 
 
 class Subscription(models.Model):
-    email = models.ForeignKey('Email')
+    email = models.ForeignKey('Email', null=True)
+    messenger = models.ForeignKey(Messenger, null=True)
     station = models.ForeignKey('Station')
 
     def __str__(self):
-        return '%s\'s subscription to %s' % (self.email.email, self.station)
+        return '%s\'s subscription to %s' % (self.messenger or self.email.email, self.station)
 
 
 class Email(models.Model):
