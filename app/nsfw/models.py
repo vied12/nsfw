@@ -45,9 +45,9 @@ class Report(models.Model):
                 continue
             station, created = Station.objects.get_or_create(
                 id=station['stationCode'],
-                name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
-                lat=station['lat'],
-                lon=station['lon'])
+                defaults=dict(name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
+                              lat=station['lat'],
+                              lon=station['lon']))
             if val >= thresholds[self.kind]:
                 Alert.objects.get_or_create(
                     report=self,
