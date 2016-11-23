@@ -40,8 +40,11 @@ class NSFWMessengerBot(generic.View):
                 if 'message' in message:
                     fb_id = message['sender']['id']
                     # We retrieve the message content
-                    text = message['message']['text']
-                    client.run_actions(session_id=fb_id, message=text)
+                    try:
+                        text = message['message'].get('text')
+                        client.run_actions(session_id=fb_id, message=text)
+                    except:
+                        pass
         return HttpResponse()
 
 
