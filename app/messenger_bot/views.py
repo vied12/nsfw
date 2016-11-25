@@ -118,6 +118,17 @@ def subscribe(request):
     return context
 
 
+def is_subscribed(session_id, station):
+    try:
+        messenger = Messenger.objects.get(messenger_id=session_id)
+        return Subscription.objects.filter(
+            messenger=messenger,
+            station=station
+        ).exists()
+    except (Messenger.DoesNotExist, Subscription.DoesNotExist):
+        return False
+
+
 def get_air_quality(request):
     geolocator = Nominatim()
     context = request['context']
@@ -134,6 +145,8 @@ def get_air_quality(request):
                 context['outOfGermany'] = True
             else:
                 closest_station = get_closest_station(loc.latitude, loc.longitude)
+                if is_subscribed(request['session_id'], closest_station):
+                    context['subscribed'] = True
                 # oldest alert we want
                 max_date = datetime.datetime.now() - datetime.timedelta(days=2)
                 last_alert = Alert.objects.filter(station=closest_station, report__date__gte=max_date).last()
