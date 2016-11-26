@@ -27,4 +27,5 @@ class Command(BaseCommand):
                        [sub.email.email])  # to
 
     def handle(self, *args, **options):
-        send_mass_mail(self.generate_messages())
+        email_sent = send_mass_mail(self.generate_messages())
+        self.stdout.write(self.style.SUCCESS('emails sent: %s' % email_sent))

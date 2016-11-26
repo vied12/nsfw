@@ -8,6 +8,7 @@ class Command(BaseCommand):
     help = 'Send message on Messenger'
 
     def handle(self, *args, **options):
+        count = 0
         for sub in Subscription.objects.filter(messenger__isnull=False):
             alerts = Alert.objects.filter(station=sub.station, created__gte=datetime.date.today())
             if alerts:
@@ -20,3 +21,5 @@ class Command(BaseCommand):
                         station=sub.station
                     )
                 fb_message(sub.messenger.messenger_id, msg)
+                count += 1
+        self.stdout.write(self.style.SUCCESS('messages sent: %s' % count))
