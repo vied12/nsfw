@@ -111,7 +111,7 @@ def subscribe(request):
     station = cache.get(request['session_id'])
     if station:
         Subscription.objects.get_or_create(messenger=messenger, station=Station.objects.get(pk=station))
-        context['subscribed'] = created
+        context['justSubscribed'] = created
     else:
         logger.error('Messenger Subscription. Station not known. %s' % request)
         context['noStation'] = True
@@ -134,6 +134,25 @@ def get_air_quality(request):
     context = request['context']
     entities = request['entities']
     loc = first_entity_value(entities, 'location')
+
+    for k in (
+        'missingLocation',
+        'outOfGermany',
+        'subscribed',
+        'notSubscribed',
+        'location',
+        'station',
+        'stationId',
+        'lastAlertValue',
+        'lastAlertDate',
+        'kind',
+        'clean',
+        'notFound',
+    ):
+        try:
+            del context[k]
+        except KeyError:
+            pass
     if not loc:
         context['missingLocation'] = True
     else:
@@ -141,12 +160,16 @@ def get_air_quality(request):
         if not loc:
             loc = geolocator.geocode('{}, Germany'.format(loc), language='en')
         if loc:
+            # out of germany ?
             if loc.address.split(', ')[-1] != 'Germany':
                 context['outOfGermany'] = True
             else:
                 closest_station = get_closest_station(loc.latitude, loc.longitude)
+                # is subscribed ?
                 if is_subscribed(request['session_id'], closest_station):
                     context['subscribed'] = True
+                else:
+                    context['notSubscribed'] = True
                 # oldest alert we want
                 max_date = datetime.datetime.now() - datetime.timedelta(days=2)
                 last_alert = Alert.objects.filter(station=closest_station, report__date__gte=max_date).last()
