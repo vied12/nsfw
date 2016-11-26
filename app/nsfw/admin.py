@@ -32,6 +32,6 @@ admin.site.register(Email, EmailAdmin)
 
 
 class SubscriptionAdmin(admin.ModelAdmin):
-    list_display = ('email', 'station')
+    list_display = ('station', 'email', 'messenger')
     list_filter = ('email__email', 'station')
 admin.site.register(Subscription, SubscriptionAdmin)
