@@ -37,32 +37,13 @@
                 templateUrl: '/home/template.html',
                 controller: 'HomeCtrl',
                 resolve: {
-                    alerts: ['$stateParams', '$resource', '$filter', function($stateParams, $resource, $filter) {
-                        var stations = [
-                            'DEBE069',
-                            'DEBE068',
-                            'DEBE067',
-                            'DEBE066',
-                            'DEBE065',
-                            'DEBE064',
-                            'DEBE063',
-                            'DEBE062',
-                            'DEBE061',
-                            'DEBE056',
-                            'DEBE051',
-                            'DEBE034',
-                            'DEBE032',
-                            'DEBE027',
-                            'DEBE018',
-                            'DEBE010'
-                        ].join(',');
-                        var url = 'api/alerts/?&limit=10&station=' + stations;
+                    alerts: ['$stateParams', '$resource', 'moment',
+                    function($stateParams, $resource, moment) {
+                        var url = 'api/alerts/?&limit=10';
                         if (!$stateParams.showOlderAlerts) {
-                            var x = new Date();
-                            x.setDate(1);
-                            x.setMonth(x.getMonth()-1);
-                            var date = $filter('date')(x, 'yyyy-MM-dd');
-                            url += '&max_date='+ date;
+                            var x = moment();
+                            x.subtract(7, 'days');
+                            url += '&max_date='+ x.format('Y-MM-DD');
                         }
                         return $resource(url).get().$promise.then(function(data) {
                             data.results.forEach(function(r) {

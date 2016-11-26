@@ -57,7 +57,7 @@ msgid "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" tar
 msgstr ""
 
 #: app/static/home/template.html:53
-msgid "Last alerts in Berlin"
+msgid "Last alerts in Germany"
 msgstr ""
 
 #: app/static/station/template.html:153
