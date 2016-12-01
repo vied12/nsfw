@@ -16,7 +16,13 @@
         "DISABLE_COLLECTSTATIC": {
             "required": true
         },
-        "DJANGO_SETTINGS_MODULE": {
+        "FB_VERIFY_TOKEN": {
+            "required": true
+        },
+        "FB_PAGE_TOKEN": {
+            "required": true
+        },
+        "WIT_TOKEN": {
             "required": true
         }
     },
