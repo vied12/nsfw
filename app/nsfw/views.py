@@ -24,10 +24,10 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'NSFW'
+        context['title'] = 'Smog Alarm'
         if 'station_id' in kwargs:
             s = Station.objects.get(pk=kwargs['station_id'])
-            context['title'] = 'NSFW // Station %s' % (s.name)
+            context['title'] = '%s // Smog Alarm' % (s.name)
         # add templates
         context['templates'] = angular_templates()
         return context
