@@ -177,13 +177,13 @@ def get_cache():
         }
     except:
         return {
-            'default': {
-                'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
-            }
             # 'default': {
-            #     'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-            #     'LOCATION': 'nsfw'
+            #     'BACKEND': 'django.core.cache.backends.dummy.DummyCache'
             # }
+            'default': {
+                'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+                'LOCATION': 'nsfw'
+            }
         }
 
 CACHES = get_cache()
