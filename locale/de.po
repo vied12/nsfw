@@ -12,7 +12,7 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/static/station/template.html:95
+#: app/static/station/template.html:104
 msgid ""
 "200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-"
 "term concentrations exceeding 200μg/m3, it is a toxic gas which causes "
@@ -22,13 +22,13 @@ msgstr ""
 "Konzentrationen über 200 μg/m³ entsteht ein giftiges Gas, das eine "
 "erkennbare Entzündung der Atemwege verursacht."
 
-#: app/static/station/template.html:73
+#: app/static/station/template.html:76
 msgid "20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 "20 μg/m³ ist der zulässige Jahresmittelwert für die Belastung durch "
 "Feinstaub (PM<sub>10</sub>)."
 
-#: app/static/station/template.html:107
+#: app/static/station/template.html:119
 msgid ""
 "40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. "
 "Epidemiological studies have shown that symptoms of bronchitis in asthmatic "
@@ -61,7 +61,7 @@ msgstr "Durchschnittswert<br/>im letzten Jahr"
 msgid "Click on a station to know more"
 msgstr "Auf die Messstation klicken, um mehr zu erfahren."
 
-#: app/static/station/module.js:244
+#: app/static/station/module.js:249
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
 
@@ -98,10 +98,10 @@ msgstr ""
 " eine E-Mail</a>"
 
 #: app/static/home/template.html:53
-msgid "Last alerts in Berlin"
-msgstr "Letzte Warnungen in Berlin"
+msgid "Last alerts in Germany"
+msgstr "Letzte Warnungen in Deutschland"
 
-#: app/static/station/template.html:134
+#: app/static/station/template.html:153
 msgid "Last alerts on this station"
 msgstr "Letzte Warnungen an dieser Messstation"
 
@@ -122,11 +122,11 @@ msgstr "Längste Periode mit täglicher<br/>Überschreitung im letzten Jahr"
 msgid "Made by"
 msgstr "Entwickelt von"
 
-#: app/static/station/template.html:135
+#: app/static/station/template.html:154
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/station/template.html:128
+#: app/static/station/template.html:146
 msgid ""
 "PM<sub>10</sub> is an important indicator of urban air pollution, and the "
 "health risks associated with the complex mixtures of pollutants typically "
@@ -140,7 +140,7 @@ msgstr ""
 "PM<sub>10</sub>-Partikel können tief in die Lungen und den Blutkreislauf "
 "eindringen und damit Schäden an den verschiedenen Organen hervorrufen."
 
-#: app/static/station/template.html:140
+#: app/static/station/template.html:160
 msgid "PM<sub>10</sub> particles pollution in time"
 msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 
@@ -195,11 +195,11 @@ msgstr ""
 "(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
 "Feeds abonnieren."
 
-#: app/static/station/template.html:146
+#: app/static/station/template.html:166
 msgid "Where the data come from"
 msgstr "Woher die Daten stammen"
 
-#: app/static/station/template.html:63 app/static/station/template.html:97
+#: app/static/station/template.html:106 app/static/station/template.html:63
 msgid "Yesterday"
 msgstr "Gestern"
 
@@ -212,6 +212,10 @@ msgid ""
 msgstr ""
 "Sie können außerdem unseren <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">RSS-Feed</a> oder\n"
 "<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a> abonnieren <i class=\"material-icons\">rss_feed</i>"
+
+#: app/static/home/template.html:11
+msgid "a service from"
+msgstr "ein Service von"
 
 #: app/static/station/template.html:25
 msgid "an error occured!"
@@ -231,8 +235,8 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/station/template.html:110 app/static/station/template.html:117
-#: app/static/station/template.html:76 app/static/station/template.html:83
+#: app/static/station/template.html:125 app/static/station/template.html:135
+#: app/static/station/template.html:82 app/static/station/template.html:92
 msgid "days"
 msgstr "Tage"
 

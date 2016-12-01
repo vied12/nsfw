@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Yvonne Hagenbach <yvonne@lesotre.de>, 2016\n"
 "Language-Team: German (https://www.transifex.com/nsfw/teams/68009/de/)\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: nsfw/management/commands/mails.py:24
@@ -39,40 +39,28 @@ msgstr ""
 "%(station)s gemessen."
 
 #: templates/email.txt:7
-#, fuzzy, python-format
-#| msgctxt "email"
-#| msgid ""
-#| "You subscribed on http://nsfw.fahrradfreundliches-neukoelln.de to receive "
-#| "alerts about station %(station)s. If you don't want to receive alerts "
-#| "anymore, reply to this message.\n"
-#| "\n"
-#| "The fahrradfreundliches-neukoelln.de team"
+#, python-format
 msgctxt "email"
 msgid ""
-"You subscribed on http://smogalarm.org to receive alerts about station "
-"%(station)s. If you don't want to receive alerts anymore, reply to this "
-"message.\n"
+"You subscribed on http://smogalarm.org to receive alerts about station %(station)s. If you don't want to receive alerts anymore, reply to this message.\n"
 "\n"
 "The Smog Alarm team"
 msgstr ""
-"Du erhältst diese Nachricht, da du dich beim Feinstaubwarndienst NSFW unter "
-"http://nsfw.fahrradfreundliches-neukoelln.de an der Station %(station)s "
-"angemeldet hast. Wenn du keine weiteren emails dazu bekommen möchtest, "
-"antworte einfach auf diese Nachricht.\n"
+"Du erhältst diese Nachricht, da du dich beim Smog Alarm unter http://smogalarm.org an der Station %(station)s angemeldet hast. Wenn du keine weiteren emails dazu bekommen möchtest, antworte einfach auf diese Nachricht.\n"
 "\n"
-"Euer Team vom Netzwerk Fahrradfreundliches Neukölln"
+"Euer Team vom The Smog Alarm team"
 
 #: templates/home.html:11
 msgid ""
-"We are collecting the daily reports from the German Environmental Protection "
-"Agency who is measuring the air quality at different points in the country. "
-"This tool helps you to find your closest station and give you the "
+"We are collecting the daily reports from the German Environmental Protection"
+" Agency who is measuring the air quality at different points in the country."
+" This tool helps you to find your closest station and give you the "
 "possibility to follow it by receiving email alerts or by subscribing to its "
 "RSS feed."
 msgstr ""
 "Wir sammeln die täglichen Daten des Umwelt&shy;bundes&shy;amts, dessen "
-"Messstationen die Luftqualität in Deutsch&shy;land messen. Verfolgen Sie die "
-"aktuellen Werte einer oder mehrerer ausgewählter Messstationen und erhalten "
-"automatisch Warnmeldungen per E-Mail. Einfach (1) oben Adresse eingeben, (2) "
-"unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
+"Messstationen die Luftqualität in Deutsch&shy;land messen. Verfolgen Sie die"
+" aktuellen Werte einer oder mehrerer ausgewählter Messstationen und erhalten"
+" automatisch Warnmeldungen per E-Mail. Einfach (1) oben Adresse eingeben, "
+"(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
 "Feeds abonnieren."
