@@ -18,6 +18,7 @@
         return {
             scope: {
                 hideStation: '@',
+                ordered: '@',
                 alerts: '='
             },
             templateUrl: 'static/alerts/last.html',

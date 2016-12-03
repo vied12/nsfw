@@ -68,10 +68,15 @@
             </div> -->
             <div ng-if="vm.alerts.length > 0">
                 <h2>
-                    <div translate>Last alerts in Germany</div>
+                    <div translate>The worst places in Europe</div>
                     <div translate class="small">Click on a station to know more</div>
                 </h2>
-                <last-alert data-alerts="vm.alerts"></last-alert>
+                <last-alert data-alerts="vm.alerts" ordered="true"></last-alert>
+                <leaflet
+                    defaults="vm.defaults"
+                    markers="vm.markers"
+                    height="420px"
+                    width="100%"></leaflet>
             </div>
             <div ng-if="vm.alerts.length === 0">
                 <h2>{{'There is no recent alert in Berlin'|translate}} <i class="material-icons md-36">sentiment_very_satisfied</i></h2>

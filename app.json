@@ -4,6 +4,9 @@
         "postdeploy": "scripts/post_deploy_pr.sh"
     },
     "env": {
+        "DJANGO_SETTINGS_MODULE": {
+            "required": true
+        },
         "COMPRESS_ENABLED": {
             "required": true
         },
@@ -23,6 +26,9 @@
             "required": true
         },
         "WIT_TOKEN": {
+            "required": true
+        },
+        "EEA_TOKEN": {
             "required": true
         }
     },

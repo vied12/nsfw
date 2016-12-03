@@ -39,10 +39,10 @@
                 resolve: {
                     alerts: ['$stateParams', '$resource', 'moment',
                     function($stateParams, $resource, moment) {
-                        var url = 'api/alerts/?&limit=10';
+                        var url = 'api/alerts/?&limit=500';
                         if (!$stateParams.showOlderAlerts) {
                             var x = moment();
-                            x.subtract(7, 'days');
+                            x.subtract(1, 'days');
                             url += '&max_date='+ x.format('Y-MM-DD');
                         }
                         return $resource(url).get().$promise.then(function(data) {

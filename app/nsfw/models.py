@@ -29,11 +29,12 @@ class Report(models.Model):
     data = models.TextField()
     kind = models.CharField(choices=KINDS, max_length=3)
     date = models.DateField()
+    source = models.CharField(max_length=3)
 
     def __str__(self):
         return '%s (%s)' % (self.get_kind_display(), self.date)
 
-    def process_report(self):
+    def process_uba_report(self):
         thresholds = {
             'PM1': THRESHOLD_PM10,
             'NO2': THRESHOLD_NO2,
@@ -50,6 +51,30 @@ class Report(models.Model):
                 defaults=dict(name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
                               lat=station['lat'],
                               lon=station['lon']))
+            if val >= thresholds[self.kind]:
+                Alert.objects.get_or_create(
+                    report=self,
+                    station=station,
+                    value=val,
+                )
+
+    def process_eea_report(self):
+        thresholds = {
+            'PM1': THRESHOLD_PM10,
+            'NO2': THRESHOLD_NO2,
+        }
+        for station in list(csv.DictReader(self.data.splitlines(),
+                                           delimiter=',')):
+            try:
+                val = round(float(station['value_numeric']))
+            except Exception as e:
+                print('ERROR', e, station)
+                continue
+            station, created = Station.objects.get_or_create(
+                id=station['station_code'],
+                defaults=dict(name=station['station_name'],
+                              lat=station['samplingpoint_y'],
+                              lon=station['samplingpoint_x']))
             if val >= thresholds[self.kind]:
                 Alert.objects.get_or_create(
                     report=self,
@@ -92,4 +117,7 @@ class Email(models.Model):
 def on_report_save(sender, **kwargs):
     instance = kwargs['instance']
     if kwargs['created']:
-        instance.process_report()
+        if instance.source == 'uba':
+            instance.process_uba_report()
+        elif instance.source == 'eea':
+            instance.process_eea_report()

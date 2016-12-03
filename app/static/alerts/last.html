@@ -1,5 +1,6 @@
 <div ng-repeat="alert in vm.alerts" class="Last">
     <h3>
+        <span ng-if="vm.ordered">#{{$index + 1}}</spam>
         <span class="label label-danger">{{ alert.report.kind}}</span>
         <span ng-if="!vm.hideStation">
             <a ui-sref="app.home.station({station: alert.station.id})" ng-bind="alert.station.name"></a>
