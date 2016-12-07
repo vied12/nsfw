@@ -7,9 +7,9 @@
             </div>
             <div class="col-md-9 col-md-pull-3" ui-sref="app.home" ui-sref-opts="{reload: true}">
                 <h1 ui-sref="app.home" ui-sref-opts="{reload: true}">
-                    <div class="title__line">Neuköllner</div>
-                    <div class="title__line">Stickoxid- und</div>
-                    <div class="title__line">Feinstaub-</div><div class="title__line">Warnsystem</div>
+                    Smog Alarm
+                    <span class="Home__title__small" translate>a service from</span>
+                    <div class="Home__title__nfn">Netzwerk Fahrradfreundliches Neukölln</div>
                 </h1>
             </div>
         </div>
@@ -48,9 +48,27 @@
             </div>
         </div>
         <div class="col-md-7 col-md-pull-5" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
+            <h2 translate>Say hello to our new bot</h2>
+            <p translate>
+                Our service is now available on Facebook Messenger too.
+                You can ask for air quality at a location and subscribe to station alerts directly from Messenger.
+            </p>
+            <p>
+                <a class="btn btn-default" href="https://m.me/smogalarm" target="_blank">
+                    Start a chat by saying hi&nbsp;!&nbsp;
+                    <i class="material-icons">chat</i>
+                </a>
+            </p>
+            <!-- <div
+                class="fb-messengermessageus"
+                messenger_app_id="1578755335758259"
+                page_id="491963731010980"
+                color="white"
+                size="xlarge" >
+            </div> -->
             <div ng-if="vm.alerts.length > 0">
                 <h2>
-                    <div translate>Last alerts in Berlin</div>
+                    <div translate>Last alerts in Germany</div>
                     <div translate class="small">Click on a station to know more</div>
                 </h2>
                 <last-alert data-alerts="vm.alerts"></last-alert>

@@ -12,7 +12,7 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: app/static/station/template.html:95
+#: app/static/station/template.html:117
 msgid ""
 "200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-"
 "term concentrations exceeding 200μg/m3, it is a toxic gas which causes "
@@ -22,13 +22,13 @@ msgstr ""
 "Konzentrationen über 200 μg/m³ entsteht ein giftiges Gas, das eine "
 "erkennbare Entzündung der Atemwege verursacht."
 
-#: app/static/station/template.html:73
+#: app/static/station/template.html:89
 msgid "20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 "20 μg/m³ ist der zulässige Jahresmittelwert für die Belastung durch "
 "Feinstaub (PM<sub>10</sub>)."
 
-#: app/static/station/template.html:107
+#: app/static/station/template.html:132
 msgid ""
 "40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. "
 "Epidemiological studies have shown that symptoms of bronchitis in asthmatic "
@@ -43,7 +43,7 @@ msgstr ""
 "ebenfalls der aktuell gemessenen (oder beobachteten) Konzentrationen von "
 "NO<sub>2</sub> in den Städten Europas und Nordamerikas zugeschrieben."
 
-#: app/static/station/template.html:61
+#: app/static/station/template.html:74
 msgid "50μg/m3 mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 "50 μg/m³ ist der durch die EU festgelegte Tages-Grenzwert für die "
@@ -53,19 +53,19 @@ msgstr ""
 msgid "Address, City"
 msgstr "Straße, PLZ Stadt"
 
-#: app/static/station/template.html:45
+#: app/static/station/template.html:58
 msgid "Average during last year"
 msgstr "Durchschnittswert<br/>im letzten Jahr"
 
-#: app/static/home/template.html:54
+#: app/static/home/template.html:66
 msgid "Click on a station to know more"
 msgstr "Auf die Messstation klicken, um mehr zu erfahren."
 
-#: app/static/station/module.js:244
+#: app/static/station/module.js:249
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
 
-#: app/static/home/template.html:60
+#: app/static/home/template.html:72
 msgid ""
 "During summer, the air quality in Berlin is quite good. But winter is "
 "coming. Find the closest station to be prepared for next winter."
@@ -74,7 +74,7 @@ msgstr ""
 "kommt. Finden Sie die nächstgelegene Messstation, um für den Winter "
 "gewappnet zu sein."
 
-#: app/static/station/template.html:18
+#: app/static/station/template.html:19
 msgid "Email"
 msgstr "E-Mail"
 
@@ -86,7 +86,7 @@ msgstr "Finden"
 msgid "Find the closest station measuring air quality in Germany"
 msgstr "Finden Sie die nächstgelegene Messstation (in Deutschland)"
 
-#: app/static/home/template.html:77
+#: app/static/home/template.html:89
 msgid ""
 "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" "
 "target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-"
@@ -97,36 +97,42 @@ msgstr ""
 "oder <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">senden Sie uns"
 " eine E-Mail</a>"
 
-#: app/static/home/template.html:53
-msgid "Last alerts in Berlin"
-msgstr "Letzte Warnungen in Berlin"
+#: app/static/home/template.html:65
+msgid "Last alerts in Germany"
+msgstr "Letzte Warnungen in Deutschland"
 
-#: app/static/station/template.html:134
+#: app/static/station/template.html:166
 msgid "Last alerts on this station"
 msgstr "Letzte Warnungen an dieser Messstation"
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:54
 msgid "Last value"
 msgstr "Neuester Wert"
 
-#: app/static/station/template.html:15
+#: app/static/station/template.html:16
 msgid "Leave your email address to receive alerts"
 msgstr ""
 "Hinterlassen Sie Ihre E-Mail-Adresse, um Feinstaub-Warnmeldungen zu erhalten"
 
-#: app/static/station/template.html:53
+#: app/static/station/template.html:66
 msgid "Longest pollution streak<br> during last year"
 msgstr "Längste Periode mit täglicher<br/>Überschreitung im letzten Jahr"
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:83
 msgid "Made by"
 msgstr "Entwickelt von"
 
-#: app/static/station/template.html:135
+#: app/static/station/template.html:167
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/station/template.html:128
+#: app/static/home/template.html:53
+msgid ""
+"Our service is now available on Facebook Messenger too.\n"
+"                    You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi !"
+msgstr ""
+
+#: app/static/station/template.html:159
 msgid ""
 "PM<sub>10</sub> is an important indicator of urban air pollution, and the "
 "health risks associated with the complex mixtures of pollutants typically "
@@ -140,15 +146,19 @@ msgstr ""
 "PM<sub>10</sub>-Partikel können tief in die Lungen und den Blutkreislauf "
 "eindringen und damit Schäden an den verschiedenen Organen hervorrufen."
 
-#: app/static/station/template.html:140
+#: app/static/station/template.html:173
 msgid "PM<sub>10</sub> particles pollution in time"
 msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 
-#: app/static/station/template.html:49
+#: app/static/station/template.html:62
 msgid "Polluted days<br>during last year"
 msgstr "Anzahl der Tage mit<br/>Überschreitungen im letzten Jahr"
 
-#: app/static/home/template.html:61
+#: app/static/home/template.html:52
+msgid "Say hello to our new bot"
+msgstr ""
+
+#: app/static/home/template.html:73
 msgid "See older alerts"
 msgstr "Ältere Warnungen anzeigen"
 
@@ -156,19 +166,23 @@ msgstr "Ältere Warnungen anzeigen"
 msgid "Station"
 msgstr "Messstation"
 
-#: app/static/station/template.html:21
+#: app/static/station/template.html:22
 msgid "Subscribe"
 msgstr "Eintragen"
 
-#: app/static/station/template.html:24
+#: app/static/station/template.html:13
+msgid "Subscribe to the station alerts"
+msgstr ""
+
+#: app/static/station/template.html:25
 msgid "Subscribed!"
 msgstr "Eingetragen!"
 
-#: app/static/station/template.html:33
+#: app/static/station/template.html:46
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/static/home/template.html:59
+#: app/static/home/template.html:71
 msgid "There is no recent alert in Berlin"
 msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 
@@ -176,7 +190,7 @@ msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
 msgid "This is the closest station"
 msgstr "Dies ist die nächstgelegene Messstation"
 
-#: app/static/home/template.html:76
+#: app/static/home/template.html:88
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
 msgstr "Ins Deutsche übersetzt von Konstantin, Saskia und Yvonne."
 
@@ -195,33 +209,37 @@ msgstr ""
 "(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
 "Feeds abonnieren."
 
-#: app/static/station/template.html:146
+#: app/static/station/template.html:179
 msgid "Where the data come from"
 msgstr "Woher die Daten stammen"
 
-#: app/static/station/template.html:63 app/static/station/template.html:97
+#: app/static/station/template.html:119 app/static/station/template.html:76
 msgid "Yesterday"
 msgstr "Gestern"
 
-#: app/static/station/template.html:28
+#: app/static/station/template.html:36
 msgid ""
-"You can also subscribe to its <a target=\"_blank\" "
-"href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or <a target=\"_blank\" "
-"href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-"
-"icons\">rss_feed</i>"
+"You can also subscribe to its\n"
+"                <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a>,\n"
+"                <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a>\n"
+"                feeds <i class=\"material-icons\">rss_feed</i>"
 msgstr ""
 "Sie können außerdem unseren <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">RSS-Feed</a> oder\n"
-"<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a> abonnieren <i class=\"material-icons\">rss_feed</i>"
+"<a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom-Feed</a><i class=\"material-icons\">rss_feed</i> abonnieren."
 
-#: app/static/station/template.html:25
+#: app/static/home/template.html:11
+msgid "a service from"
+msgstr "ein Service von"
+
+#: app/static/station/template.html:26
 msgid "an error occured!"
 msgstr "Es ist ein Fehler aufgetreten."
 
-#: app/static/home/template.html:73
+#: app/static/home/template.html:85
 msgid "an illustration from"
 msgstr "einer Grafik von"
 
-#: app/static/home/template.html:75
+#: app/static/home/template.html:87
 msgid ""
 "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-"
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's "
@@ -231,12 +249,12 @@ msgstr ""
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">Daten des "
 "Umweltbundesamts</a>."
 
-#: app/static/station/template.html:110 app/static/station/template.html:117
-#: app/static/station/template.html:76 app/static/station/template.html:83
+#: app/static/station/template.html:105 app/static/station/template.html:138
+#: app/static/station/template.html:148 app/static/station/template.html:95
 msgid "days"
 msgstr "Tage"
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:84
 msgid "from a brillant idea of"
 msgstr "aufgrund einer brillanten Idee von"
 
@@ -245,7 +263,7 @@ msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr "am"
 
-#: app/static/home/template.html:74
+#: app/static/home/template.html:86
 msgid "with the helpful Carmen's design advices"
 msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
 

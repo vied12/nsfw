@@ -6,6 +6,7 @@
 a, a [ui-sref] {
     cursor: pointer;
     text-decoration: underline;
+    &.btn { text-decoration: none; }
 }
 h1, h2, h3, h4 {
     font-family: @font-family-serif;
@@ -42,8 +43,15 @@ footer {
         }
         padding-top: 20px;
         h1 {
-            margin-top: 0;
+            margin-top: 20px;
             cursor: pointer;
+        }
+        &__nfn {
+            font-size: .7em;
+        }
+        &__small {
+            font-size: .6em;
+            opacity: .7;
         }
     }
     &__help {
@@ -63,10 +71,13 @@ footer {
         transition-duration: .55s;
         &--reduced {
             h1 {
-                font-size: 1.4em;
+                margin-top: 0px;
+                // font-size: 1.6em;
             }
             min-height: 0px;
-            .title__line {display: inline-block;}
+            .Home__title__nfn { display: none }
+            .Home__title__small { display: none }
+            // .title__line {display: inline-block;}
             .Home__address { margin-top: 0;}
         }
     }
@@ -76,7 +87,7 @@ footer {
             font-size: 1.4em;
         }
         input#address {
-            background-color: rgba(17, 16, 16, 0.18);
+            background-color: rgba(17, 16, 16, 0.40);
             border: 0;
             border-bottom: 1px solid @brand-primary;
             color: white;

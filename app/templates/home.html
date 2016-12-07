@@ -6,7 +6,7 @@
         <base href="/">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title ng-bind="'NSFW'"></title>
+        <title ng-bind="'Smog Alarm'"></title>
         <meta property="og:title" content="{{ title }}"/>
         <meta property="og:description" content="{% trans "We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed." %}" />
         <meta property="og:image" content="http://nsfw.herokuapp.com{% static "images/background.jpg" %}" />
@@ -54,6 +54,22 @@
         {% for template_name, template_body in templates %}
         <script type="text/ng-template" id="/{{ template_name }}">{{ template_body | safe }}</script>
         {% endfor %}
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: "1578755335758259",
+                    xfbml: true,
+                    version: "v2.6"
+                });
+            };
+            (function(d, s, id){
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) { return; }
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -4,19 +4,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/static/station/template.html:95
+#: app/static/station/template.html:117
 msgid "200μg/m3 1-hour mean is the limit for NO<sub>2</sub> pollution. At short-term concentrations exceeding 200μg/m3, it is a toxic gas which causes significant inflammation of the airways."
 msgstr ""
 
-#: app/static/station/template.html:73
+#: app/static/station/template.html:89
 msgid "20μg/m3 annual mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 
-#: app/static/station/template.html:107
+#: app/static/station/template.html:132
 msgid "40µg/m³ annual mean is the limit for NO<sub>2</sub> pollution. Epidemiological studies have shown that symptoms of bronchitis in asthmatic children increase in association with long-term exposure to NO2. Reduced lung function growth is also linked to NO2 at concentrations currently measured (or observed) in cities of Europe and North America."
 msgstr ""
 
-#: app/static/station/template.html:61
+#: app/static/station/template.html:74
 msgid "50μg/m3 mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 
@@ -24,23 +24,23 @@ msgstr ""
 msgid "Address, City"
 msgstr ""
 
-#: app/static/station/template.html:45
+#: app/static/station/template.html:58
 msgid "Average during last year"
 msgstr ""
 
-#: app/static/home/template.html:54
+#: app/static/home/template.html:72
 msgid "Click on a station to know more"
 msgstr ""
 
-#: app/static/station/module.js:244
+#: app/static/station/module.js:249
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
-#: app/static/home/template.html:60
+#: app/static/home/template.html:78
 msgid "During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter."
 msgstr ""
 
-#: app/static/station/template.html:18
+#: app/static/station/template.html:19
 msgid "Email"
 msgstr ""
 
@@ -52,51 +52,61 @@ msgstr ""
 msgid "Find the closest station measuring air quality in Germany"
 msgstr ""
 
-#: app/static/home/template.html:77
+#: app/static/home/template.html:95
 msgid "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>."
 msgstr ""
 
-#: app/static/home/template.html:53
-msgid "Last alerts in Berlin"
+#: app/static/home/template.html:71
+msgid "Last alerts in Germany"
 msgstr ""
 
-#: app/static/station/template.html:134
+#: app/static/station/template.html:166
 msgid "Last alerts on this station"
 msgstr ""
 
-#: app/static/station/template.html:41
+#: app/static/station/template.html:54
 msgid "Last value"
 msgstr ""
 
-#: app/static/station/template.html:15
+#: app/static/station/template.html:16
 msgid "Leave your email address to receive alerts"
 msgstr ""
 
-#: app/static/station/template.html:53
+#: app/static/station/template.html:66
 msgid "Longest pollution streak<br> during last year"
 msgstr ""
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:89
 msgid "Made by"
 msgstr ""
 
-#: app/static/station/template.html:135
+#: app/static/station/template.html:167
 msgid "No alert found"
 msgstr ""
 
-#: app/static/station/template.html:128
+#: app/static/home/template.html:52
+msgid ""
+"Our service is now available on Facebook Messenger too.\n"
+"                You can ask for air quality at a location and subscribe to station alerts directly from Messenger."
+msgstr ""
+
+#: app/static/station/template.html:159
 msgid "PM<sub>10</sub> is an important indicator of urban air pollution, and the health risks associated with the complex mixtures of pollutants typically found in cities. The smaller PM<sub>10</sub> particles are able to penetrate deep into the lungs, and also to cross into the blood, causing damage in many organ systems."
 msgstr ""
 
-#: app/static/station/template.html:140
+#: app/static/station/template.html:173
 msgid "PM<sub>10</sub> particles pollution in time"
 msgstr ""
 
-#: app/static/station/template.html:49
+#: app/static/station/template.html:62
 msgid "Polluted days<br>during last year"
 msgstr ""
 
-#: app/static/home/template.html:61
+#: app/static/home/template.html:51
+msgid "Say hello to our new bot"
+msgstr ""
+
+#: app/static/home/template.html:79
 msgid "See older alerts"
 msgstr ""
 
@@ -104,19 +114,23 @@ msgstr ""
 msgid "Station"
 msgstr ""
 
-#: app/static/station/template.html:21
+#: app/static/station/template.html:22
 msgid "Subscribe"
 msgstr ""
 
-#: app/static/station/template.html:24
+#: app/static/station/template.html:13
+msgid "Subscribe to the station alerts"
+msgstr ""
+
+#: app/static/station/template.html:25
 msgid "Subscribed!"
 msgstr ""
 
-#: app/static/station/template.html:33
+#: app/static/station/template.html:46
 msgid "Summary"
 msgstr ""
 
-#: app/static/home/template.html:59
+#: app/static/home/template.html:77
 msgid "There is no recent alert in Berlin"
 msgstr ""
 
@@ -124,7 +138,7 @@ msgstr ""
 msgid "This is the closest station"
 msgstr ""
 
-#: app/static/home/template.html:76
+#: app/static/home/template.html:94
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
 msgstr ""
 
@@ -132,39 +146,47 @@ msgstr ""
 msgid "We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed."
 msgstr ""
 
-#: app/static/station/template.html:146
+#: app/static/station/template.html:179
 msgid "Where the data come from"
 msgstr ""
 
-#: app/static/station/template.html:63
-#: app/static/station/template.html:97
+#: app/static/station/template.html:119
+#: app/static/station/template.html:76
 msgid "Yesterday"
 msgstr ""
 
-#: app/static/station/template.html:28
-msgid "You can also subscribe to its <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a> or <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a> feeds <i class=\"material-icons\">rss_feed</i>"
+#: app/static/station/template.html:36
+msgid ""
+"You can also subscribe to its\n"
+"                <a target=\"_blank\" href=\"/alerts/rss/{{vm.station.id}}\">Rss</a>,\n"
+"                <a target=\"_blank\" href=\"/alerts/atom/{{vm.station.id}}\">Atom</a>\n"
+"                feeds <i class=\"material-icons\">rss_feed</i>"
 msgstr ""
 
-#: app/static/station/template.html:25
+#: app/static/home/template.html:11
+msgid "a service from"
+msgstr ""
+
+#: app/static/station/template.html:26
 msgid "an error occured!"
 msgstr ""
 
-#: app/static/home/template.html:73
+#: app/static/home/template.html:91
 msgid "an illustration from"
 msgstr ""
 
-#: app/static/home/template.html:75
+#: app/static/home/template.html:93
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
-#: app/static/station/template.html:110
-#: app/static/station/template.html:117
-#: app/static/station/template.html:76
-#: app/static/station/template.html:83
+#: app/static/station/template.html:105
+#: app/static/station/template.html:138
+#: app/static/station/template.html:148
+#: app/static/station/template.html:95
 msgid "days"
 msgstr ""
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:90
 msgid "from a brillant idea of"
 msgstr ""
 
@@ -173,7 +195,7 @@ msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr ""
 
-#: app/static/home/template.html:74
+#: app/static/home/template.html:92
 msgid "with the helpful Carmen's design advices"
 msgstr ""
 

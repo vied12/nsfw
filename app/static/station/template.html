@@ -10,6 +10,7 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <h2 translate>Subscribe to the station alerts</h2>
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
                     <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}</label>
@@ -25,7 +26,19 @@
                     <div ng-if="vm.errorOnSubscription" translate>an error occured!</div>
                 </div>
             </form>
-            <span translate>You can also subscribe to its <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a> or <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a> feeds <i class="material-icons">rss_feed</i></span>
+            <div class="fb-send-to-messenger"
+                messenger_app_id="1578755335758259"
+                page_id="491963731010980"
+                data-ref="{{vm.station.id}}"
+                color="blue"
+                size="large">
+            </div>
+            <div translate>
+                You can also subscribe to its
+                <a target="_blank" href="/alerts/rss/{{vm.station.id}}">Rss</a>,
+                <a target="_blank" href="/alerts/atom/{{vm.station.id}}">Atom</a>
+                feeds <i class="material-icons">rss_feed</i>
+            </div>
         </div>
     </div>
     <div class="row">
