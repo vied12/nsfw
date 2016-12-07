@@ -2,6 +2,8 @@ from django.http import HttpResponse
 from django.views import generic
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from app.nsfw.models import Station, Subscription
+from .models import Messenger
 from django.conf import settings
 import json
 import logging
@@ -10,6 +12,7 @@ from .wit import get_client
 logger = logging.getLogger('nsfw')
 
 wit_client = get_client()
+
 
 class NSFWMessengerBot(generic.View):
     def get(self, request, *args, **kwargs):
@@ -30,6 +33,14 @@ class NSFWMessengerBot(generic.View):
         # multiple messages in a single call during high load
         for entry in incoming_message['entry']:
             for message in entry.get('messaging', []):
+                # subscribe
+                if 'optin' in message:
+                    try:
+                        messenger, created = Messenger.objects.get_or_create(messenger_id=message['sender']['id'])
+                        station = message['optin']['ref']
+                        Subscription.objects.get_or_create(messenger=messenger, station=Station.objects.get(pk=station))
+                    except Exception as e:
+                        logger.error('ERROR %s' % e)
                 # Check to make sure the received call is a message call
                 # This might be delivery, optin, postback for other events
                 if 'message' in message:
