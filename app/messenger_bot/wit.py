@@ -45,14 +45,14 @@ def get_closest_station(lat, lon):
 
 
 def subscribe(request):
-    context = request['context']
+    context = {}
     messenger, created = Messenger.objects.get_or_create(messenger_id=request['session_id'])
     station = cache.get(request['session_id'])
     if station:
         Subscription.objects.get_or_create(messenger=messenger, station=Station.objects.get(pk=station))
         context['justSubscribed'] = created
     else:
-        logger.error('Messenger Subscription. Station not known. %s' % request)
+        logger.error('Messenger Subscription: Station not known. %s' % request)
         context['noStation'] = True
     return context
 
@@ -74,7 +74,7 @@ def get_air_quality(request):
     entities = request['entities']
     loc = first_entity_value(entities, 'location')
 
-    for k in (
+    for context_key in (
         'missingLocation',
         'outOfGermany',
         'subscribed',
@@ -89,7 +89,7 @@ def get_air_quality(request):
         'notFound',
     ):
         try:
-            del context[k]
+            del context[context_key]
         except KeyError:
             pass
     if not loc:

@@ -33,10 +33,11 @@ class NSFWMessengerBot(generic.View):
         # multiple messages in a single call during high load
         for entry in incoming_message['entry']:
             for message in entry.get('messaging', []):
+                # save id
+                messenger, created = Messenger.objects.get_or_create(messenger_id=message['sender']['id'])
                 # subscribe
                 if 'optin' in message:
                     try:
-                        messenger, created = Messenger.objects.get_or_create(messenger_id=message['sender']['id'])
                         station = message['optin']['ref']
                         Subscription.objects.get_or_create(messenger=messenger, station=Station.objects.get(pk=station))
                     except Exception as e:
