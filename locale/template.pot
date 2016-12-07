@@ -28,7 +28,7 @@ msgstr ""
 msgid "Average during last year"
 msgstr ""
 
-#: app/static/home/template.html:66
+#: app/static/home/template.html:72
 msgid "Click on a station to know more"
 msgstr ""
 
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr ""
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:78
 msgid "During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter."
 msgstr ""
 
@@ -52,11 +52,11 @@ msgstr ""
 msgid "Find the closest station measuring air quality in Germany"
 msgstr ""
 
-#: app/static/home/template.html:89
+#: app/static/home/template.html:95
 msgid "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>."
 msgstr ""
 
-#: app/static/home/template.html:65
+#: app/static/home/template.html:71
 msgid "Last alerts in Germany"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Longest pollution streak<br> during last year"
 msgstr ""
 
-#: app/static/home/template.html:83
+#: app/static/home/template.html:89
 msgid "Made by"
 msgstr ""
 
@@ -87,7 +87,7 @@ msgstr ""
 #: app/static/home/template.html:52
 msgid ""
 "Our service is now available on Facebook Messenger too.\n"
-"                You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi&nbsp;!"
+"                You can ask for air quality at a location and subscribe to station alerts directly from Messenger."
 msgstr ""
 
 #: app/static/station/template.html:159
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Say hello to our new bot"
 msgstr ""
 
-#: app/static/home/template.html:73
+#: app/static/home/template.html:79
 msgid "See older alerts"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:77
 msgid "There is no recent alert in Berlin"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "This is the closest station"
 msgstr ""
 
-#: app/static/home/template.html:88
+#: app/static/home/template.html:94
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
 msgstr ""
 
@@ -171,11 +171,11 @@ msgstr ""
 msgid "an error occured!"
 msgstr ""
 
-#: app/static/home/template.html:85
+#: app/static/home/template.html:91
 msgid "an illustration from"
 msgstr ""
 
-#: app/static/home/template.html:87
+#: app/static/home/template.html:93
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "days"
 msgstr ""
 
-#: app/static/home/template.html:84
+#: app/static/home/template.html:90
 msgid "from a brillant idea of"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr ""
 
-#: app/static/home/template.html:86
+#: app/static/home/template.html:92
 msgid "with the helpful Carmen's design advices"
 msgstr ""
 
