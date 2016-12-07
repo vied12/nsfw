@@ -84,10 +84,10 @@ msgstr ""
 msgid "No alert found"
 msgstr ""
 
-#: app/static/home/template.html:53
+#: app/static/home/template.html:52
 msgid ""
 "Our service is now available on Facebook Messenger too.\n"
-"                    You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi&nbsp;!"
+"                You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi&nbsp;!"
 msgstr ""
 
 #: app/static/station/template.html:159
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Polluted days<br>during last year"
 msgstr ""
 
-#: app/static/home/template.html:52
+#: app/static/home/template.html:51
 msgid "Say hello to our new bot"
 msgstr ""
 

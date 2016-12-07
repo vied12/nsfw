@@ -48,12 +48,12 @@
             </div>
         </div>
         <div class="col-md-7 col-md-pull-5" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
+            <h2 translate>Say hello to our new bot</h2>
+            <p translate>
+                Our service is now available on Facebook Messenger too.
+                You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi&nbsp;!
+            </p>
             <div ng-if="vm.alerts.length > 0">
-                <h2 translate>Say hello to our new bot</h2>
-                <p translate>
-                    Our service is now available on Facebook Messenger too.
-                    You can ask for air quality at a location and subscribe to station alerts directly from Messenger. Start the chat by saying hi&nbsp;!
-                </p>
                 <div
                     class="fb-messengermessageus"
                     messenger_app_id="1578755335758259"
