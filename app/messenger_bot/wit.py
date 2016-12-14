@@ -99,29 +99,25 @@ def get_air_quality(request):
         if not loc:
             loc = geolocator.geocode('{}, Germany'.format(loc), language='en')
         if loc:
-            # out of germany ?
-            if loc.address.split(', ')[-1] != 'Germany':
-                context['outOfGermany'] = True
+            closest_station = get_closest_station(loc.latitude, loc.longitude)
+            # is subscribed ?
+            if is_subscribed(request['session_id'], closest_station):
+                context['subscribed'] = True
             else:
-                closest_station = get_closest_station(loc.latitude, loc.longitude)
-                # is subscribed ?
-                if is_subscribed(request['session_id'], closest_station):
-                    context['subscribed'] = True
-                else:
-                    context['notSubscribed'] = True
-                # oldest alert we want
-                max_date = datetime.datetime.now() - datetime.timedelta(days=2)
-                last_alert = Alert.objects.filter(station=closest_station, report__date__gte=max_date).last()
-                context['location'] = loc.address
-                context['station'] = closest_station.name
-                context['stationId'] = closest_station.pk
-                cache.set(request['session_id'], closest_station.pk)
-                if last_alert:
-                    context['lastAlertValue'] = last_alert.value
-                    context['lastAlertDate'] = last_alert.report.date.strftime('%x')
-                    context['kind'] = last_alert.report.kind
-                else:
-                    context['clean'] = True
+                context['notSubscribed'] = True
+            # oldest alert we want
+            max_date = datetime.datetime.now() - datetime.timedelta(days=2)
+            last_alert = Alert.objects.filter(station=closest_station, report__date__gte=max_date).last()
+            context['location'] = loc.address
+            context['station'] = closest_station.name
+            context['stationId'] = closest_station.pk
+            cache.set(request['session_id'], closest_station.pk)
+            if last_alert:
+                context['lastAlertValue'] = last_alert.value
+                context['lastAlertDate'] = last_alert.report.date.strftime('%x')
+                context['kind'] = last_alert.report.kind
+            else:
+                context['clean'] = True
         else:
             context['notFound'] = True
     return context
