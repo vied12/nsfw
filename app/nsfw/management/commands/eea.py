@@ -21,6 +21,7 @@ class Command(BaseCommand):
         parser.add_argument('--country', nargs='+', type=str, help='fr')
 
     def process_report(self, data, date, report=None):
+        counter = 0
         stations_by_name = {}
         for station in csv.DictReader(data.splitlines(), delimiter=','):
                 # keep only if starting date == date
@@ -38,11 +39,13 @@ class Command(BaseCommand):
                                   lat=measures[0]['samplingpoint_y'],
                                   lon=measures[0]['samplingpoint_x']))
                 if average >= thresholds[measures[0]['pollutant']]:
-                    Alert.objects.get_or_create(
+                    alert, alertCreated = Alert.objects.get_or_create(
                         station=stationObj,
                         report=report,
                         value=average,
                     )
+                    counter += 1
+        return counter
 
     def handle(self, *args, **options):
         date = options['date']
@@ -72,13 +75,12 @@ class Command(BaseCommand):
                     self.stdout.write(self.style.ERROR('%s not a zip' % (country)))
                     continue
                 csv_content = z.read('AirqualityUTDExport.csv/CSV-output.csv').decode('iso-8859-1')
-                self.stdout.write('decoding %s' % country)
                 report, created = Report.objects.get_or_create(
                     data=csv_content,
                     country=country,
                     source='eea',
                     kind=context['pollutant'][:3],
                     date=date)
-                self.process_report(csv_content, date, report=report)
-            # if created:
-            #     self.stdout.write(self.style.SUCCESS('%s %s' % (country, res)))
+                counter = self.process_report(csv_content, date, report=report)
+                if created:
+                    self.stdout.write(self.style.SUCCESS('%s: %s' % (country, counter)))
