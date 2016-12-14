@@ -28,6 +28,7 @@ class Report(models.Model):
     KINDS = (('PM1', 'PM10'), ('NO2', 'NO2'))
     data = models.TextField()
     kind = models.CharField(choices=KINDS, max_length=3)
+    country = models.CharField(max_length=2)
     date = models.DateField()
     source = models.CharField(max_length=3)
 
@@ -119,5 +120,5 @@ def on_report_save(sender, **kwargs):
     if kwargs['created']:
         if instance.source == 'uba':
             instance.process_uba_report()
-        elif instance.source == 'eea':
-            instance.process_eea_report()
+        # elif instance.source == 'eea':
+        #     instance.process_eea_report()

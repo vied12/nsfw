@@ -21,34 +21,35 @@
     HomeCtrl.$inject = ['alerts', 'geocoderService', '$resource', '$q', '$state', 'leafletData', 'moment'];
     function HomeCtrl(alerts, geocoderService, $resource, $q, $state, leafletData, moment) {
         var vm = this;
-        var markers = {};
-        var bounds = [];
-        alerts.forEach(function(a) {
-            markers[a.id] = {
-                lat: a.station.lat,
-                lng: a.station.lon,
-                message: a.station.name + '<br/>' + a.value + 'µg/m³<br/>' + moment(a.report.date).format('LL')
-            }
-            bounds.push(L.marker([a.station.lat, a.station.lon]))
-        });
-        var group = new L.featureGroup(bounds);
-        // center on markers
-        leafletData.getMap().then((map) => {
-            map.fitBounds(group.getBounds())
-        })
+        // MAP on home page
+        // var markers = {};
+        // var bounds = [];
+        // alerts.forEach(function(a) {
+        //     markers[a.id] = {
+        //         lat: a.station.lat,
+        //         lng: a.station.lon,
+        //         message: a.station.name + '<br/>' + a.value + 'µg/m³<br/>' + moment(a.report.date).format('LL')
+        //     }
+        //     bounds.push(L.marker([a.station.lat, a.station.lon]))
+        // });
+        // var group = new L.featureGroup(bounds);
+        // // center on markers
+        // leafletData.getMap().then((map) => {
+        //     map.fitBounds(group.getBounds())
+        // })
         angular.extend(vm, {
             $state: $state,
-            alerts: alerts.slice(0, 5),
+            alerts: alerts,
             suggestion: undefined,
             geolocationAvailable: 'geolocation' in navigator,
-            markers: markers,
-            defaults: {
-                // tileLayer: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
-                tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-                dragging: true,
-                scrollWheelZoom: false,
-                maxZoom: 19,
-            },
+            // markers: markers,
+            // defaults: {
+            //     // tileLayer: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+            //     tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+            //     dragging: true,
+            //     scrollWheelZoom: false,
+            //     maxZoom: 19,
+            // },
             searchWhereIam: function() {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     vm.search({lat: position.coords.latitude, lon: position.coords.longitude});
@@ -57,7 +58,8 @@
             search: function(coord) {
                 vm.suggestion = undefined;
                 if (!coord) {
-                    coord = geocoderService.getLatLong(vm.address).then(function(latlng){
+                    console.log(vm.address + ', Germany')
+                    coord = geocoderService.getLatLong(vm.address + ', Germany').then(function(latlng){
                         return {lat: latlng.lat(), lon: latlng.lng()};
                     });
                 }

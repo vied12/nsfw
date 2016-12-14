@@ -11,7 +11,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         today = datetime.datetime.now().strftime('%Y%m%d')
-        for station in Station.objects.all():
+        for station in Station.objects.filter(id__startswith='DE'):
             if kwargs['berlin'] and not station.id.startswith('DEBE'):
                 continue
             print(station)
