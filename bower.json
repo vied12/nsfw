@@ -31,5 +31,8 @@
     "d3": "3.5.17",
     "angular-gettext": "^2.3.8",
     "moment": "^2.15.1"
+  },
+  "resolutions": {
+    "angular": "1.5.10"
   }
 }
