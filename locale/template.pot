@@ -25,7 +25,7 @@ msgid "Address, City"
 msgstr ""
 
 #: app/static/station/template.html:58
-msgid "Average during last year"
+msgid "Average during last 12 months"
 msgstr ""
 
 #: app/static/home/template.html:72
@@ -73,7 +73,7 @@ msgid "Leave your email address to receive alerts"
 msgstr ""
 
 #: app/static/station/template.html:66
-msgid "Longest pollution streak<br> during last year"
+msgid "Longest pollution streak<br> during last 12 months"
 msgstr ""
 
 #: app/static/home/template.html:89
@@ -99,7 +99,7 @@ msgid "PM<sub>10</sub> particles pollution in time"
 msgstr ""
 
 #: app/static/station/template.html:62
-msgid "Polluted days<br>during last year"
+msgid "Polluted days<br>during last 12 months"
 msgstr ""
 
 #: app/static/home/template.html:51

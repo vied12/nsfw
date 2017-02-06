@@ -106,7 +106,7 @@
             station: station,
             alerts: alerts,
             dateIsYesterday: dateIsYesterday,
-            isDatavisPossible: station.pm10_data && _.any(_.keys(station.pm10_data.values), function(k) {
+            isDatavisPossible: station.pm10_data && _.some(_.keys(station.pm10_data.values), function(k) {
                 return _.startsWith(k.toString(), '2015');
             }),
             mp10LastMeasure: getLastMeasure(station.pm10_data),
