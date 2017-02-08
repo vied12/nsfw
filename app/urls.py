@@ -38,6 +38,6 @@ urlpatterns += i18n_patterns(
     url(r'^alerts/rss/(?P<station_id>\w+)/$', cache_page(60 * 60)(RssLatestEntriesFeed())),
     url(r'^alerts/atom/(?P<station_id>\w+)/$', cache_page(60 * 60)(AtomLatestEntriesFeed())),
     url(r'^$', cache_page(60 * 60)(HomePageView.as_view())),
-    url(r'^station/(?P<station_id>\w+)/$', cache_page(60 * 60)(HomePageView.as_view())),
+    url(r'^station/(?P<station_id>\w+)/$', cache_page(60 * 60)(HomePageView.as_view()), name='station'),
     # prefix_default_language=False
 )
