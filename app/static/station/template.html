@@ -13,7 +13,8 @@
             <h2 translate>Subscribe to the station alerts</h2>
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
-                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}</label>
+                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}.</label>
+                    <span translate>Unsubscribe by replying to the email.</span>
                     <div class="row" ng-if="!vm.subscribed">
                         <div class="col-sm-8">
                             <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="{{'Email'|translate}}">
