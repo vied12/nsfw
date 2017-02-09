@@ -47,11 +47,11 @@ class Command(BaseCommand):
             limit=alert.report and MAX[alert.report.get_kind_display()]
         )
         msgs = [
-            '🔴 Pollution alert !',
+            '🔴 Pollution alert !\n\n'
             'Yesterday we reached {value}µg/m³ of '
             '{kind} pollution at the station {station.name}.\n\n'
             'Based on what has been told by the World Health Organization, we should not be exposed to '
-            'more than {limit}µg/m³ of this kind of pollution\n\n',
+            'more than {limit}µg/m³ of this kind of pollution\n\n'
             'All the data is there:\n'
             'http://smogalarm.org/station/{station.id}'
         ]
