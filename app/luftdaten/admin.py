@@ -20,7 +20,7 @@ class SensorValueAdmin(ReadOnlyAdmin):
 admin.site.register(SensorValue, SensorValueAdmin)
 
 
-class SensorValueAggregatedAdmin(ReadOnlyAdmin):
+class SensorValueAggregatedAdmin(admin.ModelAdmin):
     list_display = [field.name for field in SensorValueAggregated._meta.fields if field.name != 'id']
 
 
