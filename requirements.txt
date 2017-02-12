@@ -7,6 +7,7 @@ Markdown==2.6.8
 django-filter==1.0.1
 wit==4.2.0
 geopy==1.11.0
+pytz==2016.10
 # PROD
 gunicorn==19.4.5
 dj-database-url==0.4.0
