@@ -1,10 +1,13 @@
 from django.core.management.base import BaseCommand
 from app.luftdaten.models import SensorValue, SensorValueAggregated
 from django.utils import timezone
+import datetime
 
 
 def get_hour(date):
-    return timezone.datetime(date.year, date.month, date.day, date.hour) + timezone.timedelta(hours=1)
+    return timezone.make_aware(
+        datetime.datetime(date.year, date.month, date.day, date.hour)
+    ) + timezone.timedelta(hours=1)
 
 
 def merge_rows(rows):
