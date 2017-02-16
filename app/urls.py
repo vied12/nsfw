@@ -19,6 +19,8 @@ from .nsfw.feeds import RssLatestEntriesFeed, AtomLatestEntriesFeed
 from .nsfw.views import HomePageView
 from .nsfw.api import AlertViewSet, StationViewSet, SubscriptionViewSet
 from .messenger_bot.views import NSFWMessengerBot
+from .luftdaten.views import LuftDatenHookView
+from .luftdaten.api import SensorValueAggregatedViewSet
 from rest_framework import routers
 from django.views.decorators.cache import cache_page
 from django.conf.urls.i18n import i18n_patterns
@@ -31,6 +33,8 @@ router.register(r'subscriptions', SubscriptionViewSet)
 urlpatterns = [
     url(r'^api/', include(router.urls)),
     url(r'^webhook', NSFWMessengerBot.as_view()),
+    url(r'^luftdaten$', LuftDatenHookView.as_view()),
+    url(r'^api/luftdaten$', SensorValueAggregatedViewSet.as_view()),
 ]
 
 urlpatterns += i18n_patterns(

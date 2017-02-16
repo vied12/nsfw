@@ -33,6 +33,7 @@ class AlertSerializer(serializers.ModelSerializer):
     station = StationSerializer()
 
     class Meta:
+        fields = '__all__'
         model = Alert
 
 
@@ -82,4 +83,4 @@ class AlertViewSet(viewsets.ModelViewSet):
             queryset = Alert.objects.all()
         if max_date:
             queryset = queryset.filter(report__date__gte=max_date)
-        return queryset.order_by('-report__date')
+        return queryset.order_by('-report__date', '-value')

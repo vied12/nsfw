@@ -2,10 +2,12 @@ Django==1.9.7
 requests==2.10.0
 whitenoise==2.0.6
 django-compressor==2.0
-djangorestframework==3.3.3
-django-filter==0.13.0
+djangorestframework==3.5.4
+Markdown==2.6.8
+django-filter==1.0.1
 wit==4.2.0
 geopy==1.11.0
+pytz==2016.10
 # PROD
 gunicorn==19.4.5
 dj-database-url==0.4.0

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'compressor',
     'app.nsfw',
     'app.messenger_bot',
+    'app.luftdaten',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -156,7 +157,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'DEFAULT_FILTER_BACKENDS': (
-        'rest_framework.filters.DjangoFilterBackend',
+        'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.OrderingFilter'
     )
 }
@@ -193,3 +194,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 FB_VERIFY_TOKEN = os.environ.get('FB_VERIFY_TOKEN')
 WIT_TOKEN = os.environ.get('WIT_TOKEN')
 FB_PAGE_TOKEN = os.environ.get('FB_PAGE_TOKEN')
+LUFTDATEN_BASIC_AUTH1 = os.environ.get('LUFTDATEN_BASIC_AUTH1')
+LUFTDATEN_BASIC_AUTH2 = os.environ.get('LUFTDATEN_BASIC_AUTH2')
