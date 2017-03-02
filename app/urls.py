@@ -43,5 +43,6 @@ urlpatterns += i18n_patterns(
     url(r'^alerts/atom/(?P<station_id>\w+)/$', cache_page(60 * 60)(AtomLatestEntriesFeed())),
     url(r'^$', cache_page(60 * 60)(HomePageView.as_view())),
     url(r'^station/(?P<station_id>\w+)/$', cache_page(60 * 60)(HomePageView.as_view()), name='station'),
+    url(r'^neukolln/$', cache_page(60 * 60)(HomePageView.as_view())),
     # prefix_default_language=False
 )

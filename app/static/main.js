@@ -101,6 +101,25 @@
                         });
                     }]
                 }
+            })
+            .state('app.neukolln', {
+                url: 'neukolln/',
+                controllerAs: 'vm',
+                templateUrl: '/neukolln/template.html',
+                controller: 'NeukollnCtrl',
+                resolve: {
+                    stations: ['$resource', '$q', function($resource, $q) {
+                        return $q.all(['DEBE063', 'DEBE064', 'DEBE034'].map(function(id) {
+                            return $resource('api/stations/' + id  + '/').get().$promise
+                        }))
+                    }],
+                    luftdaten: ['$resource', function($resource) {
+                        return $resource('api/luftdaten?device=0&limit=1').get().$promise
+                        .then(function(d) {
+                            return d.results[0]
+                        })
+                    }],
+                }
             });
         }
     ])
