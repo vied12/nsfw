@@ -13,6 +13,6 @@ class SensorValueAggregatedSerializer(serializers.ModelSerializer):
 
 # class SensorValueAggregatedViewSet(viewsets.ModelViewSet):
 class SensorValueAggregatedViewSet(generics.ListAPIView):
-    queryset = SensorValueAggregated.objects.all()
+    queryset = SensorValueAggregated.objects.all().order_by('-date')
     serializer_class = SensorValueAggregatedSerializer
     filter_fields = ('device',)
