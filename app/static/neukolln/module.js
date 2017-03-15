@@ -66,7 +66,7 @@
                     width = +svg.attr('width') - margin.left - margin.right,
                     height = +svg.attr('height') - margin.top - margin.bottom,
                     g = svg.append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-                var parseTime = d3.time.format('%d-%b-%y');
+                var parseTime = d3.time.format('%Y-%m-%dT%H:%M:%SZ');
 
                 var x = d3.time.scale()
                     .rangeRound([0, width]);
@@ -76,17 +76,15 @@
 
                 var line = d3.svg.line()
                     .x(function(d) { return x(d.date); })
-                    .y(function(d) { return y(d.close); });
+                    .y(function(d) { return y(d.SDS_P1); });
 
-                d3.tsv('/static/neukolln/data.tsv', function(d) {
-                  d.date = parseTime.parse(d.date);
-                  d.close = +d.close;
-                  return d;
-                }, function(error, data) {
-                  if (error) throw error;
-
+                d3.json(`api/luftdaten?device=0&limit=${24*7*2}`, function(data) {
+                  data = data.results
+                  data.forEach(function(d) {
+                      d.date = parseTime.parse(d.date);
+                  })
                   x.domain(d3.extent(data, function(d) { return d.date; }));
-                  y.domain(d3.extent(data, function(d) { return d.close; }));
+                  y.domain(d3.extent(data, function(d) { return d.SDS_P1; }));
 
                   g.append('g')
                       .attr('transform', 'translate(0,' + height + ')')
@@ -102,7 +100,7 @@
                       .attr('y', 6)
                       .attr('dy', '0.71em')
                       .attr('text-anchor', 'end')
-                      .text('Price ($)');
+                      .text('PM10');
 
                   g.append('path')
                       .datum(data)
