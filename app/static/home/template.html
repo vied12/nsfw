@@ -42,6 +42,11 @@
     </div>
     <div ui-view></div>
     <div class="row">
+        <div class="well lead" translate>
+            We are sorry to announce that we stopped to update the data because of the last UBA website update which removes the API we were using.
+        </div>
+    </div>
+    <!-- <div class="row">
         <div class="col-md-push-7 col-md-5" ng-if="vm.$state.is('app.home')">
             <div class="well lead" translate>
                 We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed.
@@ -59,13 +64,6 @@
                     <i class="material-icons">chat</i>
                 </a>
             </p>
-            <!-- <div
-                class="fb-messengermessageus"
-                messenger_app_id="1578755335758259"
-                page_id="491963731010980"
-                color="white"
-                size="xlarge" >
-            </div> -->
             <div ng-if="vm.alerts.length > 0">
                 <h2>
                     <div translate>Last alerts in Germany</div>
@@ -79,7 +77,7 @@
                 <a ui-sref="app.home({showOlderAlerts: true})" translate>See older alerts</a>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
 <div class="container">
