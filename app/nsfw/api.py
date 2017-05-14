@@ -8,7 +8,7 @@ class ReportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Report
-        fields = ('id', 'kind', 'date')
+        fields = ('id', 'kind', 'date', 'country')
 
     def get_kind(self, obj):
         return obj.get_kind_display()
@@ -68,12 +68,19 @@ class StationViewSet(viewsets.ModelViewSet):
         else:
             return StationSerializer
 
+    def get_queryset(self):
+        queryset = Station.objects.all()
+        if self.action != 'retrieve':
+            queryset = queryset.filter(id__startswith='DE')
+        return queryset
+
 
 class AlertViewSet(viewsets.ModelViewSet):
     queryset = Alert.objects.all()
     serializer_class = AlertSerializer
 
     def get_queryset(self):
+        country = self.request.query_params.get('country', None)
         id_value = self.request.query_params.get('station', None)
         max_date = self.request.query_params.get('max_date', None)
         if id_value:
@@ -83,4 +90,6 @@ class AlertViewSet(viewsets.ModelViewSet):
             queryset = Alert.objects.all()
         if max_date:
             queryset = queryset.filter(report__date__gte=max_date)
+        if country:
+            queryset = queryset.filter(report__country=country)
         return queryset.order_by('-report__date', '-value')

@@ -12,7 +12,7 @@ admin.site.register(Station, StationAdmin)
 
 
 class ReportAdmin(admin.ModelAdmin):
-    list_display = ('kind', 'date')
+    list_display = ('date', 'kind', 'country', 'source')
 admin.site.register(Report, ReportAdmin)
 
 

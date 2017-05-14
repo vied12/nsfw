@@ -191,6 +191,8 @@ CACHES = get_cache()
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+EEA_TOKEN = os.environ.get('EEA_TOKEN')
+
 FB_VERIFY_TOKEN = os.environ.get('FB_VERIFY_TOKEN')
 WIT_TOKEN = os.environ.get('WIT_TOKEN')
 FB_PAGE_TOKEN = os.environ.get('FB_PAGE_TOKEN')

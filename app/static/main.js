@@ -39,10 +39,10 @@
                 resolve: {
                     alerts: ['$stateParams', '$resource', 'moment',
                     function($stateParams, $resource, moment) {
-                        var url = 'api/alerts/?&limit=10';
+                        var url = 'api/alerts/?country=de&limit=500';
                         if (!$stateParams.showOlderAlerts) {
                             var x = moment();
-                            x.subtract(7, 'days');
+                            x.subtract(2, 'days');
                             url += '&max_date='+ x.format('Y-MM-DD');
                         }
                         return $resource(url).get().$promise.then(function(data) {
@@ -82,15 +82,9 @@
                     station: ['$stateParams', '$resource', function($stateParams, $resource) {
                         var Stations = $resource('api/stations/' + $stateParams.station  + '/');
                         return Stations.get().$promise.then(function(s) {
-                            s.pm10_data = JSON.parse(s.pm10_data);
-                            s.no2_data = JSON.parse(s.no2_data);
-                            // clean data
-                            if (s.no2_data) {
-                                s.no2_data.values = _.pick(s.no2_data.values, function(v, k) {
-                                    return v[0] !== '-999';
-                                });
-                            }
-                            s.name = s.name.replace('B ', '');
+                            var parser = d3.dsv(';', 'text/plain')
+                            s.pm10_data = parser.parse(s.pm10_data)
+                            s.no2_data = parser.parse(s.no2_data)
                             return s;
                         });
                     }],
