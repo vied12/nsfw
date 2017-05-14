@@ -96,8 +96,8 @@ class Alert(models.Model):
 
 
 class Subscription(models.Model):
-    email = models.ForeignKey('Email', null=True)
-    messenger = models.ForeignKey(Messenger, null=True)
+    email = models.ForeignKey('Email', null=True, blank=True)
+    messenger = models.ForeignKey(Messenger, null=True, blank=True)
     station = models.ForeignKey('Station')
 
     def __str__(self):

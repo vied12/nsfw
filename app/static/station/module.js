@@ -106,8 +106,8 @@
             station: station,
             alerts: alerts,
             dateIsYesterday: dateIsYesterday,
-            isDatavisPossible: station.pm10_data && _.any(_.keys(station.pm10_data.values), function(k) {
-                return _.startsWith(k.toString(), '2014');
+            isDatavisPossible: station.pm10_data && _.some(_.keys(station.pm10_data.values), function(k) {
+                return _.startsWith(k.toString(), '2015');
             }),
             mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
@@ -153,7 +153,7 @@
                     .range(['#fff68d', '#fff68f', 'rgb(227, 161, 140)', '#d9534f']);
 
                 var svg = d3.select(element.get(0)).selectAll('svg')
-                    .data(d3.range(2014, 2017).reverse())
+                    .data(d3.range(2015, 2018).reverse())
                     .enter().append('svg')
                         .attr('width', width)
                         .attr('height', height)

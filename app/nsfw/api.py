@@ -33,6 +33,7 @@ class AlertSerializer(serializers.ModelSerializer):
     station = StationSerializer()
 
     class Meta:
+        fields = '__all__'
         model = Alert
 
 

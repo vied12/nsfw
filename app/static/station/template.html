@@ -13,7 +13,8 @@
             <h2 translate>Subscribe to the station alerts</h2>
             <form ng-submit="vm.subscribe()">
                 <div class="form-group">
-                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}</label>
+                    <label for="inputEmail1"><i class="material-icons">notifications_active</i> {{ 'Leave your email address to receive alerts' | translate }}.</label>
+                    <span translate>Unsubscribe by replying to the email.</span>
                     <div class="row" ng-if="!vm.subscribed">
                         <div class="col-sm-8">
                             <input type="email" class="form-control" id="inputEmail1" ng-model="vm.email" placeholder="{{'Email'|translate}}">
@@ -55,15 +56,15 @@
                         </th>
                         <th>
                             <i class="material-icons md-36">insert_chart</i>
-                            <div translate>Average during last year</div>
+                            <div translate>Average during last 12 months</div>
                         </th>
                         <th>
                             <i class="material-icons md-36">error</i>
-                            <div translate>Polluted days<br/>during last year</div>
+                            <div translate>Polluted days<br/>during last 12 months</div>
                         </th>
                         <th>
                             <i class="material-icons md-36">flash_on</i>
-                            <div translate>Longest pollution streak<br/> during last year</div>
+                            <div translate>Longest pollution streak<br/> during last 12 months</div>
                         </th>
                     </thead>
                     <tbody>

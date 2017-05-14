@@ -45,7 +45,8 @@ def get_closest_station(lat, lon):
 
 
 def subscribe(request):
-    context = {}
+    request['context'] = {}
+    context = request['context']
     messenger, created = Messenger.objects.get_or_create(messenger_id=request['session_id'])
     station = cache.get(request['session_id'])
     if station:

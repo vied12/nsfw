@@ -25,6 +25,10 @@
         "FB_PAGE_TOKEN": {
             "required": true
         },
+        "DJANGO_SETTINGS_MODULE": {
+            "value": "app.settings_heroku",
+            "required": true
+        },
         "WIT_TOKEN": {
             "required": true
         },

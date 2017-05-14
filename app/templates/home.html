@@ -29,7 +29,7 @@
         {% compress js %}
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/modernizr/modernizr.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/jquery/dist/jquery.min.js" />
-        <script type="text/javascript" charset="utf-8" src="/static/bower_components/lodash/lodash.min.js" />
+        <script type="text/javascript" charset="utf-8" src="/static/bower_components/lodash/lodash.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/angular/angular.min.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/angular-simple-logger/dist/angular-simple-logger.js" />
         <script type="text/javascript" charset="utf-8" src="/static/bower_components/leaflet/dist/leaflet.js" />
@@ -50,6 +50,7 @@
         <script type="text/javascript" charset="utf-8" src="/static/home/module.js" />
         <script type="text/javascript" charset="utf-8" src="/static/station/module.js" />
         <script type="text/javascript" charset="utf-8" src="/static/alerts/module.js" />
+        <script type="text/javascript" charset="utf-8" src="/static/neukolln/module.js" />
         {% endcompress %}
         {% for template_name, template_body in templates %}
         <script type="text/ng-template" id="/{{ template_name }}">{{ template_body | safe }}</script>
