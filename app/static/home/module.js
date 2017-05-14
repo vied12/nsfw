@@ -58,7 +58,6 @@
             search: function(coord) {
                 vm.suggestion = undefined;
                 if (!coord) {
-                    console.log(vm.address + ', Germany')
                     coord = geocoderService.getLatLong(vm.address + ', Germany').then(function(latlng){
                         return {lat: latlng.lat(), lon: latlng.lng()};
                     });

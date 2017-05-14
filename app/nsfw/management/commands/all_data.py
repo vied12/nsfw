@@ -10,21 +10,21 @@ class Command(BaseCommand):
         parser.add_argument('--berlin', help='load only berlin data', action='store_const', const=True)
 
     def handle(self, *args, **kwargs):
-        today = datetime.datetime.now().strftime('%Y%m%d')
+        today = datetime.datetime.now().timestamp()
         for station in Station.objects.filter(id__startswith='DE'):
             if kwargs['berlin'] and not station.id.startswith('DEBE'):
                 continue
             print(station)
-            pm10_r = requests.get('https://www.umweltbundesamt.de/en/luftdaten/\
-data?pollutant=PM1&data_type=1TMW&date=20130101&\
-dateTo={today}&station={station}'.format(today=today, station=station.id))
-            no2 = requests.get('https://www.umweltbundesamt.de/en/luftdaten/\
-data?pollutant=NO2&data_type=1TMAX&date=20130101&\
-dateTo={today}&station={station}'.format(today=today, station=station.id))
+            pm10_r = requests.get('https://www.umweltbundesamt.de/uaq/csv/stations/data?station\
+[]={station}&pollutant[]=PM10&scope[]=1TMW&group[]=\
+pollutant&range[]=1356998400,{today}'.format(today=today, station=station.id))
+            no2 = requests.get('https://www.umweltbundesamt.de/uaq/csv/stations/data?station\
+[]={station}&pollutant[]=NO2&scope[]=1SMW_MAX&group[]=\
+pollutant&range[]=1356998400,{today}'.format(today=today, station=station.id))
             assert no2.status_code is 200, 'error when downloading data for %s:\n%s' % (station, no2.__dict__)
             assert pm10_r.status_code is 200, 'error when downloading data for %s:\n%s' % (station, pm10_r.__dict__)
-            pm10 = pm10_r.content.decode('utf8')
-            no2 = no2.content.decode('utf8')
+            pm10 = pm10_r.content.decode('iso-8859-1')
+            no2 = no2.content.decode('iso-8859-1')
             if pm10:
                 station.pm10_data = pm10
             if no2:

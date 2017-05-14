@@ -42,14 +42,10 @@
     </div>
     <div ui-view></div>
     <div class="row">
-        <div class="well lead" translate>
-            We are sorry to announce that we stopped to update the data because of the last UBA website update which removes the API we were using.
-        </div>
-    </div>
-    <!-- <div class="row">
         <div class="col-md-push-7 col-md-5" ng-if="vm.$state.is('app.home')">
             <div class="well lead" translate>
-                We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed.
+                <p>We are proud to announce that Smogalarm is back with up to date data !</p>
+                Smogalarm is collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed.
             </div>
         </div>
         <div class="col-md-7 col-md-pull-5" ng-if="vm.$state.is('app.home') && !vm.suggestion && vm.alerts">
@@ -72,12 +68,11 @@
                 <last-alert data-alerts="vm.alerts"></last-alert>
             </div>
             <div ng-if="vm.alerts.length === 0">
-                <h2>{{'There is no recent alert in Berlin'|translate}} <i class="material-icons md-36">sentiment_very_satisfied</i></h2>
-                <p translate>During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter.</p>
+                <h2>{{'There is no recent alert in Germany'|translate}} <i class="material-icons md-36">sentiment_very_satisfied</i></h2>
                 <a ui-sref="app.home({showOlderAlerts: true})" translate>See older alerts</a>
             </div>
         </div>
-    </div> -->
+    </div>
 
 </div>
 <div class="container">

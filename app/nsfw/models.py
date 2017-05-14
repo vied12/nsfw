@@ -4,7 +4,7 @@ from django.dispatch import receiver
 import csv
 import html
 from app.messenger_bot.models import Messenger
-
+from django.core.exceptions import ObjectDoesNotExist
 
 # From WHO
 # see: http://www.who.int/mediacentre/factsheets/fs313/en/
@@ -15,8 +15,8 @@ THRESHOLD_NO2 = 200
 class Station(models.Model):
     id = models.CharField(max_length=8, primary_key=True)
     name = models.CharField(max_length=255)
-    lat = models.FloatField()
-    lon = models.FloatField()
+    lat = models.FloatField(null=True, blank=True)
+    lon = models.FloatField(null=True, blank=True)
     pm10_data = models.TextField(null=True, blank=True)
     no2_data = models.TextField(null=True, blank=True)
 
@@ -40,24 +40,26 @@ class Report(models.Model):
             'PM1': THRESHOLD_PM10,
             'NO2': THRESHOLD_NO2,
         }
-        for station in list(csv.DictReader(self.data.splitlines(),
-                                           delimiter='\t')):
+        count = 0
+        for station in list(
+                csv.DictReader(self.data.splitlines(), delimiter=';')
+        ):
+            val = int(station['Messwert (in µg/m³)'])
             try:
-                val = int(station['val'].replace(' µg/m³', ''))
-            except Exception as e:
-                print('ERROR', e, station)
-                continue
-            station, created = Station.objects.get_or_create(
-                id=station['stationCode'],
-                defaults=dict(name=html.unescape(station['title'].replace(' %s' % (station['stationCode']), '')),
-                              lat=station['lat'],
-                              lon=station['lon']))
+                station = Station.objects.get(id=station['Stationscode'])
+            except ObjectDoesNotExist:
+                station = Station.objects.create(
+                    id=station['Stationscode'],
+                    name=html.unescape(station['Stationsname']),
+                )
             if val >= thresholds[self.kind]:
                 Alert.objects.get_or_create(
                     report=self,
                     station=station,
                     value=val,
                 )
+                count += 1
+        print('%s alerts created' % count)
 
     def process_eea_report(self):
         thresholds = {

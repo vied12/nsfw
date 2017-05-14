@@ -1,30 +1,27 @@
 (function() {
     'use strict';
+    var VALUE_KEY = 'Messwert (in µg/m³)'
+
     StationCtrl.$inject = ['alerts', 'station', 'markers', '$resource', 'moment', 'tooltipBody'];
     function StationCtrl(alerts, station, markers, $resource, moment, tooltipBody) {
         var vm = this;
-        var formatDate = d3.time.format('%Y%m%d');
+        var formatDate = d3.time.format('%d.%m.%Y');
         function getLastMeasure(data) {
-                if (!data || !data.values) {return;}
-                var keys = Object.keys(data.values);
-                var lastKey = keys[keys.length - 1];
-                if (data.values[lastKey]) {
-                    return {
-                        value: data.values[lastKey][0],
-                        date: formatDate.parse(lastKey)
-                    };
-                }
+            if (!data || data.length < 1) {return;}
+            return {
+                value: data[data.length - 1][VALUE_KEY],
+                date: formatDate.parse(data[data.length - 1]['Zeit'])
+            }
         }
         function getAverage(data) {
             if (!data) {return;}
             var lastYear = new Date();
             lastYear.setFullYear(lastYear.getFullYear() - 1);
-            var values = _.map(
-                _.filter(data.values, function(v, k) {
-                    return parseInt(k) > parseInt(formatDate(lastYear));
-                }),
-                function(d) {return parseInt(d[0]);}
-            );
+            var values = data.filter(function(v) {
+                return formatDate.parse(v['Zeit']) > parseInt(formatDate(lastYear))
+            }).map(function(d) {
+                return parseInt(d[VALUE_KEY])
+            })
             if (values.length < 1) {return;}
             var sum = values.reduce(function(a, b) { return a + b; });
             var avg = sum / values.length;
@@ -34,17 +31,13 @@
             if (!data) {return;}
             var lastYear = new Date();
             lastYear.setFullYear(lastYear.getFullYear() - 1);
-            var values = _.pick(data.values, function(v, k) {
-                return parseInt(k) > parseInt(formatDate(lastYear));
-            });
-            if (Object.keys(values).length < 1) {return;}
-            values = _.pick(values, function(v, k) {
-                return v > limit;
-            });
-            values = _.map(values,
-                function(d) {return parseInt(d[0]);}
-            );
-            return values.length;
+            return data
+            .filter(function(v) {
+                return formatDate.parse(v['Zeit']) > parseInt(formatDate(lastYear))
+            })
+            .filter(function(d) {
+                return parseInt(d[VALUE_KEY]) > limit
+            }).length
         }
         function getLongestStreak(data, limit) {
             if (!data) {return;}
@@ -55,14 +48,14 @@
             var reloadCounting = true;
             var dateStart;
             _.forEach(
-                _.pick(data.values, function(v, k) {
-                    return parseInt(k) > parseInt(formatDate(lastYear));
+                data.filter(function(v) {
+                    return formatDate.parse(v['Zeit']) > parseInt(formatDate(lastYear))
                 }),
-                function(v, k) {
-                    var value = parseInt(v[0]);
+                function(d) {
+                    var value = parseInt(d[VALUE_KEY]);
                     if (value >= limit) {
                         if (reloadCounting) {
-                            dateStart = k;
+                            dateStart = d['Zeit'];
                             occurences = 0;
                             reloadCounting = false;
                         }
@@ -106,9 +99,7 @@
             station: station,
             alerts: alerts,
             dateIsYesterday: dateIsYesterday,
-            isDatavisPossible: station.pm10_data && _.some(_.keys(station.pm10_data.values), function(k) {
-                return _.startsWith(k.toString(), '2015');
-            }),
+            isDatavisPossible: station.pm10_data,
             mp10LastMeasure: getLastMeasure(station.pm10_data),
             mp10Average: getAverage(station.pm10_data),
             mp10LongestStreak: getLongestStreak(station.pm10_data, 50),
@@ -145,7 +136,7 @@
                     height = 156,
                     cellSize = 17; // cell size
 
-                var format = d3.time.format('%Y%m%d'),
+                var format = d3.time.format('%d.%m.%Y'),
                     formatDate = d3.time.format('%d-%m-%Y');
 
                 var threshold = d3.scale.threshold()
@@ -153,7 +144,7 @@
                     .range(['#fff68d', '#fff68f', 'rgb(227, 161, 140)', '#d9534f']);
 
                 var svg = d3.select(element.get(0)).selectAll('svg')
-                    .data(d3.range(2015, 2018).reverse())
+                    .data(d3.range(2016, 2018).reverse())
                     .enter().append('svg')
                         .attr('width', width)
                         .attr('height', height)
@@ -191,12 +182,25 @@
                     .attr('class', 'month')
                     .attr('d', monthPath);
 
-                    var data = scope.station.pm10_data.values;
-                    rect.filter(function(d) { return d in data; })
-                    .style('fill', function(d) { return threshold(data[d][0]); })
+                    var data = scope.station.pm10_data;
+                    rect.filter(function(date) {
+                        return data.find(function (d) {
+                            return d['Zeit'] === date
+                        })
+                    })
+                    .style('fill', function(date) {
+                        return threshold(
+                            data.find(function (d) {
+                                return d['Zeit'] === date
+                            })[VALUE_KEY]
+                        )
+                    })
                     .append('title')
-                    .text(function(d) {
-                        return $filter('date')(format.parse(d), 'fullDate') + ': ' + data[d][0] + 'µg/m³';
+                    .text(function(date) {
+                        var value = data.find(function (d) {
+                            return d['Zeit'] === date
+                        })[VALUE_KEY]
+                        return $filter('date')(format.parse(date), 'fullDate') + ': ' +value + 'µg/m³';
                     });
 
                 function monthPath(t0) {
