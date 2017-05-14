@@ -20,6 +20,12 @@ msgstr ""
 msgid "50μg/m3 mean is the limit for PM<sub>10</sub> pollution."
 msgstr ""
 
+#: app/static/home/template.html:46
+msgid ""
+"<p>We are proud to announce that Smogalarm is back with up to date data&nbsp;!</p>\n"
+"                Smogalarm is collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed."
+msgstr ""
+
 #: app/static/home/template.html:25
 msgid "Address, City"
 msgstr ""
@@ -28,16 +34,12 @@ msgstr ""
 msgid "Average during last 12 months"
 msgstr ""
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:66
 msgid "Click on a station to know more"
 msgstr ""
 
-#: app/static/station/module.js:249
+#: app/static/station/module.js:253
 msgid "Concentration of PM10 particles (µg/m³)"
-msgstr ""
-
-#: app/static/home/template.html:78
-msgid "During summer, the air quality in Berlin is quite good. But winter is coming. Find the closest station to be prepared for next winter."
 msgstr ""
 
 #: app/static/station/template.html:20
@@ -52,11 +54,11 @@ msgstr ""
 msgid "Find the closest station measuring air quality in Germany"
 msgstr ""
 
-#: app/static/home/template.html:95
+#: app/static/home/template.html:88
 msgid "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">send us a mail</a>."
 msgstr ""
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:65
 msgid "Last alerts in Germany"
 msgstr ""
 
@@ -76,7 +78,7 @@ msgstr ""
 msgid "Longest pollution streak<br> during last 12 months"
 msgstr ""
 
-#: app/static/home/template.html:89
+#: app/static/home/template.html:82
 msgid "Made by"
 msgstr ""
 
@@ -84,7 +86,7 @@ msgstr ""
 msgid "No alert found"
 msgstr ""
 
-#: app/static/home/template.html:52
+#: app/static/home/template.html:53
 msgid ""
 "Our service is now available on Facebook Messenger too.\n"
 "                You can ask for air quality at a location and subscribe to station alerts directly from Messenger."
@@ -102,11 +104,11 @@ msgstr ""
 msgid "Polluted days<br>during last 12 months"
 msgstr ""
 
-#: app/static/home/template.html:51
+#: app/static/home/template.html:52
 msgid "Say hello to our new bot"
 msgstr ""
 
-#: app/static/home/template.html:79
+#: app/static/home/template.html:72
 msgid "See older alerts"
 msgstr ""
 
@@ -130,24 +132,20 @@ msgstr ""
 msgid "Summary"
 msgstr ""
 
-#: app/static/home/template.html:77
-msgid "There is no recent alert in Berlin"
+#: app/static/home/template.html:71
+msgid "There is no recent alert in Germany"
 msgstr ""
 
 #: app/static/home/template.html:40
 msgid "This is the closest station"
 msgstr ""
 
-#: app/static/home/template.html:94
+#: app/static/home/template.html:87
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
 msgstr ""
 
 #: app/static/station/template.html:17
 msgid "Unsubscribe by replying to the email."
-msgstr ""
-
-#: app/static/home/template.html:46
-msgid "We are collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed."
 msgstr ""
 
 #: app/static/station/template.html:180
@@ -175,11 +173,11 @@ msgstr ""
 msgid "an error occured!"
 msgstr ""
 
-#: app/static/home/template.html:91
+#: app/static/home/template.html:84
 msgid "an illustration from"
 msgstr ""
 
-#: app/static/home/template.html:93
+#: app/static/home/template.html:86
 msgid "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's data</a>."
 msgstr ""
 
@@ -190,16 +188,16 @@ msgstr ""
 msgid "days"
 msgstr ""
 
-#: app/static/home/template.html:90
+#: app/static/home/template.html:83
 msgid "from a brillant idea of"
 msgstr ""
 
-#: app/static/alerts/last.html:11
+#: app/static/alerts/last.html:12
 msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr ""
 
-#: app/static/home/template.html:92
+#: app/static/home/template.html:85
 msgid "with the helpful Carmen's design advices"
 msgstr ""
 
