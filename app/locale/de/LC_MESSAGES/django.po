@@ -35,7 +35,7 @@ msgid ""
 "Yesterday we reached %(value)sµg/m³ of %(kind)s pollution at the station "
 "%(station)s."
 msgstr ""
-"Gestern wurden %(value)sµg/m³ des Feinstaubwertes %(kind)s an der Station %(station)s gemessen.\n"
+"Gestern wurden %(value)sµg/m³ %(kind)s Verschmutzung an der Station %(station)s gemessen.\n"
 "\n"
 "Zum Schutz der menschlichen Gesundheit gelten seit dem 1. Januar 2005 europaweit Grenzwerte für die Feinstaubfraktion PM10. Der Tagesgrenzwert beträgt 50 µg/m3 und darf nicht öfter als 35mal im Jahr überschritten werden. Der zulässige Jahresmittelwert beträgt 40 µg/m3."
 
