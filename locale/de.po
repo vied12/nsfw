@@ -49,6 +49,12 @@ msgstr ""
 "50 μg/m³ ist der durch die EU festgelegte Tages-Grenzwert für die "
 "Luftbelastung durch Feinstaub (PM<sub>10</sub>)."
 
+#: app/static/home/template.html:46
+msgid ""
+"<p>We are proud to announce that Smogalarm is back with up to date data&nbsp;!</p>\n"
+"                Smogalarm is collecting the daily reports from the German Environmental Protection Agency who is measuring the air quality at different points in the country. This tool helps you to find your closest station and give you the possibility to follow it by receiving email alerts or by subscribing to its RSS feed."
+msgstr ""
+
 #: app/static/home/template.html:25
 msgid "Address, City"
 msgstr "Straße, PLZ Stadt"
@@ -57,22 +63,13 @@ msgstr "Straße, PLZ Stadt"
 msgid "Average during last 12 months"
 msgstr "Durchschnittswert<br/>in den letzten zwölf Monaten"
 
-#: app/static/home/template.html:72
+#: app/static/home/template.html:66
 msgid "Click on a station to know more"
 msgstr "Auf die Messstation klicken, um mehr zu erfahren."
 
-#: app/static/station/module.js:249
+#: app/static/station/module.js:253
 msgid "Concentration of PM10 particles (µg/m³)"
 msgstr "Feinstaub-Konzentration (µg/m³)"
-
-#: app/static/home/template.html:78
-msgid ""
-"During summer, the air quality in Berlin is quite good. But winter is "
-"coming. Find the closest station to be prepared for next winter."
-msgstr ""
-"Im Sommer ist die Luftqualität in Berlin grundsätzlich gut, aber der Winter "
-"kommt. Finden Sie die nächstgelegene Messstation, um für den Winter "
-"gewappnet zu sein."
 
 #: app/static/station/template.html:20
 msgid "Email"
@@ -86,7 +83,7 @@ msgstr "Finden"
 msgid "Find the closest station measuring air quality in Germany"
 msgstr "Finden Sie die nächstgelegene Messstation (in Deutschland)"
 
-#: app/static/home/template.html:95
+#: app/static/home/template.html:88
 msgid ""
 "Give us feedback on <a href=\"https://github.com/vied12/nsfw/issues\" "
 "target=\"_blank\">github</a> or <a href=\"mailto:nsfw@fahrradfreundliches-"
@@ -97,7 +94,7 @@ msgstr ""
 "oder <a href=\"mailto:nsfw@fahrradfreundliches-neukoelln.de\">senden Sie uns"
 " eine E-Mail</a>"
 
-#: app/static/home/template.html:71
+#: app/static/home/template.html:65
 msgid "Last alerts in Germany"
 msgstr "Letzte Warnungen in Deutschland"
 
@@ -120,7 +117,7 @@ msgstr ""
 "Längste Periode mit täglicher<br/>Überschreitung in den letzten zwölf "
 "Monaten"
 
-#: app/static/home/template.html:89
+#: app/static/home/template.html:82
 msgid "Made by"
 msgstr "Entwickelt von"
 
@@ -128,7 +125,7 @@ msgstr "Entwickelt von"
 msgid "No alert found"
 msgstr "Keine Warnmeldungen gefunden"
 
-#: app/static/home/template.html:52
+#: app/static/home/template.html:53
 msgid ""
 "Our service is now available on Facebook Messenger too.\n"
 "                You can ask for air quality at a location and subscribe to station alerts directly from Messenger."
@@ -156,11 +153,11 @@ msgstr "Überblick über die zurückliegenden PM<sub>10</sub> Feinstaubwerte"
 msgid "Polluted days<br>during last 12 months"
 msgstr "Anzahl der Tage mit<br/>Überschreitungen in den letzten zwölf Monaten"
 
-#: app/static/home/template.html:51
+#: app/static/home/template.html:52
 msgid "Say hello to our new bot"
 msgstr ""
 
-#: app/static/home/template.html:79
+#: app/static/home/template.html:72
 msgid "See older alerts"
 msgstr "Ältere Warnungen anzeigen"
 
@@ -184,36 +181,21 @@ msgstr "Eingetragen!"
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: app/static/home/template.html:77
-msgid "There is no recent alert in Berlin"
-msgstr "Aktuell liegen keine neuen Warnmeldungen für Berlin vor"
+#: app/static/home/template.html:71
+msgid "There is no recent alert in Germany"
+msgstr ""
 
 #: app/static/home/template.html:40
 msgid "This is the closest station"
 msgstr "Dies ist die nächstgelegene Messstation"
 
-#: app/static/home/template.html:94
+#: app/static/home/template.html:87
 msgid "Translated into German by Saskia, Konstantin and Yvonne."
 msgstr "Ins Deutsche übersetzt von Konstantin, Saskia und Yvonne."
 
 #: app/static/station/template.html:17
 msgid "Unsubscribe by replying to the email."
 msgstr ""
-
-#: app/static/home/template.html:46
-msgid ""
-"We are collecting the daily reports from the German Environmental Protection"
-" Agency who is measuring the air quality at different points in the country."
-" This tool helps you to find your closest station and give you the "
-"possibility to follow it by receiving email alerts or by subscribing to its "
-"RSS feed."
-msgstr ""
-"Wir sammeln die täglichen Daten des Umwelt&shy;bundes&shy;amts, dessen "
-"Messstationen die Luftqualität in Deutsch&shy;land messen. Verfolgen Sie die"
-" aktuellen Werte einer oder mehrerer ausgewählter Messstationen und erhalten"
-" automatisch Warnmeldungen per E-Mail. Einfach (1) oben Adresse eingeben, "
-"(2) unter der gefundenen Station Ihre E-Mail-Adresse eintragen und/oder (3) "
-"Feeds abonnieren."
 
 #: app/static/station/template.html:180
 msgid "Where the data come from"
@@ -241,11 +223,11 @@ msgstr "ein Service von"
 msgid "an error occured!"
 msgstr "Es ist ein Fehler aufgetreten."
 
-#: app/static/home/template.html:91
+#: app/static/home/template.html:84
 msgid "an illustration from"
 msgstr "einer Grafik von"
 
-#: app/static/home/template.html:93
+#: app/static/home/template.html:86
 msgid ""
 "and the <a href=\"https://www.umweltbundesamt.de/en/data/current-"
 "concentrations-of-air-pollutants-in-germany\" target=\"_blank\">UBA's "
@@ -260,16 +242,16 @@ msgstr ""
 msgid "days"
 msgstr "Tage"
 
-#: app/static/home/template.html:90
+#: app/static/home/template.html:83
 msgid "from a brillant idea of"
 msgstr "aufgrund einer brillanten Idee von"
 
-#: app/static/alerts/last.html:11
+#: app/static/alerts/last.html:12
 msgctxt "before a full date. ex: on Saturday, October 1, 2016"
 msgid "on"
 msgstr "am"
 
-#: app/static/home/template.html:92
+#: app/static/home/template.html:85
 msgid "with the helpful Carmen's design advices"
 msgstr "mit hilfreichen Design-Ratschlägen von Carmen"
 
