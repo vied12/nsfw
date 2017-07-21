@@ -5,6 +5,13 @@ We are collecting the daily reports from [Umweltbundesamt](https://www.umweltbun
 
 http://smogalarm.org
 
+# Help us
+
+We are looking for help with the german translation. You can easily translate texts on https://www.transifex.com/nsfw/
+
+Thank you!
+
+
 # Install and run
 
 ```bash
