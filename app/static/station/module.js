@@ -144,7 +144,7 @@
                     .range(['#fff68d', '#fff68f', 'rgb(227, 161, 140)', '#d9534f']);
 
                 var svg = d3.select(element.get(0)).selectAll('svg')
-                    .data(d3.range(2016, new Date().getFullYear() + 1).reverse())
+                    .data(d3.range(2017, new Date().getFullYear() + 1).reverse())
                     .enter().append('svg')
                         .attr('width', width)
                         .attr('height', height)
