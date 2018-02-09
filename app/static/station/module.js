@@ -116,7 +116,7 @@
                 zoom: 12
             },
             defaults: {
-                tileLayer: 'http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+                tileLayer: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
                 // tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
                 dragging: false,
                 scrollWheelZoom: false,
